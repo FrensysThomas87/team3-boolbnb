@@ -25,7 +25,7 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('Apartments.create');
     }
 
     /**
@@ -36,7 +36,17 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $this->validateForm($request);
+
+        $apartment = new Apartment();
+        $apartment->fill($data);
+        $apartment->save();
+
+        // Redirect
+        $apartmentStored = Apartment::orderBy('id','desc')->first();
+        return redirect()->route('apartments.show',$apartmentStored);
     }
 
     /**
@@ -53,34 +63,64 @@ class ApartmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Apartment $apartment
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Apartment $apartment)
     {
-        //
+        return view('Apartments.edit', compact('apartment'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Apartment $apartment)
     {
-        //
+        $data = $request->all();
+
+        $this->validateForm($request);
+
+        $apartment->update($data);
+
+        return redirect()->route('apartments.show',compact('apartment'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Apartment apartment
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Apartment $apartment)
     {
-        //
+        $apartment->delete();
+        return redirect()->route('apartments.index');
     }
+
+    protected function validateForm(Request $request){
+        $request->validate([
+            'title' => 'required | max:400',
+            'description' => 'max:10000',
+            'rooms' => 'required | integer | between:1,20',
+            'beds' => 'required | integer | between:1,80',
+            'baths' => 'required | integer | between:1,10',
+            'sq_meters' => 'required | integer | between:1,1000',
+            'price' => 'required | numeric | between: 1, 1000',
+            'visible' => 'required | boolean',
+            'check_in' => 'max:2048',
+            'check_out' => 'max:2048',
+            'max_guests' => 'required | integer | between:1,50',
+             //'view_count' => generato dal sistema
+            'profile_pic' => 'max:2048',
+            'address' => 'max:2048'
+             //'latitude' => generato dal sistema
+             //'longitude' => generato dal sistema
+        ]);
+
+    }
+
 }
