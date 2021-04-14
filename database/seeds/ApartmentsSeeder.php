@@ -37,7 +37,7 @@ class ApartmentsSeeder extends Seeder
                 $apartment->baths = rand(1, 10);
                 $apartment->sq_meters = rand(25, 1000);
                 $apartment->price = rand(100, 2000);
-                $apartment->visible = $faker->boolean();
+                $apartment->visible = 'true';
                 $apartment->check_in = $faker->text(100);
                 $apartment->check_out = $faker->text(100);
                 $apartment->max_guests = rand(1, 20);

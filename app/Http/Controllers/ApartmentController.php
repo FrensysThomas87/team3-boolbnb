@@ -36,12 +36,21 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->all();
+        $path = $request->file('profile_pic')->store('images');
 
         $this->validateForm($request);
 
         $apartment = new Apartment();
+
+
+
         $apartment->fill($data);
+
+
+
+        $apartment->profile_pic = $path;
         $apartment->save();
 
         // Redirect
@@ -80,10 +89,12 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
+
+        $path = $request->file('profile_pic')->store('images');
         $data = $request->all();
 
         $this->validateForm($request);
-
+        $apartment->profile_pic = $path;
         $apartment->update($data);
 
         return redirect()->route('apartments.show',compact('apartment'));
@@ -110,7 +121,7 @@ class ApartmentController extends Controller
             'baths' => 'required | integer | between:1,10',
             'sq_meters' => 'required | integer | between:1,1000',
             'price' => 'required | numeric | between: 1, 1000',
-            'visible' => 'required | boolean',
+            'visible' => 'required | max:5',
             'check_in' => 'max:2048',
             'check_out' => 'max:2048',
             'max_guests' => 'required | integer | between:1,50',

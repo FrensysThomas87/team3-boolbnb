@@ -24,11 +24,11 @@ class CreateApartmentsTable extends Migration
             $table->unsignedTinyInteger('baths');
             $table->unsignedSmallInteger('sq_meters');
             $table->unsignedFloat('price', 7,2);
-            $table->boolean('visible');
+            $table->string('visible', 5);
             $table->char('check_in', 100)->nullable();
             $table->char('check_out', 100)->nullable();
             $table->unsignedTinyInteger('max_guests')->nullable();
-            $table->unsignedBigInteger('view_count');
+            $table->unsignedBigInteger('view_count')->default(0);
             $table->string('profile_pic', 2048)->nullable();
             $table->string('address', 2048);
             $table->string('latitude', 255);

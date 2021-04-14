@@ -25,4 +25,23 @@ class Apartment extends Model
     public function apartmentPics() {
         return $this->hasMany('App\ApartmentPic');
     }
+
+    protected $fillable=[
+        'title',
+        'description',
+        'rooms',
+        'beds',
+        'baths',
+        'sq_meters',
+        'price',
+        'visible',
+        'check_in',
+        'check_out',
+        'max_guests',
+        'address',
+        'latitude',
+        'longitude',
+        /* 'view_count,' */
+        'user_id'
+    ];
 }
