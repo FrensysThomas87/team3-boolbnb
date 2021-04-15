@@ -24,7 +24,7 @@ class CreateApartmentsTable extends Migration
             $table->unsignedTinyInteger('baths');
             $table->unsignedSmallInteger('sq_meters');
             $table->unsignedFloat('price', 7,2);
-            $table->string('visible', 5);
+            $table->string('visible', 5)->nullable();
             $table->char('check_in', 100)->nullable();
             $table->char('check_out', 100)->nullable();
             $table->unsignedTinyInteger('max_guests')->nullable();

@@ -38,7 +38,14 @@ class ApartmentController extends Controller
     {
 
         $data = $request->all();
-        $path = $request->file('profile_pic')->store('images');
+
+        if($request->file('profile_pic')){
+            $path = $request->file('profile_pic')->store('images');
+        } else{
+            $path="";
+        }
+
+
 
         $this->validateForm($request);
 
@@ -90,7 +97,12 @@ class ApartmentController extends Controller
     public function update(Request $request, Apartment $apartment)
     {
 
-        $path = $request->file('profile_pic')->store('images');
+        if($request->file('profile_pic')){
+            $path = $request->file('profile_pic')->store('images');
+        } else{
+            $path="";
+        }
+
         $data = $request->all();
 
         $this->validateForm($request);
@@ -121,7 +133,7 @@ class ApartmentController extends Controller
             'baths' => 'required | integer | between:1,10',
             'sq_meters' => 'required | integer | between:1,1000',
             'price' => 'required | numeric | between: 1, 1000',
-            'visible' => 'required | max:5',
+            'visible' => 'max:5',
             'check_in' => 'max:2048',
             'check_out' => 'max:2048',
             'max_guests' => 'required | integer | between:1,50',
