@@ -42,6 +42,6 @@ class Apartment extends Model
         'latitude',
         'longitude',
         /* 'view_count,' */
-        'user_id'
+        // 'user_id' lo passiamo dal controller
     ];
 }

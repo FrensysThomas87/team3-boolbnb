@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Apartment;
 
 
@@ -38,8 +39,10 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
 
-
+        $auth = Auth::id();
         $data = $request->all();
+
+
 
         if($request->file('profile_pic')){
             $path = $request->file('profile_pic')->store('images');
@@ -65,6 +68,7 @@ class ApartmentController extends Controller
 
         $apartment->profile_pic = $path;
         $apartment->visible = $visible;
+        $apartment->user_id = $auth;
         $apartment->save();
 
         // Redirect
