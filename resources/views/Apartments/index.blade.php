@@ -26,7 +26,14 @@
 
             <td>{{$apartment->id}}</td>
             <td>{{$apartment->title}}</td>
-            <td><img style="height: 100px" src="{{$apartment->profile_pic}}" alt=""></td>
+
+            <td>
+                @if(!empty($apartment->profile_pic))
+                <img src="{{asset($apartment->profile_pic)}}" alt="Card image cap" style="height: 100px">
+                 @else
+                 <img src="{{asset('/images/placeholder/casadefault.jpg')}}" alt="Card image cap" style="height: 100px">
+                @endif
+            </td>
             <td>{{$apartment->address}}</td>
 
 

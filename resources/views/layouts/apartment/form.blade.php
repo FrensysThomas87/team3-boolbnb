@@ -230,8 +230,9 @@ if (isset($edit) && !empty($edit)){
         <div class="form-group">
             <div class="form-row">
                 <div class="col-sm-10">
-                  <label class="switch">
-                      <input type="checkbox" id="togBtn" name="visible" @php
+                  {{-- <label class="switch">
+                      <input type="checkbox" id="togBtn" name="visible"
+                       @php
                           if ($apartment->visible) {
                               echo 'checked';
                           }
@@ -242,7 +243,12 @@ if (isset($edit) && !empty($edit)){
                           <span class="off">OFF</span>
                           <!--END-->
                       </div>
-                  </label>
+                  </label> --}}
+                  <input type="radio" id="contactChoice1" name="visible" value="true">
+                    <label for="visible">Visible</label>
+
+                    <input type="radio" id="contactChoice2" name="visible" value="">
+                    <label for="visible">Invisible</label>
                 </div>
 
                 {{-- <select class="form-control" id="visible" name="visible">

@@ -42,7 +42,7 @@ class ApartmentsSeeder extends Seeder
                 $apartment->check_out = $faker->text(100);
                 $apartment->max_guests = rand(1, 20);
                 $apartment->view_count = rand(25, 1000);
-                $apartment->profile_pic = 'https:leganerd.com/wp-content/uploads/2020/04/21037-1-768x546.jpg';
+                $apartment->profile_pic = '';
                 $apartment->address = $faker->streetAddress();
                 $apartment->latitude = $faker->latitude($min = -90, $max = 90);
                 $apartment->longitude = $faker->longitude($min = -180, $max = 180);
