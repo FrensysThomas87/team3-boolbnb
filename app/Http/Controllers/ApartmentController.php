@@ -37,6 +37,7 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
 
+
         $data = $request->all();
 
         if($request->file('profile_pic')){
@@ -45,7 +46,11 @@ class ApartmentController extends Controller
             $path="";
         }
 
-
+        if($request->visible) {
+            $visible = $request->visible;
+        } else {
+            $visible = 'false';
+        }
 
         $this->validateForm($request);
 
@@ -58,6 +63,7 @@ class ApartmentController extends Controller
 
 
         $apartment->profile_pic = $path;
+        $apartment->visible = $visible;
         $apartment->save();
 
         // Redirect
@@ -103,11 +109,19 @@ class ApartmentController extends Controller
             $path="";
         }
 
+        if($request->visible) {
+            $visible = $request->visible;
+        } else {
+            $visible = 'false';
+        }
+
         $data = $request->all();
 
         $this->validateForm($request);
         $apartment->profile_pic = $path;
+        $apartment->visible = $visible;
         $apartment->update($data);
+
 
         return redirect()->route('apartments.show',compact('apartment'));
     }

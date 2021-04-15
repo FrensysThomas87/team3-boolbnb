@@ -34,7 +34,7 @@ class Apartment extends Model
         'baths',
         'sq_meters',
         'price',
-        'visible',
+        // 'visible', usato nel controller
         'check_in',
         'check_out',
         'max_guests',

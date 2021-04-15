@@ -230,25 +230,24 @@ if (isset($edit) && !empty($edit)){
         <div class="form-group">
             <div class="form-row">
                 <div class="col-sm-10">
-                  {{-- <label class="switch">
-                      <input type="checkbox" id="togBtn" name="visible"
-                       @php
-                          if ($apartment->visible) {
-                              echo 'checked';
-                          }
-                      @endphp >
+                  <label class="switch">
+                      <input type="checkbox" id="togBtn" name="visible" value="true"
+                        @if (isset($apartment) && $apartment->visible === 'true')
+                            checked
+                        @endif>
+
                       <div class="slider round">
                           <!--ADDED HTML -->
                           <span class="on">ON</span>
                           <span class="off">OFF</span>
                           <!--END-->
                       </div>
-                  </label> --}}
-                  <input type="radio" id="contactChoice1" name="visible" value="true">
+                  </label>
+                  {{-- <input type="radio" id="contactChoice1" name="visible" value="true">
                     <label for="visible">Visible</label>
 
                     <input type="radio" id="contactChoice2" name="visible" value="">
-                    <label for="visible">Invisible</label>
+                    <label for="visible">Invisible</label> --}}
                 </div>
 
                 {{-- <select class="form-control" id="visible" name="visible">
