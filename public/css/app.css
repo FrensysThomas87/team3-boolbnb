@@ -11029,4 +11029,10 @@ input:checked + .slider .off {
   border-radius: 50%;
 }
 
+.my-jumbotron {
+  margin: 0 auto;
+  height: 500px;
+  background-repeat: no-repeat;
+}
+
 

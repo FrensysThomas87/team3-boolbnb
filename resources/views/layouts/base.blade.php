@@ -10,8 +10,8 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+        <nav class="navbar navbar-expand-lg navbar-light" >
+            <a class="navbar-brand" href="#">IdraBnB</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -44,8 +44,15 @@
               @endif
             </div>
           </nav>
+          <div class="my-jumbotron-container">
+                <div class="my-jumbotron" style="background-image: url('../img_app/jumbo.jpeg')">
+
+                </div>
+          </div>
     </header>
-    @yield('content')
+    <div id="app">
+        @yield('content')
+    </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

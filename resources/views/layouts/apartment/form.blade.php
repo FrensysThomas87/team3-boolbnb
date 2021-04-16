@@ -173,30 +173,16 @@ if (isset($edit) && !empty($edit)){
             </div>
         </div>
 
+        <span><coordinate-component :address = "address"/></span>
 
         <div class="form-group">
             <div class="form-row">
                 {{-- <label class="control-label col-sm-2" for="address">Indirizzo:</label> --}}
                 <div class="col-sm-10">
-                  <input type="text" value="{{(isset($apartment)?$apartment->address:'')}}" class="form-control {{($errors->has('address')?'is-invalid':'')}}" id="address" name="address" placeholder="Inserire l'indirizzo">
+                  <input type="text" v-model="address" v-on:change="getCoordinate(address)"  value="{{(isset($apartment)?$apartment->address:'')}}" class="form-control {{($errors->has('address')?'is-invalid':'')}}" id="address" name="address" placeholder="Inserire l'indirizzo">
                   @php
                     if($errors->has('address')){
                       echo '<span class=text-danger>'. $errors->first('address') . '</span>';
-                    }
-                  @endphp
-                </div>
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <div class="form-row">
-                {{-- <label class="control-label col-sm-2" for="user_id">id utente:</label> --}}
-                <div class="col-sm-1">
-                  <input type="text" class="form-control {{($errors->has('user_id')?'is-invalid':'')}}" id="user_id" name="user_id" value="{{Auth::id()}}" placeholder="{{Auth::id()}}">
-                  @php
-                    if($errors->has('user_id')){
-                      echo '<span class=text-danger>'. $errors->first('user_id') . '</span>';
                     }
                   @endphp
                 </div>

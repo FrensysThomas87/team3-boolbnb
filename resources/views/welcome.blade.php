@@ -77,6 +77,7 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
+                    <a href="{{url('/apartments')}}">MY APP</a>
                 </div>
             @endif
 
