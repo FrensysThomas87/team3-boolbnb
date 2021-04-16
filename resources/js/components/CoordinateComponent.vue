@@ -1,15 +1,21 @@
 <template>
-    <div>
-       <h1 class="pippo">{{address}}</h1>
-       <h2>{{address}}</h2>
+    <div class="form-row">
+        <div class="col-sm-5">
+            <input type="text" :value="latitude" class="form-control" id="latitude" name="latitude"  placeholder="Latitudine" >
+        </div>
+        <div class="col-sm-5">
+            <input type="text" :value="longitude" class="form-control" id="longitude" name="longitude" placeholder="Longitudine" >
+        </div>
     </div>
+
 </template>
 
 <script>
 export default {
   name: 'CoordinateComponent',
     props: {
-        address:String
+        longitude: Number,
+        latitude: Number,
     },
 
 }

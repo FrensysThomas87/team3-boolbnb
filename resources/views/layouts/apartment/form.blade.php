@@ -173,13 +173,12 @@ if (isset($edit) && !empty($edit)){
             </div>
         </div>
 
-        <span><coordinate-component :address = "address"/></span>
 
         <div class="form-group">
             <div class="form-row">
                 {{-- <label class="control-label col-sm-2" for="address">Indirizzo:</label> --}}
                 <div class="col-sm-10">
-                  <input type="text" v-model="address" v-on:change="getCoordinate(address)"  value="{{(isset($apartment)?$apartment->address:'')}}" class="form-control {{($errors->has('address')?'is-invalid':'')}}" id="address" name="address" placeholder="Inserire l'indirizzo">
+                  <input type="text"  value="{{(isset($apartment)?$apartment->address:'')}}" v-model="address" v-on:change="getCoordinate(address)" class="form-control {{($errors->has('address')?'is-invalid':'')}}" id="address" name="address" placeholder="Inserire l'indirizzo">
                   @php
                     if($errors->has('address')){
                       echo '<span class=text-danger>'. $errors->first('address') . '</span>';
@@ -190,25 +189,26 @@ if (isset($edit) && !empty($edit)){
         </div>
 
 
+
         <div class="form-group">
             <div class="form-row">
-                {{-- <label class="control-label col-sm-2" for="latitude">Latitudine:</label> --}}
-                <div class="col-sm-5">
+                <coordinate-component  :latitude='latitude' :longitude='longitude'/>
+                {{-- <div class="col-sm-5">
                   <input type="text" value="{{(isset($apartment)?$apartment->latitude:'')}}" class="form-control {{($errors->has('latitude')?'is-invalid':'')}}" id="latitude" name="latitude"  placeholder="Inserisci latitudine">
                   @php
                     if($errors->has('latitude')){
                       echo '<span class=text-danger>'. $errors->first('latitude') . '</span>';
                     }
                   @endphp
-                </div>
-                <div class="col-sm-5">
+                </div> --}}
+                {{-- <div class="col-sm-5">
                   <input type="text" value="{{(isset($apartment)?$apartment->longitude:'')}}" class="form-control {{($errors->has('longitude')?'is-invalid':'')}}" id="longitude" name="longitude"  placeholder="Inserisci longitudine">
                   @php
                       if($errors->has('longitude')){
                       echo '<span class=text-danger>'. $errors->first('longitude') . '</span>';
                       }
                   @endphp
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -229,17 +229,8 @@ if (isset($edit) && !empty($edit)){
                           <!--END-->
                       </div>
                   </label>
-                  {{-- <input type="radio" id="contactChoice1" name="visible" value="true">
-                    <label for="visible">Visible</label>
-
-                    <input type="radio" id="contactChoice2" name="visible" value="">
-                    <label for="visible">Invisible</label> --}}
                 </div>
 
-                {{-- <select class="form-control" id="visible" name="visible">
-                  <option value="true" >Si</option>
-                  <option value="false" >No</option>
-                </select> --}}
             </div>
         </div>
 
@@ -253,4 +244,5 @@ if (isset($edit) && !empty($edit)){
         </div>
     </form>
 </div>
+
 

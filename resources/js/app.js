@@ -34,16 +34,24 @@ const app = new Vue({
 
     data: {
         address:'',
-        coordinate:[]
+        latitude:0,
+        longitude:0
     },
     methods:{
         getCoordinate: function(address){
             const self = this;
             axios.get('https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')
             .then(function(response) {
-            self.coordinate = response.data;
+            var coordinate=[];
+            coordinate = response.data.results[0].position;
+            self.latitude = coordinate.lat;
+            self.longitude = coordinate.lon;
+
+
+
+
           });
         }
-    }
+    },
 
 });

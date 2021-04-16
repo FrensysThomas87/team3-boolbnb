@@ -45,11 +45,16 @@
             </div>
           </nav>
           <div class="my-jumbotron-container">
-                <div class="my-jumbotron" style="background-image: url('../img_app/jumbo.jpeg')">
+                <div class="my-jumbotron" style="background-image: url({{asset('../img_app/jumbo.jpeg')}})">
 
                 </div>
           </div>
     </header>
+    <div>
+        <label for="search">Cerca un appartamento</label>
+        <input type="text" id="search">
+        <button class="btn btn-light">Search</button>
+    </div>
     <div id="app">
         @yield('content')
     </div>

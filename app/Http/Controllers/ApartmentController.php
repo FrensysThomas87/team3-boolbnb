@@ -96,6 +96,7 @@ class ApartmentController extends Controller
     public function edit(Apartment $apartment)
     {
         return view('Apartments.edit', compact('apartment'));
+
     }
 
     /**

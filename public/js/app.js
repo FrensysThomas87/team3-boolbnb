@@ -1852,10 +1852,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'CoordinateComponent',
   props: {
-    address: String
+    longitude: Number,
+    latitude: Number
   }
 });
 
@@ -1940,13 +1946,17 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#app',
   data: {
     address: '',
-    coordinate: []
+    latitude: 0,
+    longitude: 0
   },
   methods: {
     getCoordinate: function getCoordinate(address) {
       var self = this;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr').then(function (response) {
-        self.coordinate = response.data;
+        var coordinate = [];
+        coordinate = response.data.results[0].position;
+        self.latitude = coordinate.lat;
+        self.longitude = coordinate.lon;
       });
     }
   }
@@ -37541,10 +37551,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", { staticClass: "pippo" }, [_vm._v(_vm._s(_vm.address))]),
+  return _c("div", { staticClass: "form-row" }, [
+    _c("div", { staticClass: "col-sm-5" }, [
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          type: "text",
+          id: "latitude",
+          name: "latitude",
+          placeholder: "Latitudine"
+        },
+        domProps: { value: _vm.latitude }
+      })
+    ]),
     _vm._v(" "),
-    _c("h2", [_vm._v(_vm._s(_vm.address))])
+    _c("div", { staticClass: "col-sm-5" }, [
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          type: "text",
+          id: "longitude",
+          name: "longitude",
+          placeholder: "Longitudine"
+        },
+        domProps: { value: _vm.longitude }
+      })
+    ])
   ])
 }
 var staticRenderFns = []
