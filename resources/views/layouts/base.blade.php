@@ -26,7 +26,7 @@
                   <a class="nav-link" href="/">Welcome Page</a>
                 </li>
                 <li>
-                  <a class="nav-link" href="/">Booking</a>
+                  <a class="nav-link" href="{{route('search')}}">Booking</a>
                 </li>
               </ul>
               @if (!Auth::check())
@@ -71,11 +71,11 @@
           <div class="my-jumbotron-container">
                 <div class="my-jumbotron" style="background-image: url({{asset('../img_app/jumbo.jpeg')}})">
                     <div class="my-search">
-                        <form class="form-horizontal" action=  method="post">
+                        <form class="form-horizontal" action={{route('search')}}  method="post">
                             @csrf
                             @method('POST')
                             <div class="form-group my-search-form">
-                                <input class="form-control" type="text" id="search" placeholder="Inserisci indirizzo di ricerca" >
+                                <input class="form-control" type="text" id="search" name="searchAddress" placeholder="Inserisci indirizzo di ricerca" >
                                 <button class="btn btn-dark" type="submit">Search</button>
                             </div>
                         </form>

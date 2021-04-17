@@ -24,3 +24,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('apartments', ApartmentController::class);
 
+Route::post('/search', 'SearchController@index')->name('search');
