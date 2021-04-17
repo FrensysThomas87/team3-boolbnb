@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <title>Document</title>
@@ -18,20 +20,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="/houses">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/apartments">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/">Welcome Page</a>
                 </li>
+                <li>
+                  <a class="nav-link" href="/">Booking</a>
+                </li>
               </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
               @if (!Auth::check())
                 <a class="btn btn-success" href="/login">Login</a>
               @else
-                <div class="btn btn-danger" aria-labelledby="navbarDropdown">
+                {{-- <div class="btn btn-danger" aria-labelledby="navbarDropdown">
                     <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
@@ -40,21 +41,49 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                </div>
+                </div> --}}
+                <ul class="navbar-nav left">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{Auth::user()->name}}
+                            <span><i class="fas fa-user"></i></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="#">My Appartments</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+
+
               @endif
             </div>
           </nav>
           <div class="my-jumbotron-container">
                 <div class="my-jumbotron" style="background-image: url({{asset('../img_app/jumbo.jpeg')}})">
+                    <div class="my-search">
+                        <form class="form-horizontal" action=  method="post">
+                            @csrf
+                            @method('POST')
+                            <div class="form-group my-search-form">
+                                <input class="form-control" type="text" id="search" placeholder="Inserisci indirizzo di ricerca" >
+                                <button class="btn btn-dark" type="submit">Search</button>
+                            </div>
+                        </form>
 
+                    </div>
                 </div>
           </div>
     </header>
-    <div>
-        <label for="search">Cerca un appartamento</label>
-        <input type="text" id="search">
-        <button class="btn btn-light">Search</button>
-    </div>
     <div id="app">
         @yield('content')
     </div>
