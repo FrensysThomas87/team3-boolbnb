@@ -87,9 +87,9 @@
                 </div>
           </div>
     </header>
-    <div id="app">
-        @yield('content')
-    </div>
+
+    @yield('content')
+
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
