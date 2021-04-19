@@ -4,8 +4,27 @@
 
 @section('content')
 
+        {{-- VUE ADVANCED SEARCH BOX --}}
+        {{-- div app definito in layout base --}}
 
-        <ul style="list-style:none">
+        {{-- Address --}}
+
+        {{-- Filtri --}}
+            {{-- N. stanze --}}
+
+            {{-- N. letti --}}
+
+            {{-- Servizi aggiuntivi --}}
+
+        {{-- Km range slider --}}
+
+
+
+        {{-- /VUE ADVANCED SEARCH BOX --}}
+
+
+        {{-- LEFT SIDEBAR --}}
+       {{--  <ul style="list-style:none">
             @foreach ($apartments as $apartment)
             <li>
                 <div class="card" style="width: 14rem;">
@@ -23,7 +42,14 @@
                 </div>
             </li>
             @endforeach
-        </ul>
+        </ul> --}}
+        {{-- /LEFT SIDEBAR --}}
 
+        {{-- MAIN BOX --}}
+
+
+        {{-- /MAIN BOX --}}
+
+    {{-- /App --}}
 
 @endsection

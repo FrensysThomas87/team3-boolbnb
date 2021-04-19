@@ -27,7 +27,6 @@ Route::get('/apartments', 'PublicApartmentController@index')->name('public.apart
 
 Route::get('/apartments/{apartment}', 'PublicApartmentController@show')->name('public.apartments.show');
 
-Route::post('/search', 'SearchController@index')->name('search');
 
 Route::prefix('admin')
     ->namespace('Admin')
@@ -35,3 +34,4 @@ Route::prefix('admin')
     ->group(function(){
         Route::resource('apartments', ApartmentController::class);
     });
+Route::get('/search', 'SearchController@index')->name('search');
