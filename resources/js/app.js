@@ -33,23 +33,39 @@ const app = new Vue({
     el: '#app',
 
     data: {
+        apartments:[],
+        searchAddress:"",
+        rangeKm:'20'
 
     },
-//     methods:{
-//         getCoordinate: function(address){
-//             const self = this;
-//             axios.get('https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')
-//             .then(function(response) {
-//             var coordinate=[];
-//             coordinate = response.data.results[0].position;
-//             self.latitude = coordinate.lat;
-//             self.longitude = coordinate.lon;
+    methods:{
+
+        getApartments: function(){
+            const self = this;
+            self.apartments=[];
+            axios.get('http://127.0.0.1:8000/api/get-apartments?address='+ self.searchAddress +'&range='+ self.rangeKm)
+            .then(function(response) {
+            self.apartments = response.data;
+            })
+        }
+       /*  getCoordinate: function(address){
+            const self = this;
+            axios.get('https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')
+            .then(function(response) {
+            var coordinate=[];
+            coordinate = response.data.results[0].position;
+            self.latitude = coordinate.lat;
+            self.longitude = coordinate.lon;
 
 
 
 
-//           });
-//         }
-//     },
+            });
+        } */
+    },
+    mounted() {
+
+
+    }
 
 });
