@@ -21,7 +21,7 @@
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('coordinate-component', require('./components/CoordinateComponent.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -33,25 +33,23 @@ const app = new Vue({
     el: '#app',
 
     data: {
-        address:'',
-        latitude:0,
-        longitude:0
+
     },
-    methods:{
-        getCoordinate: function(address){
-            const self = this;
-            axios.get('https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')
-            .then(function(response) {
-            var coordinate=[];
-            coordinate = response.data.results[0].position;
-            self.latitude = coordinate.lat;
-            self.longitude = coordinate.lon;
+//     methods:{
+//         getCoordinate: function(address){
+//             const self = this;
+//             axios.get('https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')
+//             .then(function(response) {
+//             var coordinate=[];
+//             coordinate = response.data.results[0].position;
+//             self.latitude = coordinate.lat;
+//             self.longitude = coordinate.lon;
 
 
 
 
-          });
-        }
-    },
+//           });
+//         }
+//     },
 
 });

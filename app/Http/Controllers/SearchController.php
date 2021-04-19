@@ -13,9 +13,9 @@ class SearchController extends Controller
         // dd($request);
         $address = $request->searchAddress;
         // dd($address);
-        $response = Http::withOptions(['verify' => false])->get('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr');
+        $response = Http::withOptions(['verify' => false])->get('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')->json();
         // dd($response->json());
-        $response = $response->json();
+
         // dd($response);
         $lat = $response['results'][0]['position']['lat'];
         $lon = $response['results'][0]['position']['lon'];

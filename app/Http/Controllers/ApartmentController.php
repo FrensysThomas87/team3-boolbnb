@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Apartment;
+use Illuminate\Support\Facades\Http;
 
 
 class ApartmentController extends Controller
@@ -56,6 +57,13 @@ class ApartmentController extends Controller
             $visible = 'false';
         }
 
+        $address = $request->address;
+        // dd($address);
+        $response = Http::withOptions(['verify' => false])->get('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')->json();
+        $lat = $response['results'][0]['position']['lat'];
+        $lon = $response['results'][0]['position']['lon'];
+
+
         $this->validateForm($request);
 
         $apartment = new Apartment();
@@ -69,6 +77,8 @@ class ApartmentController extends Controller
         $apartment->profile_pic = $path;
         $apartment->visible = $visible;
         $apartment->user_id = $auth;
+        $apartment->latitude = $lat;
+        $apartment->longitude = $lon;
         $apartment->save();
 
         // Redirect
@@ -123,9 +133,17 @@ class ApartmentController extends Controller
 
         $data = $request->all();
 
+        $address = $request->address;
+        // dd($address);
+        $response = Http::withOptions(['verify' => false])->get('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')->json();
+        $lat = $response['results'][0]['position']['lat'];
+        $lon = $response['results'][0]['position']['lon'];
+
         $this->validateForm($request);
         $apartment->profile_pic = $path;
         $apartment->visible = $visible;
+        $apartment->latitude = $lat;
+        $apartment->longitude = $lon;
         $apartment->update($data);
 
 
@@ -152,7 +170,7 @@ class ApartmentController extends Controller
             'beds' => 'required | integer | between:1,80',
             'baths' => 'required | integer | between:1,10',
             'sq_meters' => 'required | integer | between:1,1000',
-            'price' => 'required | numeric | between: 1, 1000',
+            'price' => 'required | numeric | between: 1, 10000',
             'visible' => 'max:5',
             'check_in' => 'max:2048',
             'check_out' => 'max:2048',

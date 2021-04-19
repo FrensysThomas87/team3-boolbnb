@@ -70,17 +70,20 @@
           </nav>
           <div class="my-jumbotron-container">
                 <div class="my-jumbotron" style="background-image: url({{asset('../img_app/jumbo.jpeg')}})">
-                    <div class="my-search">
-                        <form class="form-horizontal" action={{route('search')}}  method="post">
-                            @csrf
-                            @method('POST')
-                            <div class="form-group my-search-form">
-                                <input class="form-control" type="text" id="search" name="searchAddress" placeholder="Inserisci indirizzo di ricerca" >
-                                <button class="btn btn-dark" type="submit">Search</button>
-                            </div>
-                        </form>
+                    @if(Route::is('apartments.index'))
 
-                    </div>
+                        <div class="my-search">
+                            <form class="form-horizontal" action={{route('search')}}  method="post">
+                                @csrf
+                                @method('POST')
+                                <div class="form-group my-search-form">
+                                    <input class="form-control" type="text" id="search" name="searchAddress" placeholder="Inserisci indirizzo di ricerca" >
+                                    <button class="btn btn-dark" type="submit">Search</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    @endif
                 </div>
           </div>
     </header>
