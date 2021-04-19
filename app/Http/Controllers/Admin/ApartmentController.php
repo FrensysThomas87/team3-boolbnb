@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Apartment;
 use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\Controller;
 
 
 class ApartmentController extends Controller
@@ -17,8 +18,8 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        $apartments = Apartment::all();
-        return view('Apartments.index', compact('apartments'));
+
+        return redirect()->route('public.apartments.index') ;
     }
 
     /**
@@ -94,7 +95,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        return view('Apartments.show', compact('apartment'));
+        return redirect()->route('public.apartments.show', $apartment);
     }
 
     /**

@@ -44,7 +44,8 @@
             </td>
             <td>
                 <a class="btn btn-success" href="apartments/{{$apartment->id}}" role="button"><i class="fas fa-info-circle"></i></a>
-                <a class="btn btn-primary" href="apartments/{{$apartment->id}}/edit"><i class="fas fa-edit"></i></a>
+                @auth
+                <a class="btn btn-primary" href="admin/apartments/{{$apartment->id}}/edit"><i class="fas fa-edit"></i></a>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-{{$apartment->id}}">
                     <i class="fas fa-bomb"></i>
@@ -74,6 +75,9 @@
                     </div>
                     </div>
                 </div>
+                @endauth
+
+
             </td>
 
 
