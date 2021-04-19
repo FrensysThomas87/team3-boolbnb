@@ -15,7 +15,7 @@
             <th scope="col">Address</th>
             <th scope="col">
                 @auth
-                    <a class="btn btn-light" href="/apartments/create" role="button">ADD NEW ITEM</a>
+                    <a class="btn btn-light" href="{{route('apartments.create')}}" role="button">ADD NEW ITEM</a>
                 @endauth
             </th>
 

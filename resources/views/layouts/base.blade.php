@@ -70,7 +70,8 @@
           </nav>
           <div class="my-jumbotron-container">
                 <div class="my-jumbotron" style="background-image: url({{asset('../img_app/jumbo.jpeg')}})">
-                    @if(Route::is('apartments.index'))
+
+                    @if(Route::is('apartments.index') || Route::is('public.apartments.index'))
 
                         <div class="my-search">
                             <form class="form-horizontal" action={{route('search')}}  method="post">
