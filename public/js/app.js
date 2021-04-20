@@ -1851,6 +1851,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'ApartmentsComponent',
   props: {
@@ -1980,11 +1985,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     apartments: [],
     searchAddress: "",
     rangeKm: '20',
-    beds: 0,
-    rooms: 0,
+    beds: '0',
+    rooms: '0',
     services: ['Wifi', 'Animali Ammessi', 'Pulizie', 'Posto Macchina', 'Piscina', 'Portineria', 'Sauna', 'Vista mare'],
-    selectedServices: [],
-    saluto: 'ciao'
+    selectedServices: []
   },
   methods: {
     getApartments: function getApartments() {
@@ -1993,7 +1997,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/get-apartments?address=' + self.searchAddress + '&range=' + self.rangeKm).then(function (response) {
         self.apartments = response.data;
       });
-    }
+    },
+
     /*  getCoordinate: function(address){
          const self = this;
          axios.get('https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')
@@ -2004,7 +2009,28 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
          self.longitude = coordinate.lon;
          });
      } */
-
+    filterVisible: function filterVisible(apartment) {
+      if (apartment.visible === 'true') {
+        return true;
+      }
+    },
+    filterRooms: function filterRooms(apartment) {
+      if (this.rooms === '0' || this.rooms == apartment.rooms) {
+        return true;
+      }
+    },
+    filterBeds: function filterBeds(apartment) {
+      if (this.beds === '0' || this.beds == apartment.beds) {
+        return true;
+      }
+    },
+    filterServices: function filterServices(apartment) {
+      this.selectedServices.forEach(function (element) {
+        if (apartment.services.includes(element)) {
+          return true;
+        }
+      });
+    }
   },
   mounted: function mounted() {}
 });
@@ -37670,7 +37696,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("h1", [_vm._v(_vm._s(_vm.apartments.address))])])
+  return _c("div", [
+    _c("h1", [_vm._v(_vm._s(_vm.apartments.title))]),
+    _vm._v(" "),
+    _c("h3", [_vm._v(_vm._s(_vm.apartments.address))]),
+    _vm._v(" "),
+    _c("div", [
+      _c("span", [_vm._v("Numero Camere: " + _vm._s(_vm.apartments.rooms))]),
+      _vm._v(" "),
+      _c("span", [_vm._v("Numero Letti: " + _vm._s(_vm.apartments.beds))])
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

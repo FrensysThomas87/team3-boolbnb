@@ -16,7 +16,7 @@
             </div> --}}
             <div class="km-range">
                 <label for="range-km" class="form-label">Km Distance</label>
-                <input v-model='rangeKm' type="range" class="form-range" min="1" max="50" step="1" id="range-km">
+                <input v-model='rangeKm' v-on:change="getApartments" type="range" class="form-range" min="1" max="50" step="1" id="range-km">
                 <input type="text" :value="rangeKm" disabled>
             </div>
         </form>
@@ -24,7 +24,7 @@
 </div>
 <div class="main-search-container">
     <div class="search-content-left">
-        <apartments-component v-for="(apartment) in apartments" :key="apartment.id" :apartments="apartment" />
+        <apartments-component v-for="(apartment) in apartments" :key="apartment.id" v-if="filterVisible(apartment) && filterRooms(apartment) && filterBeds(apartment) && filterServices(apartment)" :apartments="apartment" />
     </div>
     <div class="search-content-right">
 

@@ -40,8 +40,8 @@ const app = new Vue({
         apartments:[],
         searchAddress:"",
         rangeKm:'20',
-        beds:0,
-        rooms:0,
+        beds:'0',
+        rooms:'0',
         services:[
             'Wifi',
             'Animali Ammessi',
@@ -53,7 +53,6 @@ const app = new Vue({
             'Vista mare'
         ],
         selectedServices:[],
-        saluto:'ciao',
 
     },
     methods:{
@@ -65,7 +64,7 @@ const app = new Vue({
             .then(function(response) {
             self.apartments = response.data;
             })
-        }
+        },
        /*  getCoordinate: function(address){
             const self = this;
             axios.get('https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')
@@ -76,6 +75,32 @@ const app = new Vue({
             self.longitude = coordinate.lon;
             });
         } */
+
+        filterVisible: function(apartment) {
+            if(apartment.visible === 'true') {
+                return true;
+            }
+        },
+
+        filterRooms: function(apartment) {
+            if(this.rooms === '0' || this.rooms == apartment.rooms) {
+                return true;
+            }
+        },
+
+        filterBeds: function(apartment) {
+            if(this.beds === '0' || this.beds == apartment.beds) {
+                return true;
+            }
+        },
+
+        filterServices: function(apartment) {
+            this.selectedServices.forEach(element => {
+                if(apartment.services.includes(element)) {
+                    return true;
+                }
+            });
+        }
     },
     mounted() {
 
