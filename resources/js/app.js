@@ -6,6 +6,7 @@
 
  import axios from 'axios'
  import Vue from 'vue'
+ import vSelect from "vue-select"
  window.Vue = Vue;
  require('./bootstrap');
 
@@ -21,6 +22,8 @@
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('search-component', require('./components/SearchComponent.vue').default);
+Vue.component('v-select', vSelect);
 
 
 /**
@@ -35,7 +38,20 @@ const app = new Vue({
     data: {
         apartments:[],
         searchAddress:"",
-        rangeKm:'20'
+        rangeKm:'20',
+        beds:0,
+        rooms:0,
+        services:[
+            'Wifi',
+            'Animali Ammessi',
+            'Pulizie',
+            'Posto Macchina',
+            'Piscina',
+            'Portineria',
+            'Sauna',
+            'Vista mare'
+        ],
+        selectedServices:[],
 
     },
     methods:{
@@ -56,10 +72,6 @@ const app = new Vue({
             coordinate = response.data.results[0].position;
             self.latitude = coordinate.lat;
             self.longitude = coordinate.lon;
-
-
-
-
             });
         } */
     },

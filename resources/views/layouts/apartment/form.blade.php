@@ -148,6 +148,31 @@ if (isset($edit) && !empty($edit)){
             </div>
         </div>
 
+        <div class="form-group">
+            <div class="form-row">
+                {{-- <label class="control-label col-sm-2" for="max_guests">N° massimo di ospiti:</label> --}}
+                <div class="col-sm-2">
+                    {{-- <label for="services">Servizi</label> --}}
+                    <select class="form-select" multiple name="service_name[]" id="services">
+                        <option disabled >SERVIZI</option>
+                        @foreach ($services as $service)
+                        <option value="{{$service->service_id}}"
+                            @if (isset($apartment))
+                                @foreach ($apartment->services as $apartmentService)
+                                    @if ($apartmentService->id === $service->id)
+                                    selected
+                                    @endif
+                                @endforeach
+                            @endif
+                            >
+                            {{$service->service_name}}
+                        </option>
+                        @endforeach
+                      </select>
+                </div>
+            </div>
+        </div>
+
 
         <div class="form-group">
             <div class="form-row">

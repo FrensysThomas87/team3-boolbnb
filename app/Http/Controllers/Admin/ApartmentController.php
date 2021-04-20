@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Apartment;
 use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\Controller;
+use App\Service;
 
 
 class ApartmentController extends Controller
@@ -29,7 +30,8 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        return view('Apartments.create');
+        $services = Service::all();
+        return view('Apartments.create', compact('services'));
     }
 
     /**
@@ -43,7 +45,6 @@ class ApartmentController extends Controller
 
         $auth = Auth::id();
         $data = $request->all();
-
 
 
         if($request->file('profile_pic')){
@@ -64,16 +65,11 @@ class ApartmentController extends Controller
         $lat = $response['results'][0]['position']['lat'];
         $lon = $response['results'][0]['position']['lon'];
 
-
         $this->validateForm($request);
 
         $apartment = new Apartment();
 
-
-
         $apartment->fill($data);
-
-
 
         $apartment->profile_pic = $path;
         $apartment->visible = $visible;
@@ -81,6 +77,7 @@ class ApartmentController extends Controller
         $apartment->latitude = $lat;
         $apartment->longitude = $lon;
         $apartment->save();
+        $apartment->services()->attach($data['service_name']);
 
         // Redirect
         $apartmentStored = Apartment::orderBy('id','desc')->first();
@@ -106,7 +103,8 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        return view('Apartments.edit', compact('apartment'));
+        $services = Service::all();
+        return view('Apartments.edit', compact('apartment', 'services'));
 
     }
 
@@ -146,6 +144,7 @@ class ApartmentController extends Controller
         $apartment->latitude = $lat;
         $apartment->longitude = $lon;
         $apartment->update($data);
+        $apartment->services()->attach($data['service_name']);
 
 
         return redirect()->route('apartments.show',compact('apartment'));
@@ -159,7 +158,10 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
+
+        $apartment->services()->detach();
         $apartment->delete();
+
         return redirect()->route('apartments.index');
     }
 

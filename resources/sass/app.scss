@@ -14,6 +14,10 @@
 
 @import 'jumbotron';
 
+@import 'searchForm';
+
+@import "vue-select/src/scss/vue-select.scss";
+
 body{
     font-family: 'Roboto', sans-serif;
 }

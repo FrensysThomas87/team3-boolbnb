@@ -3,7 +3,25 @@
 @section('title', 'Search Apartment')
 
 @section('content')
-
+<div class="filter-container">
+    <div class="filter-content">
+        <form action="">
+            <label for="rooms">N° Rooms</label>
+            <input v-model="rooms" type="text" id="rooms" name="rooms">
+            <label for="beds">N°Letti</label>
+            <input v-model="beds" type="text"  id="beds" name="beds">
+            <v-select multiple v-model="selectedServices" :options="services"></v-select>
+            {{-- <div>
+                <search-component v-model="selectedServices" :services="services" />
+            </div> --}}
+            <div class="km-range">
+                <label for="range-km" class="form-label">Km Distance</label>
+                <input v-model='rangeKm' type="range" class="form-range" min="1" max="50" step="1" id="range-km">
+                <input type="text" :value="rangeKm" disabled>
+            </div>
+        </form>
+    </div>
+</div>
         {{-- VUE ADVANCED SEARCH BOX --}}
         {{-- div app definito in layout base --}}
 

@@ -15,9 +15,7 @@ use App\Http\Controllers\PublicApartmentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PublicApartmentController@index');
 
 Auth::routes();
 
