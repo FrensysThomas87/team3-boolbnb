@@ -104,7 +104,7 @@ class ApartmentController extends Controller
     public function edit(Apartment $apartment)
     {
         $services = Service::all();
-        return view('Apartments.edit', compact('apartment', 'services'));
+        return redirect()->route('dashboard', compact('apartment', 'services'));
 
     }
 
@@ -162,7 +162,6 @@ class ApartmentController extends Controller
         $apartment->services()->detach();
         $apartment->delete();
 
-        return redirect()->route('apartments.index');
     }
 
     protected function validateForm(Request $request){
