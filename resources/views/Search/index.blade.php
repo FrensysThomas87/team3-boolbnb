@@ -24,7 +24,7 @@
 </div>
 <div class="main-search-container">
     <div class="search-content-left">
-
+        <apartments-component v-for="(apartment) in apartments" :key="apartment.id" :apartments="apartment" />
     </div>
     <div class="search-content-right">
 

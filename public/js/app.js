@@ -1851,18 +1851,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'SearchComponent',
+  name: 'ApartmentsComponent',
   props: {
-    services: Array,
-    selectedServices: Array
-  },
-  data: function data() {
-    return {
-      myselected: this.selectedServices
-    };
+    apartments: Object
   }
 });
 
@@ -1974,7 +1966,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('search-component', __webpack_require__(/*! ./components/SearchComponent.vue */ "./resources/js/components/SearchComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_2__.default.component('apartmens-component', __webpack_require__(/*! ./components/ApartmentsComponent.vue */ "./resources/js/components/ApartmentsComponent.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('apartments-component', __webpack_require__(/*! ./components/ApartmentsComponent.vue */ "./resources/js/components/ApartmentsComponent.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('v-select', (vue_select__WEBPACK_IMPORTED_MODULE_1___default()));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -1991,7 +1983,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     beds: 0,
     rooms: 0,
     services: ['Wifi', 'Animali Ammessi', 'Pulizie', 'Posto Macchina', 'Piscina', 'Portineria', 'Sauna', 'Vista mare'],
-    selectedServices: []
+    selectedServices: [],
+    saluto: 'ciao'
   },
   methods: {
     getApartments: function getApartments() {
@@ -37677,21 +37670,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "select",
-      {
-        staticClass: "form-select",
-        attrs: { multiple: "", "aria-label": "multiple select example" }
-      },
-      _vm._l(_vm.services, function(service) {
-        return _c("option", { key: service, domProps: { value: service } }, [
-          _vm._v(_vm._s(service))
-        ])
-      }),
-      0
-    )
-  ])
+  return _c("div", [_c("h1", [_vm._v(_vm._s(_vm.apartments.address))])])
 }
 var staticRenderFns = []
 render._withStripped = true

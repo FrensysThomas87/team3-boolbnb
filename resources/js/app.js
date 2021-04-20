@@ -23,7 +23,7 @@
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('search-component', require('./components/SearchComponent.vue').default);
-Vue.component('apartmens-component', require('./components/ApartmentsComponent.vue').default);
+Vue.component('apartments-component', require('./components/ApartmentsComponent.vue').default);
 Vue.component('v-select', vSelect);
 
 
@@ -53,6 +53,7 @@ const app = new Vue({
             'Vista mare'
         ],
         selectedServices:[],
+        saluto:'ciao',
 
     },
     methods:{

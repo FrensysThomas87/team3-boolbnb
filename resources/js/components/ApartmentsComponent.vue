@@ -1,25 +1,15 @@
 <template>
         <div>
-            <select class="form-select" multiple aria-label="multiple select example">
-                <option v-for="service in services" :key="service" :value="service">{{service}}</option>
-            </select>
+            <h1>{{apartments.address}}</h1>
         </div>
 </template>
 
 <script>
 export default {
-  name: 'SearchComponent',
+  name: 'ApartmentsComponent',
     props:{
-        services: Array,
-        selectedServices: Array,
+        apartments: Object
     },
-
-    data: function(){
-        return{
-            myselected: this.selectedServices,
-        }
-
-    }
 
 }
 </script>
