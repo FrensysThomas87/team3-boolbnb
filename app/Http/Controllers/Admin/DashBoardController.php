@@ -21,38 +21,15 @@ class DashBoardController extends Controller
     public function index()
     {
         $apartments = Apartment::all();
-        $users = Auth::user();
+        $user = Auth::user();
         // dd($users);
-        return view('Apartments.dashboard', compact('apartments','users')) ;
+        return view('Apartments.dashboard', compact('apartments','user')) ;
     }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  Apartment $apartment
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Apartment $apartment)
-    {
-        $services = Service::all();
 
-        return redirect()->route('apartments.edit', compact('apartment', 'services'));
-
-    }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  Apartment apartment
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Apartment $apartment)
-    {
-
-        $apartment->services()->detach();
-        $apartment->delete();
-
-
-    }
 
 }
+
+
+

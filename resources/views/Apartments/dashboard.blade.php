@@ -20,7 +20,7 @@
     </thead>
     <tbody>
         @foreach ($apartments as $apartment)
-                @if ($apartment->user_id === $users->id)
+                @if ($apartment->user_id === $user->id)
                 <tr>
                     <th scope="row">{{$apartment->id}}</th>
                     <td>{{$apartment->title}}</td>

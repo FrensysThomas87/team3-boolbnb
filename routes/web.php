@@ -48,6 +48,13 @@ Route::prefix('admin')
     ->group(function(){
         Route::get('apartments', 'DashBoardController@index')->name('dashboard');
     });
+
+
+
+
+
+
+
 Route::get('/search', 'SearchController@index')->name('search');
 
 

@@ -161,6 +161,7 @@ class ApartmentController extends Controller
 
         $apartment->services()->detach();
         $apartment->delete();
+        return redirect()->route('dashboard');
 
     }
 
