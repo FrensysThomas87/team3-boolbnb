@@ -22,6 +22,15 @@
         </form>
     </div>
 </div>
+<div class="main-search-container">
+    <div class="search-content-left">
+
+    </div>
+    <div class="search-content-right">
+
+    </div>
+</div>
+
         {{-- VUE ADVANCED SEARCH BOX --}}
         {{-- div app definito in layout base --}}
 

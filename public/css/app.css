@@ -11100,6 +11100,12 @@ input:checked + .slider .off {
   padding-top: 7px;
 }
 
+.main-search-container {
+  height: 500px;
+  width: 100%;
+  background-color: brown;
+}
+
 .v-select {
   position: relative;
   font-family: inherit;

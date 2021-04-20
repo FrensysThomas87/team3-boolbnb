@@ -15,7 +15,7 @@ use App\Http\Controllers\PublicApartmentController;
 |
 */
 
-Route::get('/', 'PublicApartmentController@index');
+Route::get('/', 'PublicApartmentController@index')->name('index');
 
 Auth::routes();
 
