@@ -23,6 +23,7 @@
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('search-component', require('./components/SearchComponent.vue').default);
+Vue.component('apartmens-component', require('./components/ApartmentsComponent.vue').default);
 Vue.component('v-select', vSelect);
 
 
