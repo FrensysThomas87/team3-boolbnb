@@ -104,7 +104,7 @@ class ApartmentController extends Controller
     public function edit(Apartment $apartment)
     {
         $services = Service::all();
-        return redirect()->route('dashboard', compact('apartment', 'services'));
+        return view('Apartments.edit', compact('apartment', 'services'));
 
     }
 

@@ -28,7 +28,7 @@
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-{{$apartment->id}}">
                             <i class="fas fa-bomb"></i>
                         </button>
-                        <a class="btn btn-primary" href="admin/apartments/{{$apartment->id}}/edit"><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-primary" href="{{route('apartments.edit', ['apartment'=> $apartment->id])}}"><i class="fas fa-edit"></i></a>
                         <!-- Modal -->
                         <div class="modal fade" id="modal-{{$apartment->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">

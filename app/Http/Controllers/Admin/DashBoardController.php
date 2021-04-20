@@ -36,7 +36,8 @@ class DashBoardController extends Controller
     public function edit(Apartment $apartment)
     {
         $services = Service::all();
-        return view('Apartments.edit', compact('apartment', 'services'));
+
+        return redirect()->route('apartments.edit', compact('apartment', 'services'));
 
     }
     /**
@@ -51,7 +52,7 @@ class DashBoardController extends Controller
         $apartment->services()->detach();
         $apartment->delete();
 
-        return redirect()->route('apartments.index');
+
     }
 
 }
