@@ -156,7 +156,7 @@ if (isset($edit) && !empty($edit)){
                     <select class="form-select" multiple name="service_name[]" id="services">
                         <option disabled >SERVIZI</option>
                         @foreach ($services as $service)
-                        <option value="{{$service->service_id}}"
+                        <option value="{{$service->id}}"
                             @if (isset($apartment))
                                 @foreach ($apartment->services as $apartmentService)
                                     @if ($apartmentService->id === $service->id)
