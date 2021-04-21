@@ -161,8 +161,8 @@ class ApartmentController extends Controller
 
         $apartment->services()->detach();
         $apartment->delete();
+        return redirect()->route('dashboard');
 
-        return redirect()->route('apartments.index');
     }
 
     protected function validateForm(Request $request){

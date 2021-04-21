@@ -1,6 +1,8 @@
 <?php
 
 // use App\Http\Controllers\ApartmentController;
+
+// use App\Http\Controllers\DashBoardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicApartmentController;
 
@@ -32,4 +34,27 @@ Route::prefix('admin')
     ->group(function(){
         Route::resource('apartments', ApartmentController::class);
     });
+
+    // Route::prefix('dashboard')
+    // ->namespace('Admin')
+    // ->middleware('auth')
+    // ->group(function(){
+    //     Route::get('apartments', 'DashBoardController@edit')->name('dashboard-edit');
+    // });
+
+    Route::prefix('dashboard')
+    ->namespace('Admin')
+    ->middleware('auth')
+    ->group(function(){
+        Route::get('apartments', 'DashBoardController@index')->name('dashboard');
+    });
+
+
+
+
+
+
+
 Route::get('/search', 'SearchController@index')->name('search');
+
+

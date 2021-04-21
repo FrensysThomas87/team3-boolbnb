@@ -51,7 +51,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="#">My Appartments</a>
+                                <a class="dropdown-item" href="{{route('dashboard')}}">My Appartments</a>
                                 <div class="dropdown-divider"></div>
                                 <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
