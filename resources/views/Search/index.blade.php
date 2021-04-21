@@ -24,7 +24,7 @@
 </div>
 <div class="main-search-container">
     <div class="search-content-left">
-        <apartments-component v-for="(apartment) in apartments" :key="apartment.id" v-if="filterVisible(apartment) && filterRooms(apartment) && filterBeds(apartment) && filterServices(apartment)" :apartments="apartment" />
+        <apartments-component v-for="(apartment) in apartments" :key="apartment.id" v-if="filterVisible(apartment) && filterRooms(apartment) && filterBeds(apartment)" :apartments="apartment" />
     </div>
     <div class="search-content-right">
 
