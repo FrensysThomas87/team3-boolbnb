@@ -11038,7 +11038,7 @@ input:checked + .slider .off {
 
 .my-jumbotron-container .my-jumbotron {
   width: 100%;
-  height: 400px;
+  height: 460px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -11478,6 +11478,37 @@ input:checked + .slider .off {
 
 .vs--loading .vs__spinner {
   opacity: 1;
+}
+
+.my-navbar {
+  background-color: #69b2ff;
+}
+
+.my-navbar .my-brand {
+  font-size: 22px;
+}
+
+.my-navbar a,
+.my-navbar .my-link {
+  color: #ffffff;
+}
+
+.my-navbar .my-link {
+  display: block;
+  padding: 0rem 1rem;
+}
+
+.my-navbar .my-username {
+  padding: 0px 5px;
+}
+
+.my-navbar .my-dropdown {
+  left: unset;
+  right: 0px;
+}
+
+.my-footer {
+  background-color: #4d82bb;
 }
 
 body {
