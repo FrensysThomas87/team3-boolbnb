@@ -38089,6 +38089,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("img", {
+      staticStyle: { width: "300px" },
       attrs: { src: "/images/placeholder/casadefault.jpg", alt: "" }
     }),
     _vm._v(" "),

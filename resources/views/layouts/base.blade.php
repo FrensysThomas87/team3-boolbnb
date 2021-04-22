@@ -70,7 +70,7 @@
                     <div class="my-jumbotron" style="background-image: url({{asset('../img_app/jumbo2.jpeg')}})">
                         @if (Route::is('index') || Route::is('public.apartments.index'))
                             <div>
-                                <h1><a href="{{route('search')}}">RICERCA APPARTAMENTO</a></h1>
+
                             </div>
                         @endif
                         @if(Route::is('search'))

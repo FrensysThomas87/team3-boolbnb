@@ -2,7 +2,7 @@
         <div class="apartment-box">
             <h1 class="apartment-title">{{apartments.title}}</h1>
             <h3 class="apartment-address">{{apartments.address}}</h3>
-            <img src="/images/placeholder/casadefault.jpg" alt="">
+            <img style="width:300px;" src="/images/placeholder/casadefault.jpg" alt="">
             <div>
                 <p>description: {{apartments.description}}</p>
                 <span class="apartment-rooms">Numero Camere: {{apartments.rooms}}</span>
