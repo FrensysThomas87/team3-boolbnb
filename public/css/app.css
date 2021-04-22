@@ -11108,15 +11108,21 @@ input:checked + .slider .off {
 .main-search-container .search-content-left {
   width: 40%;
   height: 100%;
-  border-right: 3px solid black;
+  border-right: 3px solid #4d82bb;
   overflow-y: auto;
+  background-color: #eee;
 }
 
 .main-search-container .search-content-right {
   height: 100%;
   width: 100%;
-  background-color: yellow;
+  background-color: #fff;
   padding: 15px;
+  overflow-y: auto;
+}
+
+.main-search-container .message-form {
+  width: 27%;
 }
 
 .v-select {
