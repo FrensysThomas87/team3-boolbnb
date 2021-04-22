@@ -27,7 +27,7 @@
             <apartments-component
             v-for="(apartment, index) in apartments"
             :key="apartment.id"
-            v-if="filterVisible(apartment) && filterRooms(apartment) && filterBeds(apartment)"
+            v-if="filterVisible(apartment) && filterRooms(apartment) && filterBeds(apartment) && filterServices(apartment)"
             :apartments="apartment"
             v-on:send-index="activeIndex = index"
             v-on:active-main="active = true"

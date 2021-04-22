@@ -2027,7 +2027,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     rangeKm: '20',
     beds: '0',
     rooms: '0',
-    services: ['Wifi', 'Animali Ammessi', 'Pulizie', 'Posto Macchina', 'Piscina', 'Portineria', 'Sauna', 'Vista mare'],
+    services: ['WiFi', 'Animali Ammessi', 'Pulizie', 'Posto Macchina', 'Piscina', 'Portineria', 'Sauna', 'Vista mare'],
     selectedServices: [],
     active: false,
     activeIndex: 0,
@@ -2044,17 +2044,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     getApartmentIndex: function getApartmentIndex(index) {
       return this.activeIndex = index;
     },
-
-    /*  getCoordinate: function(address){
-         const self = this;
-         axios.get('https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')
-         .then(function(response) {
-         var coordinate=[];
-         coordinate = response.data.results[0].position;
-         self.latitude = coordinate.lat;
-         self.longitude = coordinate.lon;
-         });
-     } */
     filterVisible: function filterVisible(apartment) {
       if (apartment.visible === 'true') {
         return true;
@@ -2071,11 +2060,38 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
       }
     },
     filterServices: function filterServices(apartment) {
-      this.selectedServices.forEach(function (element) {
-        if (apartment.services.includes(element)) {
-          return true;
-        }
+      //costruito funziona per filtrare i servizi
+      //create due variabili utility
+      //la funzione passa il singolo appartmaneto che + già stato ciclato nell'html dal v-for
+      var apartmentServices = [];
+      var counter = 0; //all'interno dell'appartamento ciclo i servizi appartenenti all'appartamento, e li inserisco in un array
+
+      apartment.services.forEach(function (service) {
+        apartmentServices.push(service.service_name);
+      }); //ciclo i servizi che ho selezionato nell'input e li confronto con il servizi all'interno dell'array popolato in precedenza
+      //per ogni servizio che trova riscontro il contatore aumenta di 1
+
+      this.selectedServices.forEach(function (selectedService) {
+        /* console.log(selectedService); */
+        apartmentServices.forEach(function (apartmentService) {
+          if (apartmentService === selectedService) {
+            counter = counter + 1;
+          }
+
+          ;
+        });
       });
+      /* console.log(apartmentServices);
+      console.log(counter);
+      console.log('lunghezza array:' + this.selectedServices.length); */
+      //se il contatore è uguale alla lunghezza dell'array dei servizi scelti nell'input filtro
+      //ritorna true
+
+      if (counter === this.selectedServices.length) {
+        return true;
+      }
+
+      ;
     },
     activeContent: function activeContent() {
       this.active = true;

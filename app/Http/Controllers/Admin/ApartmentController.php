@@ -8,6 +8,7 @@ use App\Apartment;
 use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\Controller;
 use App\Service;
+use Illuminate\Support\Facades\DB;
 
 
 class ApartmentController extends Controller
@@ -117,6 +118,12 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
+        //si fa una query alla tabella apartment con la relazione servizi
+        // si chiede l'appartamento comprensivo di servizi corrispondente all'id dell'appartmento che si sta modificando
+        $apartmentServices = Apartment::with('services')
+                ->where('id', '=', $apartment->id)
+                ->get();
+        //____________________________________________________
 
         if($request->file('profile_pic')){
             $path = $request->file('profile_pic')->store('images');
@@ -130,9 +137,25 @@ class ApartmentController extends Controller
             $visible = 'false';
         }
 
+
         $data = $request->all();
 
+        // si ciclano i servizi passati dal form nella request(arrivati poi nei data)
+        // si cicla l'array dei servizi ricevuti dalla query(fatta all'inizio)
+        // si confrontano i servizi dell'appartmento esistente (quello ottenuto dalla query) con i servizi passati nel form Edit
+        // se i due servizi combaciano allora il serivio viene rimosso dai data.
+        foreach ($data['service_name'] as $key => $service) {
+            foreach ($apartmentServices[0]->services as $key => $apartmentService){
+                if ($service == $apartmentService->id) {
+
+                    unset($data['service_name'][$key]);
+                };
+            };            
+        };
+        
+
         $address = $request->address;
+        
         // dd($address);
         $response = Http::withOptions(['verify' => false])->get('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')->json();
         $lat = $response['results'][0]['position']['lat'];

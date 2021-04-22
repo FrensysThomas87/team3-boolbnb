@@ -20,19 +20,22 @@ class SearchController extends Controller
 
         $address = $_GET['address'];
         $km = $_GET['range'];
-        $response = Http::withOptions(['verify' => false])->get('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')->json();
+        $response = Http::withOptions(['verify' => false])
+            ->get('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')
+            ->json();
         $lat =$response['results'][0]['position']['lat'];
         $lon =$response['results'][0]['position']['lon'];
 
-        $apartments = DB::select('SELECT *,
-         ( 6371 * acos( cos( radians('.$lat.') ) * cos( radians( apartments.latitude ) )
-            * cos( radians(apartments.longitude) - radians('.$lon.')) + sin(radians('.$lat.'))
-            * sin( radians(apartments.latitude)))) AS distance
-        FROM apartments
-        HAVING distance <'. $km);
 
-
+        $apartments = Apartment::with('services')
+        ->select(Apartment::raw('*, ( 6371 * acos( cos( radians('.$lat.') ) * cos( radians(apartments.latitude) )
+        * cos( radians(apartments.longitude) - radians('.$lon.')) + sin(radians('.$lat.'))
+        * sin( radians(apartments.latitude)))) AS distance'))
+        ->having('distance','<', $km)
+        ->get();
 
         return response()->json($apartments);
     }
 }
+
+

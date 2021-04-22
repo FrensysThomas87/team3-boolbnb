@@ -44,7 +44,7 @@ const app = new Vue({
         beds:'0',
         rooms:'0',
         services:[
-            'Wifi',
+            'WiFi',
             'Animali Ammessi',
             'Pulizie',
             'Posto Macchina',
@@ -74,17 +74,6 @@ const app = new Vue({
             return this.activeIndex = index;
         },
 
-       /*  getCoordinate: function(address){
-            const self = this;
-            axios.get('https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')
-            .then(function(response) {
-            var coordinate=[];
-            coordinate = response.data.results[0].position;
-            self.latitude = coordinate.lat;
-            self.longitude = coordinate.lon;
-            });
-        } */
-
         filterVisible: function(apartment) {
             if(apartment.visible === 'true') {
                 return true;
@@ -104,11 +93,42 @@ const app = new Vue({
         },
 
         filterServices: function(apartment) {
-            this.selectedServices.forEach(element => {
-                if(apartment.services.includes(element)) {
-                    return true;
-                }
-            });
+
+                //costruito funziona per filtrare i servizi
+                //create due variabili utility
+                //la funzione passa il singolo appartmaneto che + già stato ciclato nell'html dal v-for
+                const apartmentServices = [];
+                let counter = 0;
+
+                //all'interno dell'appartamento ciclo i servizi appartenenti all'appartamento, e li inserisco in un array
+                apartment.services.forEach(service =>{
+                    apartmentServices.push(service.service_name);
+                });
+                
+                //ciclo i servizi che ho selezionato nell'input e li confronto con il servizi all'interno dell'array popolato in precedenza
+                //per ogni servizio che trova riscontro il contatore aumenta di 1
+                this.selectedServices.forEach(selectedService => {
+                    /* console.log(selectedService); */
+                    apartmentServices.forEach(apartmentService => {
+                        if (apartmentService === selectedService) {
+                            counter = counter +1;
+                        };
+                    });
+                });
+
+                /* console.log(apartmentServices);
+                console.log(counter);
+                console.log('lunghezza array:' + this.selectedServices.length); */
+
+
+                //se il contatore è uguale alla lunghezza dell'array dei servizi scelti nell'input filtro
+                //ritorna true
+                if (counter === this.selectedServices.length) {
+
+                    return true
+                };
+
+
         },
 
         activeContent: function () {
