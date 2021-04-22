@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use App\Apartment;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Auth;
 
 class SearchController extends Controller
 {
     public function index() {
-        return view('Search.index');
+
+        $user = Auth::user();
+        return view('Search.index', compact('user'));
     }
 
     public function getApartments(){

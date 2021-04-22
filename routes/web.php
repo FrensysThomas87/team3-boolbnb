@@ -49,6 +49,7 @@ Route::prefix('admin')
         Route::get('apartments', 'DashBoardController@index')->name('dashboard');
     });
 
+    Route::post('/message', 'MessagesController@store' )->name('message');
 
 
 

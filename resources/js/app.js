@@ -24,6 +24,7 @@
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('search-component', require('./components/SearchComponent.vue').default);
 Vue.component('apartments-component', require('./components/ApartmentsComponent.vue').default);
+Vue.component('show-component', require('./components/ShowComponent.vue').default);
 Vue.component('v-select', vSelect);
 
 
@@ -53,6 +54,9 @@ const app = new Vue({
             'Vista mare'
         ],
         selectedServices:[],
+        active:false,
+        activeIndex:0,
+        apartmentId:'',
 
     },
     methods:{
@@ -65,6 +69,11 @@ const app = new Vue({
             self.apartments = response.data;
             })
         },
+
+        getApartmentIndex: function (index) {
+            return this.activeIndex = index;
+        },
+
        /*  getCoordinate: function(address){
             const self = this;
             axios.get('https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')
@@ -100,7 +109,12 @@ const app = new Vue({
                     return true;
                 }
             });
-        }
+        },
+
+        activeContent: function () {
+            this.active = true;
+        },
+
     },
     mounted() {
 

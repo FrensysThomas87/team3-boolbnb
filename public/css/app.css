@@ -11033,7 +11033,6 @@ input:checked + .slider .off {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000;
 }
 
 .my-jumbotron-container .my-jumbotron {
@@ -11103,7 +11102,21 @@ input:checked + .slider .off {
 .main-search-container {
   height: 500px;
   width: 100%;
-  background-color: brown;
+  display: flex;
+}
+
+.main-search-container .search-content-left {
+  width: 40%;
+  height: 100%;
+  border-right: 3px solid black;
+  overflow-y: auto;
+}
+
+.main-search-container .search-content-right {
+  height: 100%;
+  width: 100%;
+  background-color: yellow;
+  padding: 15px;
 }
 
 .v-select {

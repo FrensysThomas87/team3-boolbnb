@@ -1,3 +1,6 @@
+
+
+
 .filter-container{
     padding-top: 20px;
     display: flex;
@@ -40,5 +43,19 @@
 .main-search-container{
     height: 500px;
     width: 100%;
-    background-color: brown;
+    display: flex;
+
+    .search-content-left{
+        width: 40%;
+        height: 100%;
+        border-right: 3px solid black;
+        overflow-y: auto;
+    }
+
+    .search-content-right{
+        height: 100%;
+        width: 100%;
+        background-color: yellow;
+        padding: 15px;
+    }
 }
