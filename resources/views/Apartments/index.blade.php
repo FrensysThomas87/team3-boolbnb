@@ -4,6 +4,7 @@
 
 @section('content')
 
+    @include('Apartments.jumbotron')
 
     {{-- <div class="main-content"> --}}
       <table class="table">
