@@ -1,0 +1,29 @@
+
+// Personalizzazione navbar bootstrap
+.my-navbar{
+    background-color: $color_bg1;
+
+    .my-brand{
+        font-size: 22px;
+    }
+    a, .my-link{
+        color: $color_txt1;
+    }
+    .my-link {
+        display: block;
+        padding: 0rem 1rem;
+    }
+
+    .my-username{
+        padding: 0px 5px;
+    }
+
+    .my-dropdown{
+        left: unset;
+        right: 0px;
+    }
+    // .my-bg-dark{
+    //     background-color: $color_bg2;
+
+    // }
+}
