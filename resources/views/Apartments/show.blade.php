@@ -17,7 +17,22 @@
     <div class="card-body">
         <h1>{{$apartment->title}}</h1>
         <p class="card-text">{{$apartment->description}}</p>
-        <a href="#" class="btn btn-primary">Edit</a>
     </div>
 </div>
+@if (Auth::id()=== $apartment->user_id)
+<div>
+    <h1>Messaggi Appartmento</h1>
+    @foreach ($apartment->messages as $message)
+    <div>
+        <h2>{{$message->message_title}}</h2>
+        <h4>FROM: {{$message->message_email}}</h4>
+        <p>
+            <h4>Descrizione</h4>
+            {{$message->body_message}}
+        </p>
+    </div>
+
+    @endforeach
+</div>
+@endif
 @endsection

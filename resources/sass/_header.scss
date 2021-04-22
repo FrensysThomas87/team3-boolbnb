@@ -5,13 +5,23 @@
 
     .my-brand{
         font-size: 22px;
+
+        :hover{
+            text-decoration: none;
+        }
+
     }
+
     a, .my-link{
         color: $color_txt1;
     }
     .my-link {
         display: block;
         padding: 0rem 1rem;
+
+        :hover{
+            transform: scale(1.5);
+        }
     }
 
     .my-username{

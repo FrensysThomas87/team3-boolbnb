@@ -11103,6 +11103,18 @@ input:checked + .slider .off {
 .main-search-container {
   height: 500px;
   width: 100%;
+  display: flex;
+}
+
+.main-search-container .search-content-left {
+  width: 20%;
+  height: 100%;
+  border-right: 3px solid black;
+}
+
+.main-search-container .search-content-right {
+  height: 100%;
+  width: 100%;
   background-color: brown;
 }
 
@@ -11488,6 +11500,10 @@ input:checked + .slider .off {
   font-size: 22px;
 }
 
+.my-navbar .my-brand :hover {
+  text-decoration: none;
+}
+
 .my-navbar a,
 .my-navbar .my-link {
   color: #ffffff;
@@ -11496,6 +11512,10 @@ input:checked + .slider .off {
 .my-navbar .my-link {
   display: block;
   padding: 0rem 1rem;
+}
+
+.my-navbar .my-link :hover {
+  transform: scale(1.5);
 }
 
 .my-navbar .my-username {
@@ -11511,8 +11531,35 @@ input:checked + .slider .off {
   background-color: #4d82bb;
 }
 
+.container-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -75px auto 0 auto;
+  border-radius: 10px;
+}
+
+.container-card .card {
+  width: 20rem;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  box-shadow: 4px 4px 8px #000000;
+}
+
+.container-card .card .image-size {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.container-card .card .image-size :hover {
+  transform: scale(1.5);
+}
+
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #eff3f6;
 }
 
 

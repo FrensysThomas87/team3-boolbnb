@@ -24,10 +24,32 @@
 </div>
 <div class="main-search-container">
     <div class="search-content-left">
-        <apartments-component v-for="(apartment) in apartments" :key="apartment.id" v-if="filterVisible(apartment) && filterRooms(apartment) && filterBeds(apartment)" :apartments="apartment" />
+            <apartments-component
+            v-for="(apartment, index) in apartments"
+            :key="apartment.id"
+            v-if="filterVisible(apartment) && filterRooms(apartment) && filterBeds(apartment)"
+            :apartments="apartment"
+            v-on:send-index="activeIndex = index"
+            v-on:active-main="active = true"
+            v-on:apartment-id="apartmentId = apartment.id"
+            />
     </div>
     <div class="search-content-right">
+            <div class="search-apartment-content" v-if="active">
+                <show-component v-for="(apartment, index) in apartments" :key="index" v-if="index === activeIndex" :apartments="apartment"/>
+            </div>
+            <form action="{{route('message')}}" v-if="active" method="post">
+                @csrf
+                @method('POST')
 
+                <input type="text" name="apartment_id" :value="apartmentId" hidden>
+                <input type="text" name="message_email" value="{{Auth::check()?$user->email:""}}" placeholder="Inserici Email">
+                <input type="text" name="message_title" placeholder="Oggetto Messaggio">
+                <div>
+                    <textarea type="text" name="body_message" placeholder="Messaggio" row="6"></textarea>
+                </div>
+                <button type="submit">Invia</button>
+            </form>
     </div>
 </div>
 
