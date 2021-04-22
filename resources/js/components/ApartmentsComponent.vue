@@ -1,10 +1,24 @@
 <template>
         <div class="apartment-box" v-on:click="$emit('send-index'), $emit('active-main'), $emit('apartment-id')">
-            <h1 class="apartment-title">{{apartments.title}}</h1>
-            <h3 class="apartment-address">{{apartments.address}}</h3>
+            <h2 class="apartment-title">{{apartments.title}}</h2>
+
+
+            <div class="pic-container">
+                <img v-if="apartments.profile_pic" :src="apartments.profile_pic" alt="">
+                <img v-else src="/images/placeholder/casadefault.jpg" alt="">
+            </div>
+            <div class="description-container">
+                <h3>Descrizione</h3>
+                <p>{{apartments.description}}</p>
+            </div>
+
+
+            <!-- <h3 class="apartment-address">{{apartments.address}}</h3> -->
             <div>
-                <span class="apartment-rooms">Numero Camere: {{apartments.rooms}}</span>
-                <span class="apartment-beds">Numero Letti: {{apartments.beds}}</span>
+                <!-- <span class="apartment-rooms">Numero Camere: {{apartments.rooms}}</span>
+                <span class="apartment-beds">Numero Letti: {{apartments.beds}}</span> -->
+
+
             </div>
         </div>
 </template>
@@ -21,16 +35,56 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
     .apartment-box{
-        border: 1px solid black;
+        border-bottom: 1px solid black;
+        height: 50%;
+        padding-top: 10px;
+
+        .pic-container{
+            width: 47%;
+            height: 72%;
+            float: left;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+
 
         .apartment-title{
-            font-size: 15px;
+            margin-bottom: 16px;
         }
-        .apartment-address{
+        .apartment-description{
             font-size: 10px;
 
         }
+
+        img{
+            width: 57%;
+            height: 57%;
+            float: left;
+        }
+
+        .description-container{
+
+            float: left;
+                h3,p{
+                    margin-left:15px;
+                }
+
+                h3{
+                    float: left;
+                    vertical-align: top;
+                }
+            }
+
+
+
+
+
         > div > .apartment-beds{
             font-size: 10px;
 
@@ -41,4 +95,5 @@ export default {
 
         }
     }
+
 </style>
