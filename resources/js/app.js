@@ -58,6 +58,8 @@ const app = new Vue({
         activeIndex:0,
         apartmentId:'',
         formActive:false,
+        noResults:false,
+
 
     },
     methods:{
@@ -115,6 +117,9 @@ const app = new Vue({
         activeContent: function () {
             this.active = true;
         },
+
+
+
 
     },
     mounted() {

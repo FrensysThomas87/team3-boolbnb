@@ -12,9 +12,9 @@
 </head>
 <body>
     <div id="app">
-        <header>
+        <header >
             {{-- Navbar --}}
-            <nav class="navbar navbar-expand-lg  navbar-light my-navbar fixed-top" >
+            <nav class="navbar navbar-expand-lg  navbar-light my-navbar  fixed-top" :class="{change_color: scrollPosition > 50}" >
                 <div class="position-relative">
                     <a href="#" class="my-brand">BOOLBNB</a>
                 </div>
@@ -76,6 +76,7 @@
               {{-- Jumbotron --}}
               <div class="my-jumbotron-container">
                     <div class="my-jumbotron" style="background-image: url({{asset('../img_app/jumbo3.jpeg')}})">
+
                         @if (Route::is('index') || Route::is('public.apartments.index'))
                             <div>
 
@@ -84,8 +85,10 @@
                         @if(Route::is('search') || Route::is('index') )
                             <div class="my-search">
                                 <div class="form-group my-search-form mt-5 mb-5 mr-2 ml-2">
-                                    <input class="form-control" v-on:keyup.enter="getApartments()" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="Inserisci indirizzo di ricerca" >
+
+                                    <input class="form-control" v-on:keyup.enter="getApartments(), noResults = true" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="Inserisci indirizzo di ricerca" >
                                     <button class="btn btn-dark" v-on:click="getApartments()" {{-- type="submit" --}}>Search</button>
+                                    <div v-if="apartments.length === 0 && noResults === true" class="no-results">La ricerca non ha prodotto risultati</div>
                                 </div>
                             </div>
                         @endif
@@ -168,6 +171,8 @@
     </div>
 
     {{-- Javascript --}}
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}">
+        $(function () { $(document).scroll(function () { var $nav = $(".fixed-top"); $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height(50)); }); });
+    </script>
 </body>
 </html>
