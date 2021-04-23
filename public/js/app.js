@@ -1870,6 +1870,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'ApartmentsComponent',
   props: {
@@ -6656,7 +6658,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".apartment-box[data-v-bfbb633e] {\n  border-bottom: 1px solid black;\n  padding: 15px;\n  height: 300px;\n}\n.apartment-box .pic-container[data-v-bfbb633e] {\n  width: 44%;\n  height: 72%;\n  float: left;\n}\n.apartment-box .pic-container img[data-v-bfbb633e] {\n  width: 100%;\n  height: 100%;\n  border-radius: 5px;\n}\n.apartment-box .apartment-title[data-v-bfbb633e] {\n  margin-bottom: 16px;\n}\n.apartment-box .apartment-description[data-v-bfbb633e] {\n  font-size: 10px;\n}\n.apartment-box .description-container[data-v-bfbb633e] {\n  float: left;\n}\n.apartment-box .description-container h3[data-v-bfbb633e], .apartment-box .description-container p[data-v-bfbb633e] {\n  margin-left: 15px;\n}\n.apartment-box .description-container h3[data-v-bfbb633e] {\n  float: left;\n  vertical-align: top;\n}\n.apartment-box > div > .apartment-beds[data-v-bfbb633e] {\n  font-size: 10px;\n}\n.apartment-box > div > .apartment-rooms[data-v-bfbb633e] {\n  font-size: 10px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".float-l[data-v-bfbb633e] {\n  float: left;\n}\n.apartment-box[data-v-bfbb633e] {\n  border-bottom: 1px solid black;\n  padding: 15px;\n  height: 350px;\n}\n.apartment-box .pic-container[data-v-bfbb633e] {\n  width: 44%;\n  height: 72%;\n  margin: 15px 0;\n}\n.apartment-box .pic-container img[data-v-bfbb633e] {\n  width: 100%;\n  height: 100%;\n  border-radius: 5px;\n}\n.apartment-box .apartment-title[data-v-bfbb633e] {\n  margin-bottom: 16px;\n}\n.apartment-box .description-container[data-v-bfbb633e] {\n  font-size: 10px;\n  width: 50%;\n  margin: 15px;\n  vertical-align: middle;\n}\n.apartment-box .description-container p[data-v-bfbb633e] {\n  font-size: 15px;\n}\n.apartment-box > div > .apartment-beds[data-v-bfbb633e] {\n  font-size: 10px;\n}\n.apartment-box > div > .apartment-rooms[data-v-bfbb633e] {\n  font-size: 10px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -38065,7 +38067,7 @@ var render = function() {
         _vm._v(_vm._s(_vm.apartments.title))
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "pic-container" }, [
+      _c("div", { staticClass: "pic-container float-l" }, [
         _vm.apartments.profile_pic
           ? _c("img", { attrs: { src: _vm.apartments.profile_pic, alt: "" } })
           : _c("img", {
@@ -38073,10 +38075,15 @@ var render = function() {
             })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "description-container" }, [
-        _c("h3", [_vm._v("Descrizione")]),
+      _c("div", { staticClass: "description-container float-l" }, [
+        _c("h3", [_vm._v("Indirizzo:")]),
         _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.apartments.description))])
+        _c("p", [_vm._v(_vm._s(_vm.apartments.address))]),
+        _c("br"),
+        _vm._v(" "),
+        _c("h3", [_vm._v("Prezzo:")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("€" + _vm._s(_vm.apartments.price) + ",00")])
       ]),
       _vm._v(" "),
       _c("div")
