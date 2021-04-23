@@ -1,5 +1,7 @@
 <template>
+
         <div class="apartment-box" v-on:click="$emit('send-index'), $emit('active-main'), $emit('apartment-id'),$emit('disactive-message')">
+
             <h2 class="apartment-title">{{apartments.title}}</h2>
 
 
@@ -46,12 +48,21 @@ export default {
         border-bottom: 1px solid black;
         padding: 15px;
         height: 350px;
+        cursor: pointer;
+
+
+
 
 
         .pic-container{
             width: 44%;
             height: 72%;
             margin: 15px 0;
+            transition:0.5s;
+
+              &:hover{
+                transform: translateY(-8px);
+        }
 
 
             img{

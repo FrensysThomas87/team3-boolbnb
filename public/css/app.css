@@ -11099,6 +11099,13 @@ input:checked + .slider .off {
   padding-top: 7px;
 }
 
+.no-results {
+  color: red;
+  position: absolute;
+  font-size: 20px;
+  top: 50%;
+}
+
 .main-search-container {
   width: 100%;
   display: flex;

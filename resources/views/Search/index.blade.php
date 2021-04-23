@@ -3,6 +3,7 @@
 @section('title', 'Search Apartment')
 
 @section('content')
+
 <div class="filter-container">
     <div class="filter-content">
         <form action="">

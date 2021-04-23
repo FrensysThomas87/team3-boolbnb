@@ -1,5 +1,6 @@
 <template>
         <div class="apartment-box">
+
             <!-- Title + address -->
             <h1 class="apartment-title">{{apartments.title}}</h1>
             <h4 class="apartment-address">{{apartments.address}}</h4>
