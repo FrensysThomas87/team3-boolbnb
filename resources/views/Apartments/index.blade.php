@@ -10,16 +10,17 @@
         @foreach ($apartments as $apartment)
         <div class="card">
             @if(!empty($apartment->profile_pic))
+
                 <img class="card-img-top image-size" src="{{asset($apartment->profile_pic)}}" alt="Card image cap">
 
             @else
                 <img src="{{asset('/images/placeholder/casadefault.jpg')}}" alt="Card image cap">
             @endif
 
-            <div class="card-body inline-block">
-                <h1>{{$apartment->title}}</h1>
-                <h4>€{{$apartment->price}},00</h4>
-            </div>
+
+                <h1 class="color-text-dark text-right pr-3">{{$apartment->title}}</h1>
+                <h4 class="color-text-dark text-right pr-3">€{{$apartment->price}},00</h4>
+
         </div>
         @endforeach
 
@@ -42,7 +43,7 @@
             </div>
           </div>
           <div class="buttons-change-life">
-            <button type="button" class="btn btn-primary">Scopri di più</button>
+            <button type="button" class="btn my-btn-primary">Scopri di più</button>
 
           </div>
         </div>

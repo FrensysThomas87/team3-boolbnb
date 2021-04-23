@@ -12,9 +12,9 @@
 </head>
 <body>
     <div id="app">
-        <header>
+        <header >
             {{-- Navbar --}}
-            <nav class="navbar navbar-expand-lg  navbar-light my-navbar fixed-top" >
+            <nav class="navbar navbar-expand-lg  navbar-light my-navbar  fixed-top" :class="{change_color: scrollPosition > 50}" >
                 <div class="position-relative">
                     <a href="#" class="my-brand">BOOLBNB</a>
                 </div>
@@ -85,7 +85,7 @@
                             <div class="my-search">
                                 <div class="form-group my-search-form mt-5 mb-5 mr-2 ml-2">
                                     <input class="form-control" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="Inserisci indirizzo di ricerca" >
-                                    <button class="btn btn-dark" v-on:click="getApartments()" {{-- type="submit" --}}>Search</button>
+                                    <button class="btn my-btn-dark" v-on:click="getApartments()" {{-- type="submit" --}}>Search</button>
                                 </div>
                             </div>
                         @endif
@@ -168,6 +168,8 @@
     </div>
 
     {{-- Javascript --}}
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}">
+        $(function () { $(document).scroll(function () { var $nav = $(".fixed-top"); $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height(50)); }); });
+    </script>
 </body>
 </html>
