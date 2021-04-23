@@ -11107,14 +11107,25 @@ input:checked + .slider .off {
 .main-search-container .search-content-left {
   width: 40%;
   height: 100%;
-  border-right: 3px solid black;
+  border-right: 3px solid #4d82bb;
   overflow-y: auto;
+}
+
+.main-search-container .search-content-left,
+.main-search-container .search-content-right {
+  background-color: #eee;
+  border-top: 3px solid #4d82bb;
 }
 
 .main-search-container .search-content-right {
   height: 100%;
-  width: 60%;
+  width: 100%;
   padding: 15px;
+  overflow-y: auto;
+}
+
+.main-search-container .message-form {
+  width: 27%;
 }
 
 .v-select {
@@ -11492,29 +11503,46 @@ input:checked + .slider .off {
 }
 
 .my-navbar {
-  background-color: #69b2ff;
+  background-color: #162e44;
+  vertical-align: middle;
 }
 
-.my-navbar .my-brand {
+.my-navbar .position-relative {
+  width: 100px;
+  height: 30px;
+}
+
+.my-navbar .position-relative .my-brand {
   font-size: 22px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.my-navbar .my-brand :hover {
+.my-navbar .position-relative .my-brand:hover {
   text-decoration: none;
+  font-size: 24px;
+  color: #ffffff;
 }
 
 .my-navbar a,
 .my-navbar .my-link {
-  color: #ffffff;
+  text-decoration: none;
 }
 
 .my-navbar .my-link {
   display: block;
-  padding: 0rem 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0rem 0.9rem;
 }
 
-.my-navbar .my-link :hover {
-  transform: scale(1.5);
+.my-navbar .my-link:hover {
+  font-size: 1rem;
+  color: #3490dc;
 }
 
 .my-navbar .my-username {
@@ -11527,7 +11555,7 @@ input:checked + .slider .off {
 }
 
 .my-footer {
-  background-color: #4d82bb;
+  background-color: #162e44;
 }
 
 .container-card {
@@ -11540,9 +11568,9 @@ input:checked + .slider .off {
 
 .container-card .card {
   width: 20rem;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   margin-right: 15px;
-  box-shadow: 4px 4px 8px #000000;
+  box-shadow: 5px 5px 10px 2px #ccc;
 }
 
 .container-card .card .image-size {
@@ -11554,6 +11582,15 @@ input:checked + .slider .off {
 
 .container-card .card .image-size :hover {
   transform: scale(1.5);
+}
+
+.container-host {
+  width: 100%;
+  background-image: url("https://mdbcdn.b-cdn.net/img/new/standard/city/041.jpg");
+  background-position: center;
+  border: 1px;
+  border-radius: 8px;
+  padding: 15px;
 }
 
 body {

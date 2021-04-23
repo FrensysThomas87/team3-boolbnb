@@ -24,6 +24,30 @@
         @endforeach
 
     </div>
+
+    <div class="container-host mt-5 mb-5">
+
+        <div class="container-changeLife">
+          <div class="change-life">
+            <div class="text-title">
+              <h2 class="text-white">Diventa un HOST</h2>
+            </div>
+            <div class="line-text">
+              <div class="line">
+
+              </div>
+            </div>
+            <div class="text-subtitle">
+              <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis minus, provident sapiente voluptas qui dolore omnis autem exercitationem mollitia. Quam, nisi quidem. Perferendis modi voluptates nostrum expedita ad inventore sint?</p>
+            </div>
+          </div>
+          <div class="buttons-change-life">
+            <button type="button" class="btn btn-primary">Scopri di più</button>
+
+          </div>
+        </div>
+
+      </div>
 </div>
 
 

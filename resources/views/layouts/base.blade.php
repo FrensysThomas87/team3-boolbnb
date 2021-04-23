@@ -14,33 +14,41 @@
     <div id="app">
         <header>
             {{-- Navbar --}}
-            <nav class="navbar navbar-expand-lg  navbar-light my-navbar" >
-                <a href="#" class="my-brand">BOOLBNB</a>
+            <nav class="navbar navbar-expand-lg  navbar-light my-navbar fixed-top" >
+                <div class="position-relative">
+                    <a href="#" class="my-brand">BOOLBNB</a>
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
+                  <ul class="navbar-nav mr-auto align-items-end">
                     <li class="nav-item active">
-                      <a class="my-link" href="/apartments">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item ">
-                      <a class="my-link" href="/">Welcome Page</a>
+                        <div class="position-relative">
+                            <a class="my-link text-white" href="{{route('index')}}">Home <span class="sr-only">(current)</span></a>
+                        </div>
+
                     </li>
                     <li>
-                      <a class="my-link" href="{{route('search')}}">Booking</a>
+                        <div class="position-relative">
+                            <a class="my-link text-white" href="{{route('search')}}">Search</a>
+                        </div>
+
                     </li>
                   </ul>
                   @if (!Auth::check())
-                    <a class="btn btn-primary" href="/login">Login</a>
+                  <div class="align-items-end">
+                    <a class="btn btn-primary align-items-flex-end" href="/login">Login</a>
+                  </div>
+
                   @else
 
                     {{-- LOGIN --}}
-                    <ul class="navbar-nav left">
+                    <ul class="navbar-nav left align-items-end">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{Auth::user()->name}}
-                                <span class="my-username"><i class="fas fa-user"></i></span>
+                                <span class="my-username"><i class="fas fa-user text-white"></i></span>
                             </a>
                             <div class="dropdown-menu my-dropdown" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item text-dark" href="#">Profile</a>
@@ -73,9 +81,9 @@
 
                             </div>
                         @endif
-                        @if(Route::is('search'))
+                        @if(Route::is('search') || Route::is('index') )
                             <div class="my-search">
-                                <div class="form-group my-search-form">
+                                <div class="form-group my-search-form mt-5 mb-5 mr-2 ml-2">
                                     <input class="form-control" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="Inserisci indirizzo di ricerca" >
                                     <button class="btn btn-dark" v-on:click="getApartments()" {{-- type="submit" --}}>Search</button>
                                 </div>
@@ -153,7 +161,7 @@
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
               © 2020 Copyright:
-              <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+              <a class="text-white" href="https://mdbootstrap.com/">Team3 - IDRA</a>
             </div>
             <!-- Copyright -->
           </footer>

@@ -2,25 +2,44 @@
 // Personalizzazione navbar bootstrap
 .my-navbar{
     background-color: $color_bg1;
+    vertical-align: middle;
 
-    .my-brand{
-        font-size: 22px;
+    .position-relative{
+        width: 100px;
+        height: 30px;
 
-        :hover{
-            text-decoration: none;
+        .my-brand{
+            font-size: 22px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            &:hover{
+                text-decoration: none;
+                font-size: 24px;
+                color: $color_txt1;
+            }
+
         }
-
     }
 
     a, .my-link{
-        color: $color_txt1;
+        text-decoration: none;
+
     }
+
     .my-link {
         display: block;
-        padding: 0rem 1rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 0rem 0.9rem;
 
-        :hover{
-            transform: scale(1.5);
+       &:hover{
+            font-size:1rem;
+            color: $color_txt2;
         }
     }
 

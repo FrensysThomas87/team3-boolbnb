@@ -142,6 +142,17 @@ export default {
         }
 
     }
+    button{
+        margin-bottom: 15px;
+    }
+
+    img{
+        width: 27%;
+        height: 52%;
+    }
+
+
+
 </style>
 
 

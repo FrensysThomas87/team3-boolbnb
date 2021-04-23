@@ -6,10 +6,15 @@
 <div class="filter-container">
     <div class="filter-content">
         <form action="">
-            <label for="rooms">N° Rooms</label>
-            <input v-model="rooms" type="text" id="rooms" name="rooms">
+            <label for="rooms" >N° Rooms</label>
+            <input v-model="rooms" type="number" id="rooms" name="rooms">
             <label for="beds">N°Letti</label>
-            <input v-model="beds" type="text"  id="beds" name="beds">
+            <input v-model="beds" type="number"  id="beds" name="beds">
+            <label for="beds">N°Bagni</label>
+            <input v-model="beds" type="number"  id="beds" name="baths">
+
+
+
             <v-select multiple v-model="selectedServices" :options="services"></v-select>
             {{-- <div>
                 <search-component v-model="selectedServices" :services="services" />
@@ -32,27 +37,42 @@
             v-on:send-index="activeIndex = index"
             v-on:active-main="active = true"
             v-on:apartment-id="apartmentId = apartment.id"
+            v-on:disactive-message="formActive = false"
             />
     </div>
     <div class="search-content-right">
             {{-- Show appartamento --}}
             <div class="search-apartment-content" v-if="active">
-                <show-component v-for="(apartment, index) in apartments" :key="index" v-if="index === activeIndex" :apartments="apartment"/>
+                <show-component v-for="(apartment, index) in apartments" :key="index" v-if="index === activeIndex" :apartments="apartment"
+                v-on:active-message="formActive = true"/>
+
             </div>
-
-            {{-- Invia messaggio al proprietario --}}
-
-            <form action="{{route('message')}}" v-if="active" method="post">
+            <form action="{{route('message')}}" v-if="formActive" method="post">
                 @csrf
                 @method('POST')
-                <h3>Invia messaggio al proprietario</h3>
                 <input type="text" name="apartment_id" :value="apartmentId" hidden>
+                {{-- <input type="text" name="apartment_id" :value="apartmentId" hidden>
                 <input type="text" name="message_email" value="{{Auth::check()?$user->email:""}}" placeholder="Inserici Email">
                 <input type="text" name="message_title" placeholder="Oggetto Messaggio">
                 <div>
                     <textarea type="text" name="body_message" placeholder="Messaggio" row="6"></textarea>
-                </div>
-                <button type="submit">Invia</button>
+                </div> --}}
+                <div class="form-group message-form">
+                    <label for="message_email">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" value="{{Auth::check()?$user->email:""}}"
+                    placeholder="Enter email" name="message_email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group message-form">
+                    <label for="message_title">Oggetto del messaggio</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Inserisci l'oggetto del messaggio"
+                    name="message_title">
+                  </div>
+                  <div class="form-group message-form">
+                    <label for="body_message">Testo del messaggio</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" name="body_message" placeholder="Scrivi il messaggio"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-default">Invia</button>
             </form>
     </div>
 </div>
