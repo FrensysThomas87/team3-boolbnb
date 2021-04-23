@@ -11056,6 +11056,12 @@ input:checked + .slider .off {
   align-items: center;
 }
 
+.my-jumbotron-container .my-jumbotron .my-search .my-btn-dark {
+  color: #fff;
+  background-color: #162e44;
+  border-color: #162e44;
+}
+
 .my-jumbotron-container .my-jumbotron .my-search .my-search-form {
   display: flex;
   justify-content: center;
@@ -11510,17 +11516,23 @@ input:checked + .slider .off {
 }
 
 .my-navbar {
-  background-color: #162e44;
+  background-color: rgba(22, 46, 68, 0.5);
   vertical-align: middle;
+  height: 50px;
+}
+
+.my-navbar .change_color {
+  background-color: #162e44;
 }
 
 .my-navbar .position-relative {
+  position: relative;
   width: 100px;
   height: 30px;
 }
 
 .my-navbar .position-relative .my-brand {
-  font-size: 22px;
+  font-size: 26px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -11529,7 +11541,7 @@ input:checked + .slider .off {
 
 .my-navbar .position-relative .my-brand:hover {
   text-decoration: none;
-  font-size: 24px;
+  font-size: 28px;
   color: #ffffff;
 }
 
@@ -11545,11 +11557,12 @@ input:checked + .slider .off {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 0rem 0.9rem;
+  font-size: 16px;
 }
 
 .my-navbar .my-link:hover {
-  font-size: 1rem;
-  color: #3490dc;
+  font-size: 18px;
+  color: #162e44;
 }
 
 .my-navbar .my-username {
@@ -11578,6 +11591,18 @@ input:checked + .slider .off {
   margin-bottom: 25px;
   margin-right: 15px;
   box-shadow: 5px 5px 10px 2px #ccc;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.container-card .card:hover img {
+  transition: all 0.5s ease-out 0s;
+  transform: scale(1);
+  overflow: hidden;
+}
+
+.container-card .card .color-text-dark {
+  color: #162e44;
 }
 
 .container-card .card .image-size {
@@ -11588,7 +11613,7 @@ input:checked + .slider .off {
 }
 
 .container-card .card .image-size :hover {
-  transform: scale(1.5);
+  transition: transform 250ms ease-in-out;
 }
 
 .container-host {
@@ -11598,6 +11623,12 @@ input:checked + .slider .off {
   border: 1px;
   border-radius: 8px;
   padding: 15px;
+}
+
+.container-host .my-btn-primary {
+  color: #fff;
+  background-color: #162e44;
+  border-color: #162e44;
 }
 
 body {

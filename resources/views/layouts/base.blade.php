@@ -12,9 +12,9 @@
 </head>
 <body>
     <div id="app">
-        <header>
+        <header >
             {{-- Navbar --}}
-            <nav class="navbar navbar-expand-lg  navbar-light my-navbar fixed-top" >
+            <nav class="navbar navbar-expand-lg  navbar-light my-navbar  fixed-top" :class="{change_color: scrollPosition > 50}" >
                 <div class="position-relative">
                     <a href="#" class="my-brand">BOOLBNB</a>
                 </div>
@@ -171,6 +171,8 @@
     </div>
 
     {{-- Javascript --}}
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}">
+        $(function () { $(document).scroll(function () { var $nav = $(".fixed-top"); $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height(50)); }); });
+    </script>
 </body>
 </html>
