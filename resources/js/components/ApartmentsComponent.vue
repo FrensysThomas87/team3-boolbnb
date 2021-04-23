@@ -38,18 +38,20 @@ export default {
 
     .apartment-box{
         border-bottom: 1px solid black;
-        height: 50%;
         padding: 15px;
+        height: 300px;
 
 
         .pic-container{
-            width: 47%;
+            width: 44%;
             height: 72%;
             float: left;
 
             img{
                 width: 100%;
                 height: 100%;
+                border-radius: 5px;
+
             }
         }
 
@@ -63,12 +65,12 @@ export default {
 
         }
 
-        img{
-            width: 57%;
-            height: 57%;
-            float: left;
-            border-radius: 5px;
-        }
+        // img{
+        //     width: 57%;
+        //     height: 57%;
+        //     float: left;
+        //     border-radius: 5px;
+        // }
 
         .description-container{
 

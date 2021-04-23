@@ -10,8 +10,7 @@
             <input v-model="rooms" type="number" id="rooms" name="rooms">
             <label for="beds">N°Letti</label>
             <input v-model="beds" type="number"  id="beds" name="beds">
-            <label for="beds">N°Bagni</label>
-            <input v-model="beds" type="number"  id="beds" name="baths">
+
 
 
 

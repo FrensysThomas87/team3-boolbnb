@@ -64,7 +64,7 @@
             <div class="apartment-booking">
                 <h4><i class="fas fa-tag"></i> Prezzo: {{apartments.price}}€ /notte</h4>
                 <h4><i class="far fa-eye"></i> Visualizzazioni: {{apartments.view_count}} </h4>
-                <button type="button" class="btn btn-primary"><i class="fas fa-credit-card"></i> PRENOTA</button>
+                <button v-on:click="$emit('active-message')" type="button" class="btn btn-primary"><i class="fas fa-credit-card"></i> PRENOTA</button>
             </div>
 
         </div>
@@ -92,8 +92,8 @@ export default {
     }
 
     .main-box{
-        display: flex;
-        width: 100%;
+        // display: flex;
+        // width: 100%;
         &-left{
             width:50%;
             background-color:white;
