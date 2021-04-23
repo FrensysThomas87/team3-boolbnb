@@ -1870,6 +1870,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'ApartmentsComponent',
   props: {
@@ -1959,6 +1961,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6606,7 +6658,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".apartment-box[data-v-bfbb633e] {\n  border-bottom: 1px solid black;\n  height: 50%;\n  padding: 15px;\n}\n.apartment-box .pic-container[data-v-bfbb633e] {\n  width: 47%;\n  height: 72%;\n  float: left;\n}\n.apartment-box .pic-container img[data-v-bfbb633e] {\n  width: 100%;\n  height: 100%;\n}\n.apartment-box .apartment-title[data-v-bfbb633e] {\n  margin-bottom: 16px;\n}\n.apartment-box .apartment-description[data-v-bfbb633e] {\n  font-size: 10px;\n}\n.apartment-box img[data-v-bfbb633e] {\n  width: 57%;\n  height: 57%;\n  float: left;\n  border-radius: 5px;\n}\n.apartment-box .description-container[data-v-bfbb633e] {\n  float: left;\n}\n.apartment-box .description-container h3[data-v-bfbb633e], .apartment-box .description-container p[data-v-bfbb633e] {\n  margin-left: 15px;\n}\n.apartment-box .description-container h3[data-v-bfbb633e] {\n  float: left;\n  vertical-align: top;\n}\n.apartment-box > div > .apartment-beds[data-v-bfbb633e] {\n  font-size: 10px;\n}\n.apartment-box > div > .apartment-rooms[data-v-bfbb633e] {\n  font-size: 10px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".float-l[data-v-bfbb633e] {\n  float: left;\n}\n.apartment-box[data-v-bfbb633e] {\n  border-bottom: 1px solid black;\n  padding: 15px;\n  height: 350px;\n}\n.apartment-box .pic-container[data-v-bfbb633e] {\n  width: 44%;\n  height: 72%;\n  margin: 15px 0;\n}\n.apartment-box .pic-container img[data-v-bfbb633e] {\n  width: 100%;\n  height: 100%;\n  border-radius: 5px;\n}\n.apartment-box .apartment-title[data-v-bfbb633e] {\n  margin-bottom: 16px;\n}\n.apartment-box .description-container[data-v-bfbb633e] {\n  font-size: 10px;\n  width: 50%;\n  margin: 15px;\n  vertical-align: middle;\n}\n.apartment-box .description-container p[data-v-bfbb633e] {\n  font-size: 15px;\n}\n.apartment-box > div > .apartment-beds[data-v-bfbb633e] {\n  font-size: 10px;\n}\n.apartment-box > div > .apartment-rooms[data-v-bfbb633e] {\n  font-size: 10px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6630,7 +6682,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "button[data-v-59cc4a25] {\n  margin-bottom: 15px;\n}\nimg[data-v-59cc4a25] {\n  width: 27%;\n  height: 52%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".main-box[data-v-59cc4a25] {\n  display: flex;\n  width: 100%;\n  height: 400px;\n  border-radius: 30px;\n  overflow: hidden;\n}\n.main-box-left[data-v-59cc4a25] {\n  width: 50%;\n  height: 100%;\n  background-color: blue;\n}\n.main-box-left img[data-v-59cc4a25] {\n  height: 100%;\n}\n.main-box-right[data-v-59cc4a25] {\n  width: 50%;\n  height: 100%;\n  background-color: blue;\n  background-image: url(\"https://lh3.googleusercontent.com/proxy/hKuhG_ipMzNTOluMhdno-8T4Bz0bwhWLQ0ps4I-I0d3v0yEJquvIhAgWSnrSnNk2d4SKf8DBAo4yCkwG2XRosD4wUU_cDZIIr1vb82Qq-EwmInKBxQT0hoVO\");\n}\n.main-box-left[data-v-59cc4a25], .main-box-right[data-v-59cc4a25] {\n  display: inline-block;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.main-box-left img[data-v-59cc4a25], .main-box-right img[data-v-59cc4a25] {\n  width: 100%;\n}\n.apartment-properties[data-v-59cc4a25] {\n  border-bottom: 1px solid grey;\n}\n.apartment-properties .apartment-description[data-v-59cc4a25] {\n  font-style: italic;\n}\n.apartment-properties ul[data-v-59cc4a25] {\n  list-style: none;\n  padding: 0px;\n}\n.apartment-properties li[data-v-59cc4a25] {\n  display: inline-block;\n  cursor: pointer;\n}\n.apartment-services[data-v-59cc4a25] {\n  border-bottom: 1px solid grey;\n}\n.apartment-services ul[data-v-59cc4a25] {\n  list-style: none;\n  padding: 15px;\n}\nbutton[data-v-59cc4a25] {\n  margin-bottom: 15px;\n}\nimg[data-v-59cc4a25] {\n  width: 27%;\n  height: 52%;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -38015,7 +38067,7 @@ var render = function() {
         _vm._v(_vm._s(_vm.apartments.title))
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "pic-container" }, [
+      _c("div", { staticClass: "pic-container float-l" }, [
         _vm.apartments.profile_pic
           ? _c("img", { attrs: { src: _vm.apartments.profile_pic, alt: "" } })
           : _c("img", {
@@ -38023,10 +38075,15 @@ var render = function() {
             })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "description-container" }, [
-        _c("h3", [_vm._v("Descrizione")]),
+      _c("div", { staticClass: "description-container float-l" }, [
+        _c("h3", [_vm._v("Indirizzo:")]),
         _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.apartments.description))])
+        _c("p", [_vm._v(_vm._s(_vm.apartments.address))]),
+        _c("br"),
+        _vm._v(" "),
+        _c("h3", [_vm._v("Prezzo:")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("€" + _vm._s(_vm.apartments.price) + ",00")])
       ]),
       _vm._v(" "),
       _c("div")
@@ -38148,53 +38205,140 @@ var render = function() {
       _vm._v(_vm._s(_vm.apartments.title))
     ]),
     _vm._v(" "),
-    _c("h3", { staticClass: "apartment-address" }, [
+    _c("h4", { staticClass: "apartment-address" }, [
       _vm._v(_vm._s(_vm.apartments.address))
     ]),
     _vm._v(" "),
-    _vm.apartments.profile_pic
-      ? _c("img", { attrs: { src: _vm.apartments.profile_pic, alt: "" } })
-      : _c("img", {
-          attrs: { src: "/images/placeholder/casadefault.jpg", alt: "" }
-        }),
+    _c("div", { staticClass: "main-box" }, [
+      _c("div", { staticClass: "main-box-left" }, [
+        _vm.apartments.profile_pic
+          ? _c("img", { attrs: { src: _vm.apartments.profile_pic, alt: "" } })
+          : _c("img", {
+              attrs: { src: "/images/placeholder/casadefault.jpg", alt: "" }
+            })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-box-right" })
+    ]),
     _vm._v(" "),
-    _c("div", [
-      _c("p", [_vm._v("description: " + _vm._s(_vm.apartments.description))]),
-      _vm._v(" "),
-      _c("span", { staticClass: "apartment-rooms" }, [
-        _vm._v("Numero Camere: " + _vm._s(_vm.apartments.rooms))
+    _c("div", { staticClass: "apartment-properties" }, [
+      _c("ul", [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("li", [
+          _c("span", { staticClass: "apartment-guests" }, [
+            _vm._v(_vm._s(_vm.apartments.max_guests) + " ospiti")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("span", { staticClass: "apartment-rooms" }, [
+            _vm._v(_vm._s(_vm.apartments.rooms) + " camere")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("span", { staticClass: "apartment-beds" }, [
+            _vm._v(_vm._s(_vm.apartments.beds) + " letti")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("span", { staticClass: "apartment-baths" }, [
+            _vm._v(_vm._s(_vm.apartments.baths) + " bagni")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("span", { staticClass: "apartment-mq" }, [
+            _vm._v(_vm._s(_vm.apartments.sq_meters) + "mq")
+          ])
+        ])
       ]),
       _vm._v(" "),
-      _c("span", { staticClass: "apartment-beds" }, [
-        _vm._v("Numero Letti: " + _vm._s(_vm.apartments.beds))
+      _c("div", { staticClass: "apartment-check-in" }, [
+        _c("ul", [
+          _c("li", { staticClass: "apartment-check-in" }, [
+            _c("i", { staticClass: "far fa-clock fa-lg" }),
+            _vm._v(" Check in: " + _vm._s(_vm.apartments.check_in))
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "apartment-check-out" }, [
+            _c("i", { staticClass: "fas fa-clock fa-lg" }),
+            _vm._v(" Check out: " + _vm._s(_vm.apartments.check_out))
+          ])
+        ])
       ]),
       _vm._v(" "),
-      _c("span", { staticClass: "apartment-baths" }, [
-        _vm._v("Numero Bagni: " + _vm._s(_vm.apartments.baths))
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "apartment-mq" }, [
-        _vm._v("Numero Mq: " + _vm._s(_vm.apartments.sq_meters))
+      _c("p", { staticClass: "apartment-description" }, [
+        _vm._v(_vm._s(_vm.apartments.description))
       ])
     ]),
     _vm._v(" "),
-    _c("div", [_c("h4", [_vm._v("PRICE: " + _vm._s(_vm.apartments.price))])]),
+    _vm._m(1),
     _vm._v(" "),
-    _c(
-      "button",
-      {
-        staticClass: "btn btn-primary btn-default",
-        on: {
-          click: function($event) {
-            return _vm.$emit("active-message")
+    _c("div", { staticClass: "apartment-booking" }, [
+      _c("h4", [
+        _c("i", { staticClass: "fas fa-tag" }),
+        _vm._v(" Prezzo: " + _vm._s(_vm.apartments.price) + "€ /notte")
+      ]),
+      _vm._v(" "),
+      _c("h4", [
+        _c("i", { staticClass: "far fa-eye" }),
+        _vm._v(" Visualizzazioni: " + _vm._s(_vm.apartments.view_count) + " ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { type: "button" },
+          on: {
+            click: function($event) {
+              return _vm.$emit("active-message")
+            }
           }
-        }
-      },
-      [_vm._v("Chiedi Info")]
-    )
+        },
+        [_c("i", { staticClass: "fas fa-credit-card" }), _vm._v(" PRENOTA")]
+      )
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("i", { staticClass: "fas fa-home fa-2x" })])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "apartment-services" }, [
+      _c("h2", [_vm._v("Services")]),
+      _vm._v(" "),
+      _c("ul", [
+        _c("li", [_c("i", { staticClass: "fas fa-plus" }), _vm._v(" Wifake")]),
+        _vm._v(" "),
+        _c("li", [
+          _c("i", { staticClass: "fas fa-plus" }),
+          _vm._v(" Animali fake")
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("i", { staticClass: "fas fa-plus" }),
+          _vm._v(" Colazione fake")
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("i", { staticClass: "fas fa-plus" }),
+          _vm._v(" Cancellazione prenotazione gratuita")
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

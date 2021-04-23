@@ -11106,29 +11106,28 @@ input:checked + .slider .off {
 }
 
 .main-search-container {
-  height: 500px;
   width: 100%;
   display: flex;
+  min-height: 30px;
+  max-height: 800px;
 }
 
 .main-search-container .search-content-left {
   width: 40%;
-  height: 100%;
-  border-right: 3px solid #4d82bb;
-  overflow-y: auto;
+  border-right: 3px solid #212529;
 }
 
 .main-search-container .search-content-left,
 .main-search-container .search-content-right {
   background-color: #eee;
-  border-top: 3px solid #4d82bb;
+  border-top: 3px solid #212529;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 .main-search-container .search-content-right {
-  height: 100%;
-  width: 100%;
   padding: 15px;
-  overflow-y: auto;
+  width: 60%;
 }
 
 .main-search-container .message-form {

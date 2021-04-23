@@ -10,8 +10,7 @@
             <input v-model="rooms" type="number" id="rooms" name="rooms">
             <label for="beds">N°Letti</label>
             <input v-model="beds" type="number"  id="beds" name="beds">
-            <label for="beds">N°Bagni</label>
-            <input v-model="beds" type="number"  id="beds" name="baths">
+
 
 
 
@@ -41,6 +40,7 @@
             />
     </div>
     <div class="search-content-right">
+            {{-- Show appartamento --}}
             <div class="search-apartment-content" v-if="active">
                 <show-component v-for="(apartment, index) in apartments" :key="index" v-if="index === activeIndex" :apartments="apartment"
                 v-on:active-message="formActive = true"/>

@@ -84,8 +84,8 @@
                         @if(Route::is('search') || Route::is('index') )
                             <div class="my-search">
                                 <div class="form-group my-search-form mt-5 mb-5 mr-2 ml-2">
-                                    <input class="form-control" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="Inserisci indirizzo di ricerca" >
-                                    <button class="btn my-btn-dark" v-on:click="getApartments()" {{-- type="submit" --}}>Search</button>
+                                    <input class="form-control" v-on:keyup.enter="getApartments()" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="Inserisci indirizzo di ricerca" >
+                                    <button class="btn btn-dark" v-on:click="getApartments()" {{-- type="submit" --}}>Search</button>
                                 </div>
                             </div>
                         @endif

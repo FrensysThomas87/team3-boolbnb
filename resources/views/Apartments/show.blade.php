@@ -7,32 +7,31 @@
 
 
 @section('content')
-<div class="card" style="width: 14rem;">
-    @if(!empty($apartment->profile_pic))
-        <img class="card-img-top" src="{{asset($apartment->profile_pic)}}" alt="Card image cap">
-    @else
-        <img src="{{asset('/images/placeholder/casadefault.jpg')}}" alt="Card image cap" style="height: 100px">
-    @endif
-
-    <div class="card-body">
-        <h1>{{$apartment->title}}</h1>
-        <p class="card-text">{{$apartment->description}}</p>
+    {{-- Show component --}}
+    <div class="search-apartment-content" {{--v-if="active" --}}>
+        <show-component apartments="apartment"/>
     </div>
-</div>
-@if (Auth::id()=== $apartment->user_id)
-<div>
-    <h1>Messaggi Appartmento</h1>
-    @foreach ($apartment->messages as $message)
+    {{-- /Show component --}}
+
+
+
+    {{-- Messaggi ricevuti dal proprietario --}}
+    @if (Auth::id()=== $apartment->user_id)
     <div>
-        <h2>{{$message->message_title}}</h2>
-        <h4>FROM: {{$message->message_email}}</h4>
-        <p>
-            <h4>Descrizione</h4>
-            {{$message->body_message}}
-        </p>
-    </div>
+        <h1>Messaggi Appartmento</h1>
+        @foreach ($apartment->messages as $message)
+        <div>
+            <h2>{{$message->message_title}}</h2>
+            <h4>FROM: {{$message->message_email}}</h4>
+            <p>
+                <h4>Descrizione</h4>
+                {{$message->body_message}}
+            </p>
+        </div>
 
-    @endforeach
-</div>
-@endif
+        @endforeach
+    </div>
+    @endif
+    {{-- /Messaggi ricevuti dal proprietario --}}
+
 @endsection

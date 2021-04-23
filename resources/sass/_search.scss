@@ -41,31 +41,30 @@
 
 
 .main-search-container{
-    height: 500px;
+    // min-height: 500px;
     width: 100%;
     display: flex;
+    min-height: 30px;
+    max-height: 800px ;
 
     .search-content-left{
         width: 40%;
-        height: 100%;
-        border-right: 3px solid #4d82bb;
+        border-right: 3px solid #212529;
 
-        overflow-y: auto;
 
     }
 
     .search-content-left,
     .search-content-right{
         background-color: #eee;
-        border-top: 3px solid #4d82bb;
-
+        border-top: 3px solid #212529;
+        max-height: 100%;
+        overflow-y: auto;
     }
 
     .search-content-right{
-        height: 100%;
-        width: 100%;
         padding: 15px;
-        overflow-y: auto;
+        width: 60%;
     }
 
     .message-form{
