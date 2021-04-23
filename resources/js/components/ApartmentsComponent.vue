@@ -1,5 +1,5 @@
 <template>
-        <div class="apartment-box" v-on:click="$emit('send-index'), $emit('active-main'), $emit('apartment-id')">
+        <div class="apartment-box" v-on:click="$emit('send-index'), $emit('active-main'), $emit('apartment-id'),$emit('disactive-message')">
             <h2 class="apartment-title">{{apartments.title}}</h2>
 
 
@@ -39,7 +39,8 @@ export default {
     .apartment-box{
         border-bottom: 1px solid black;
         height: 50%;
-        padding-top: 10px;
+        padding: 15px;
+
 
         .pic-container{
             width: 47%;
@@ -66,6 +67,7 @@ export default {
             width: 57%;
             height: 57%;
             float: left;
+            border-radius: 5px;
         }
 
         .description-container{

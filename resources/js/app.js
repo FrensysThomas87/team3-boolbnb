@@ -57,6 +57,7 @@ const app = new Vue({
         active:false,
         activeIndex:0,
         apartmentId:'',
+        formActive:false,
 
     },
     methods:{

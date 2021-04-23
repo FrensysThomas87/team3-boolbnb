@@ -48,14 +48,27 @@
     .search-content-left{
         width: 40%;
         height: 100%;
-        border-right: 3px solid black;
+        border-right: 3px solid #4d82bb;
+
         overflow-y: auto;
+
+    }
+
+    .search-content-left,
+    .search-content-right{
+        background-color: #eee;
+        border-top: 3px solid #4d82bb;
+
     }
 
     .search-content-right{
         height: 100%;
         width: 100%;
-        background-color: yellow;
         padding: 15px;
+        overflow-y: auto;
+    }
+
+    .message-form{
+        width: 27%;
     }
 }

@@ -2,7 +2,8 @@
         <div class="apartment-box">
             <h1 class="apartment-title">{{apartments.title}}</h1>
             <h3 class="apartment-address">{{apartments.address}}</h3>
-            <img style="width:300px;" src="/images/placeholder/casadefault.jpg" alt="">
+            <img v-if="apartments.profile_pic" :src="apartments.profile_pic" alt="">
+            <img v-else src="/images/placeholder/casadefault.jpg" alt="">
             <div>
                 <p>description: {{apartments.description}}</p>
                 <span class="apartment-rooms">Numero Camere: {{apartments.rooms}}</span>
@@ -14,6 +15,8 @@
             <div>
                 <h4>PRICE: {{apartments.price}}</h4>
             </div>
+            <button class="btn btn-primary btn-default" v-on:click="$emit('active-message')">Chiedi Info</button>
+
         </div>
 </template>
 
@@ -27,5 +30,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
+    button{
+        margin-bottom: 15px;
+    }
+
+    img{
+        width: 27%;
+        height: 52%;
+    }
+
+
 
 </style>
