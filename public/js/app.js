@@ -2033,6 +2033,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'ShowComponent',
   props: {
@@ -6682,7 +6688,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".main-box[data-v-59cc4a25] {\n  display: flex;\n  width: 100%;\n  height: 400px;\n  border-radius: 30px;\n  overflow: hidden;\n}\n.main-box-left[data-v-59cc4a25] {\n  width: 50%;\n  height: 100%;\n  background-color: blue;\n}\n.main-box-left img[data-v-59cc4a25] {\n  height: 100%;\n}\n.main-box-right[data-v-59cc4a25] {\n  width: 50%;\n  height: 100%;\n  background-color: blue;\n  background-image: url(\"https://lh3.googleusercontent.com/proxy/hKuhG_ipMzNTOluMhdno-8T4Bz0bwhWLQ0ps4I-I0d3v0yEJquvIhAgWSnrSnNk2d4SKf8DBAo4yCkwG2XRosD4wUU_cDZIIr1vb82Qq-EwmInKBxQT0hoVO\");\n}\n.main-box-left[data-v-59cc4a25], .main-box-right[data-v-59cc4a25] {\n  display: inline-block;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.main-box-left img[data-v-59cc4a25], .main-box-right img[data-v-59cc4a25] {\n  width: 100%;\n}\n.apartment-properties[data-v-59cc4a25] {\n  border-bottom: 1px solid grey;\n}\n.apartment-properties .apartment-description[data-v-59cc4a25] {\n  font-style: italic;\n}\n.apartment-properties ul[data-v-59cc4a25] {\n  list-style: none;\n  padding: 0px;\n}\n.apartment-properties li[data-v-59cc4a25] {\n  display: inline-block;\n  cursor: pointer;\n}\n.apartment-services[data-v-59cc4a25] {\n  border-bottom: 1px solid grey;\n}\n.apartment-services ul[data-v-59cc4a25] {\n  list-style: none;\n  padding: 15px;\n}\nbutton[data-v-59cc4a25] {\n  margin-bottom: 15px;\n}\nimg[data-v-59cc4a25] {\n  width: 27%;\n  height: 52%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".apartment-box[data-v-59cc4a25] {\n  font-family: \"Montserrat\", sans-serif, Arial, sans-serif;\n  font-size: 16px;\n  line-height: 1.71429;\n  font-weight: 400;\n  letter-spacing: normal;\n}\nh1[data-v-59cc4a25] {\n  font-size: 26px;\n  font-weight: 600;\n  line-height: 0.88;\n  margin-bottom: 15px;\n}\nh2[data-v-59cc4a25], h3[data-v-59cc4a25], h4[data-v-59cc4a25], h5[data-v-59cc4a25] {\n  line-height: 1.2;\n}\nh2[data-v-59cc4a25] {\n  font-size: 22px;\n  font-weight: 600;\n  margin-bottom: 10px;\n}\nh3[data-v-59cc4a25] {\n  font-size: 20px;\n  font-weight: 600;\n  margin-bottom: 8px;\n}\nh4[data-v-59cc4a25] {\n  font-size: 18px;\n  font-weight: 600;\n  margin-bottom: 8px;\n}\nh5[data-v-59cc4a25] {\n  font-size: 16px;\n  font-weight: 500;\n  margin-bottom: 8px;\n}\nh6[data-v-59cc4a25] {\n  font-size: 14px;\n  text-decoration: underline;\n  font-weight: 500;\n  margin-bottom: 8px;\n}\np[data-v-59cc4a25] {\n  font-size: 16px;\n  color: grey;\n  margin-bottom: 8px;\n}\n.main-box[data-v-59cc4a25] {\n  display: flex;\n  width: 100%;\n  height: 400px;\n  border-radius: 30px;\n  overflow: hidden;\n}\n.main-box-left[data-v-59cc4a25] {\n  width: 50%;\n  height: 100%;\n  background-color: blue;\n}\n.main-box-left img[data-v-59cc4a25] {\n  height: 100%;\n}\n.main-box-right[data-v-59cc4a25] {\n  width: 50%;\n  height: 100%;\n  background-color: blue;\n  background-image: url(\"https://lh3.googleusercontent.com/proxy/hKuhG_ipMzNTOluMhdno-8T4Bz0bwhWLQ0ps4I-I0d3v0yEJquvIhAgWSnrSnNk2d4SKf8DBAo4yCkwG2XRosD4wUU_cDZIIr1vb82Qq-EwmInKBxQT0hoVO\");\n}\n.main-box-left[data-v-59cc4a25], .main-box-right[data-v-59cc4a25] {\n  display: inline-block;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.main-box-left img[data-v-59cc4a25], .main-box-right img[data-v-59cc4a25] {\n  width: 100%;\n}\n.apartment-top[data-v-59cc4a25],\n.apartment-properties[data-v-59cc4a25],\n.apartment-description[data-v-59cc4a25],\n.apartment-services[data-v-59cc4a25],\n.apartment-booking[data-v-59cc4a25] {\n  padding: 15px 0;\n}\n.apartment-top i[data-v-59cc4a25] {\n  padding-right: 5px;\n}\n.apartment-properties[data-v-59cc4a25] {\n  border-bottom: 1px solid lightgrey;\n}\n.apartment-properties .apartment-description[data-v-59cc4a25] {\n  font-style: italic;\n}\n.apartment-properties ul[data-v-59cc4a25] {\n  list-style: none;\n  display: inline-block;\n  padding: 0px;\n  padding-right: 30px;\n  margin-bottom: 0px;\n}\n.apartment-properties li[data-v-59cc4a25] {\n  display: inline-block;\n  cursor: pointer;\n  margin-right: 5px;\n}\n.apartment-description[data-v-59cc4a25] {\n  border-bottom: 1px solid lightgrey;\n}\n.apartment-services[data-v-59cc4a25] {\n  border-bottom: 1px solid lightgrey;\n}\n.apartment-services ul[data-v-59cc4a25] {\n  list-style: none;\n  padding: 0 15px;\n}\nbutton[data-v-59cc4a25] {\n  margin: 15px 0;\n}\nimg[data-v-59cc4a25] {\n  width: 27%;\n  height: 52%;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -38201,12 +38207,15 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "apartment-box" }, [
-    _c("h1", { staticClass: "apartment-title" }, [
-      _vm._v(_vm._s(_vm.apartments.title))
-    ]),
-    _vm._v(" "),
-    _c("h4", { staticClass: "apartment-address" }, [
-      _vm._v(_vm._s(_vm.apartments.address))
+    _c("div", { staticClass: "apartment-top" }, [
+      _c("h1", { staticClass: "apartment-title" }, [
+        _vm._v(_vm._s(_vm.apartments.title))
+      ]),
+      _vm._v(" "),
+      _c("h6", { staticClass: "apartment-address" }, [
+        _c("i", { staticClass: "fas fa-map-marker-alt fa-lg" }),
+        _vm._v(_vm._s(_vm.apartments.address))
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "main-box" }, [
@@ -38256,34 +38265,38 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "apartment-check-in" }, [
-        _c("ul", [
-          _c("li", { staticClass: "apartment-check-in" }, [
+      _c("ul", [
+        _c("li", { staticClass: "apartment-check-in" }, [
+          _c("span", [
             _c("i", { staticClass: "far fa-clock fa-lg" }),
             _vm._v(" Check in: " + _vm._s(_vm.apartments.check_in))
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "apartment-check-out" }, [
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "apartment-check-out" }, [
+          _c("span", [
             _c("i", { staticClass: "fas fa-clock fa-lg" }),
             _vm._v(" Check out: " + _vm._s(_vm.apartments.check_out))
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "apartment-description" }, [
-        _vm._v(_vm._s(_vm.apartments.description))
       ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "apartment-description" }, [
+      _c("h2", [_vm._v("Description")]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.apartments.description))])
     ]),
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
     _c("div", { staticClass: "apartment-booking" }, [
-      _c("h4", [
+      _c("h2", [
         _c("i", { staticClass: "fas fa-tag" }),
         _vm._v(" Prezzo: " + _vm._s(_vm.apartments.price) + "€ /notte")
       ]),
       _vm._v(" "),
-      _c("h4", [
+      _c("h2", [
         _c("i", { staticClass: "far fa-eye" }),
         _vm._v(" Visualizzazioni: " + _vm._s(_vm.apartments.view_count) + " ")
       ]),
@@ -38319,20 +38332,23 @@ var staticRenderFns = [
       _c("h2", [_vm._v("Services")]),
       _vm._v(" "),
       _c("ul", [
-        _c("li", [_c("i", { staticClass: "fas fa-plus" }), _vm._v(" Wifake")]),
+        _c("li", [
+          _c("i", { staticClass: "far fa-dot-circle" }),
+          _vm._v(" Wifake ")
+        ]),
         _vm._v(" "),
         _c("li", [
-          _c("i", { staticClass: "fas fa-plus" }),
+          _c("i", { staticClass: "far fa-dot-circle" }),
           _vm._v(" Animali fake")
         ]),
         _vm._v(" "),
         _c("li", [
-          _c("i", { staticClass: "fas fa-plus" }),
+          _c("i", { staticClass: "far fa-dot-circle" }),
           _vm._v(" Colazione fake")
         ]),
         _vm._v(" "),
         _c("li", [
-          _c("i", { staticClass: "fas fa-plus" }),
+          _c("i", { staticClass: "far fa-dot-circle" }),
           _vm._v(" Cancellazione prenotazione gratuita")
         ])
       ])
