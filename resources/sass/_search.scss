@@ -41,7 +41,7 @@
 
 
 .main-search-container{
-    height: 500px;
+    // min-height: 500px;
     width: 100%;
     display: flex;
 
@@ -54,8 +54,8 @@
 
     .search-content-right{
         height: 100%;
-        width: 100%;
-        background-color: yellow;
+        width: 60%;
+
         padding: 15px;
     }
 }

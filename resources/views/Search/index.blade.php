@@ -35,13 +35,17 @@
             />
     </div>
     <div class="search-content-right">
+            {{-- Show appartamento --}}
             <div class="search-apartment-content" v-if="active">
                 <show-component v-for="(apartment, index) in apartments" :key="index" v-if="index === activeIndex" :apartments="apartment"/>
             </div>
+
+            {{-- Invia messaggio al proprietario --}}
+
             <form action="{{route('message')}}" v-if="active" method="post">
                 @csrf
                 @method('POST')
-
+                <h3>Invia messaggio al proprietario</h3>
                 <input type="text" name="apartment_id" :value="apartmentId" hidden>
                 <input type="text" name="message_email" value="{{Auth::check()?$user->email:""}}" placeholder="Inserici Email">
                 <input type="text" name="message_title" placeholder="Oggetto Messaggio">
