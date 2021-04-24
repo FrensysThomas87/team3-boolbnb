@@ -38374,7 +38374,7 @@ var render = function() {
             }
           }
         },
-        [_c("i", { staticClass: "fas fa-credit-card" }), _vm._v(" PRENOTA")]
+        [_c("i", { staticClass: "far fa-comment" }), _vm._v(" INVIA MESSAGGIO")]
       )
     ])
   ])

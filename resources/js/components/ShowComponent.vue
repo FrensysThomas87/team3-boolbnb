@@ -71,7 +71,7 @@
             <div class="apartment-booking">
                 <h2><i class="fas fa-tag"></i> Prezzo: {{apartments.price}}€ /notte</h2>
                 <h2><i class="far fa-eye"></i> Visualizzazioni: {{apartments.view_count}} </h2>
-                <button v-on:click="$emit('active-message')" type="button" class="btn btn-primary"><i class="fas fa-credit-card"></i> PRENOTA</button>
+                <button v-on:click="$emit('active-message')" type="button" class="btn btn-primary"><i class="far fa-comment"></i> INVIA MESSAGGIO</button>
             </div>
 
         </div>

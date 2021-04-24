@@ -17,7 +17,7 @@
 
 
             {{-- Servizi --}}
-            <v-select multiple v-model="selectedServices" :options="services" placeholder="Servizi"></v-select>
+            <v-select class="service-input" multiple v-model="selectedServices" :options="services" placeholder="Servizi"></v-select>
 
             {{-- Slider km --}}
             <div class="km-range">

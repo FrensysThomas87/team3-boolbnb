@@ -11133,12 +11133,19 @@ p {
   margin-bottom: 20px;
   padding: 15px;
   border-radius: 10px;
+  width: 65%;
+  text-align: center;
 }
 
 .filter-container .filter-content > form > input {
   border-radius: 10px;
   border: 1px solid black;
   margin: 15px;
+}
+
+.filter-container .filter-content .service-input {
+  width: 50%;
+  margin: 0 auto;
 }
 
 .filter-container .filter-content .km-range {
