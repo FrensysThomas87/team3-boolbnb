@@ -14,9 +14,9 @@
     <div id="app">
         <header >
             {{-- Navbar --}}
-            <nav class="navbar navbar-expand-lg  navbar-light my-navbar  fixed-top" :class="{change_color: scrollPosition > 50}" >
+            <nav class="navbar navbar-expand-lg navbar-light my-navbar fixed-top">
                 <div class="position-relative">
-                    <a href="#" class="my-brand">BOOLBNB</a>
+                    <a href="{{route('index')}}" class="my-brand">BOOLBNB</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
                   </ul>
                   @if (!Auth::check())
                   <div class="align-items-end">
-                    <a class="btn btn-primary align-items-flex-end" href="/login">Login</a>
+                    <a class="btn btn-primary justify-content-end" href="/login">Login</a>
                   </div>
 
                   @else
