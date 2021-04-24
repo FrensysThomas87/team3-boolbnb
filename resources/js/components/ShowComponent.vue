@@ -99,55 +99,6 @@ export default {
         letter-spacing: normal;
     }
 
-    h1{
-        font-size: 26px;
-        font-weight: 600;
-        line-height: 0.88;
-        margin-bottom: 15px;
-        // letter-spacing: .075em;
-    }
-
-    h2, h3 , h4 , h5{
-        line-height: 1.2;
-
-    }
-
-    h2{
-        font-size: 22px;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    h3{
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 8px;
-    }
-
-    h4{
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 8px;
-    }
-
-    h5{
-        font-size: 16px;
-        font-weight: 500;
-        margin-bottom: 8px;
-    }
-
-    h6{
-        font-size: 14px;
-        text-decoration: underline;
-        font-weight: 500;
-        margin-bottom: 8px;
-    }
-
-    p{
-        font-size: 16px;
-        color: grey;
-        margin-bottom: 8px;
-    }
 
     // Common
     @mixin resetListBullets{

@@ -41,8 +41,8 @@ const app = new Vue({
         apartments:[],
         searchAddress:"",
         rangeKm:'20',
-        beds:'0',
-        rooms:'0',
+        beds:'1',
+        rooms:'1',
         services:[
             'WiFi',
             'Animali Ammessi',
@@ -107,7 +107,7 @@ const app = new Vue({
                 apartment.services.forEach(service =>{
                     apartmentServices.push(service.service_name);
                 });
-                
+
                 //ciclo i servizi che ho selezionato nell'input e li confronto con il servizi all'interno dell'array popolato in precedenza
                 //per ogni servizio che trova riscontro il contatore aumenta di 1
                 this.selectedServices.forEach(selectedService => {

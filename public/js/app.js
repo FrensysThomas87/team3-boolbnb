@@ -1874,6 +1874,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'ApartmentsComponent',
   props: {
@@ -2103,8 +2111,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     apartments: [],
     searchAddress: "",
     rangeKm: '20',
-    beds: '0',
-    rooms: '0',
+    beds: '1',
+    rooms: '1',
     services: ['WiFi', 'Animali Ammessi', 'Pulizie', 'Posto Macchina', 'Piscina', 'Portineria', 'Sauna', 'Vista mare'],
     selectedServices: [],
     active: false,
@@ -6684,7 +6692,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".float-l[data-v-bfbb633e] {\n  float: left;\n}\n.apartment-box[data-v-bfbb633e] {\n  border-bottom: 1px solid black;\n  padding: 15px;\n  height: 350px;\n  cursor: pointer;\n}\n.apartment-box .pic-container[data-v-bfbb633e] {\n  width: 44%;\n  height: 72%;\n  margin: 15px 0;\n  transition: 0.5s;\n}\n.apartment-box .pic-container[data-v-bfbb633e]:hover {\n  transform: translateY(-8px);\n}\n.apartment-box .pic-container img[data-v-bfbb633e] {\n  width: 100%;\n  height: 100%;\n  border-radius: 5px;\n}\n.apartment-box .apartment-title[data-v-bfbb633e] {\n  margin-bottom: 16px;\n}\n.apartment-box .description-container[data-v-bfbb633e] {\n  font-size: 10px;\n  width: 50%;\n  margin: 15px;\n  vertical-align: middle;\n}\n.apartment-box .description-container p[data-v-bfbb633e] {\n  font-size: 15px;\n}\n.apartment-box > div > .apartment-beds[data-v-bfbb633e] {\n  font-size: 10px;\n}\n.apartment-box > div > .apartment-rooms[data-v-bfbb633e] {\n  font-size: 10px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".float-l[data-v-bfbb633e] {\n  float: left;\n}\n.apartment-box[data-v-bfbb633e] {\n  border-bottom: 1px solid black;\n  padding: 15px;\n  height: 350px;\n  cursor: pointer;\n}\n.apartment-box .pic-container[data-v-bfbb633e] {\n  width: 44%;\n  height: 72%;\n  margin: 15px 0;\n  transition: 0.5s;\n}\n.apartment-box .pic-container[data-v-bfbb633e]:hover {\n  transform: translateY(-8px);\n}\n.apartment-box .pic-container img[data-v-bfbb633e] {\n  width: 100%;\n  height: 100%;\n  border-radius: 5px;\n}\n.apartment-box .apartment-title[data-v-bfbb633e] {\n  margin-bottom: 16px;\n}\n.apartment-box .description-container[data-v-bfbb633e] {\n  width: 50%;\n  margin: 15px;\n  vertical-align: middle;\n}\n.apartment-box .description-container p[data-v-bfbb633e] {\n  font-size: 15px;\n}\n.apartment-box .description-container .apartment-address[data-v-bfbb633e], .apartment-box .description-container .apartment-price[data-v-bfbb633e] {\n  margin-bottom: 15px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6708,7 +6716,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".apartment-box[data-v-59cc4a25] {\n  font-family: \"Montserrat\", sans-serif, Arial, sans-serif;\n  font-size: 16px;\n  line-height: 1.71429;\n  font-weight: 400;\n  letter-spacing: normal;\n}\nh1[data-v-59cc4a25] {\n  font-size: 26px;\n  font-weight: 600;\n  line-height: 0.88;\n  margin-bottom: 15px;\n}\nh2[data-v-59cc4a25], h3[data-v-59cc4a25], h4[data-v-59cc4a25], h5[data-v-59cc4a25] {\n  line-height: 1.2;\n}\nh2[data-v-59cc4a25] {\n  font-size: 22px;\n  font-weight: 600;\n  margin-bottom: 10px;\n}\nh3[data-v-59cc4a25] {\n  font-size: 20px;\n  font-weight: 600;\n  margin-bottom: 8px;\n}\nh4[data-v-59cc4a25] {\n  font-size: 18px;\n  font-weight: 600;\n  margin-bottom: 8px;\n}\nh5[data-v-59cc4a25] {\n  font-size: 16px;\n  font-weight: 500;\n  margin-bottom: 8px;\n}\nh6[data-v-59cc4a25] {\n  font-size: 14px;\n  text-decoration: underline;\n  font-weight: 500;\n  margin-bottom: 8px;\n}\np[data-v-59cc4a25] {\n  font-size: 16px;\n  color: grey;\n  margin-bottom: 8px;\n}\n.main-box[data-v-59cc4a25] {\n  display: flex;\n  width: 100%;\n  height: 400px;\n  border-radius: 30px;\n  overflow: hidden;\n}\n.main-box-left[data-v-59cc4a25] {\n  width: 50%;\n  height: 100%;\n  background-color: blue;\n}\n.main-box-left img[data-v-59cc4a25] {\n  height: 100%;\n}\n.main-box-right[data-v-59cc4a25] {\n  width: 50%;\n  height: 100%;\n  background-color: blue;\n  background-image: url(\"https://lh3.googleusercontent.com/proxy/hKuhG_ipMzNTOluMhdno-8T4Bz0bwhWLQ0ps4I-I0d3v0yEJquvIhAgWSnrSnNk2d4SKf8DBAo4yCkwG2XRosD4wUU_cDZIIr1vb82Qq-EwmInKBxQT0hoVO\");\n}\n.main-box-left[data-v-59cc4a25], .main-box-right[data-v-59cc4a25] {\n  display: inline-block;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.main-box-left img[data-v-59cc4a25], .main-box-right img[data-v-59cc4a25] {\n  width: 100%;\n}\n.apartment-top[data-v-59cc4a25],\n.apartment-properties[data-v-59cc4a25],\n.apartment-description[data-v-59cc4a25],\n.apartment-services[data-v-59cc4a25],\n.apartment-booking[data-v-59cc4a25] {\n  padding: 15px 0;\n}\n.apartment-top i[data-v-59cc4a25] {\n  padding-right: 5px;\n}\n.apartment-properties[data-v-59cc4a25] {\n  border-bottom: 1px solid lightgrey;\n}\n.apartment-properties .apartment-description[data-v-59cc4a25] {\n  font-style: italic;\n}\n.apartment-properties ul[data-v-59cc4a25] {\n  list-style: none;\n  display: inline-block;\n  padding: 0px;\n  padding-right: 30px;\n  margin-bottom: 0px;\n}\n.apartment-properties li[data-v-59cc4a25] {\n  display: inline-block;\n  cursor: pointer;\n  margin-right: 5px;\n}\n.apartment-description[data-v-59cc4a25] {\n  border-bottom: 1px solid lightgrey;\n}\n.apartment-services[data-v-59cc4a25] {\n  border-bottom: 1px solid lightgrey;\n}\n.apartment-services ul[data-v-59cc4a25] {\n  list-style: none;\n  padding: 0 15px;\n}\nbutton[data-v-59cc4a25] {\n  margin: 15px 0;\n}\nimg[data-v-59cc4a25] {\n  width: 27%;\n  height: 52%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".apartment-box[data-v-59cc4a25] {\n  font-family: \"Montserrat\", sans-serif, Arial, sans-serif;\n  font-size: 16px;\n  line-height: 1.71429;\n  font-weight: 400;\n  letter-spacing: normal;\n}\n.main-box[data-v-59cc4a25] {\n  display: flex;\n  width: 100%;\n  height: 400px;\n  border-radius: 30px;\n  overflow: hidden;\n}\n.main-box-left[data-v-59cc4a25] {\n  width: 50%;\n  height: 100%;\n  background-color: blue;\n}\n.main-box-left img[data-v-59cc4a25] {\n  height: 100%;\n}\n.main-box-right[data-v-59cc4a25] {\n  width: 50%;\n  height: 100%;\n  background-color: blue;\n  background-image: url(\"https://lh3.googleusercontent.com/proxy/hKuhG_ipMzNTOluMhdno-8T4Bz0bwhWLQ0ps4I-I0d3v0yEJquvIhAgWSnrSnNk2d4SKf8DBAo4yCkwG2XRosD4wUU_cDZIIr1vb82Qq-EwmInKBxQT0hoVO\");\n}\n.main-box-left[data-v-59cc4a25], .main-box-right[data-v-59cc4a25] {\n  display: inline-block;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.main-box-left img[data-v-59cc4a25], .main-box-right img[data-v-59cc4a25] {\n  width: 100%;\n}\n.apartment-top[data-v-59cc4a25],\n.apartment-properties[data-v-59cc4a25],\n.apartment-description[data-v-59cc4a25],\n.apartment-services[data-v-59cc4a25],\n.apartment-booking[data-v-59cc4a25] {\n  padding: 15px 0;\n}\n.apartment-top i[data-v-59cc4a25] {\n  padding-right: 5px;\n}\n.apartment-properties[data-v-59cc4a25] {\n  border-bottom: 1px solid lightgrey;\n}\n.apartment-properties .apartment-description[data-v-59cc4a25] {\n  font-style: italic;\n}\n.apartment-properties ul[data-v-59cc4a25] {\n  list-style: none;\n  display: inline-block;\n  padding: 0px;\n  padding-right: 30px;\n  margin-bottom: 0px;\n}\n.apartment-properties li[data-v-59cc4a25] {\n  display: inline-block;\n  cursor: pointer;\n  margin-right: 5px;\n}\n.apartment-description[data-v-59cc4a25] {\n  border-bottom: 1px solid lightgrey;\n}\n.apartment-services[data-v-59cc4a25] {\n  border-bottom: 1px solid lightgrey;\n}\n.apartment-services ul[data-v-59cc4a25] {\n  list-style: none;\n  padding: 0 15px;\n}\nbutton[data-v-59cc4a25] {\n  margin: 15px 0;\n}\nimg[data-v-59cc4a25] {\n  width: 27%;\n  height: 52%;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -38104,19 +38112,53 @@ var render = function() {
       _c("div", { staticClass: "description-container float-l" }, [
         _c("h3", [_vm._v("Indirizzo:")]),
         _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.apartments.address))]),
-        _c("br"),
+        _c("p", { staticClass: "apartment-address" }, [
+          _vm._v(_vm._s(_vm.apartments.address))
+        ]),
         _vm._v(" "),
         _c("h3", [_vm._v("Prezzo:")]),
         _vm._v(" "),
-        _c("p", [_vm._v("€" + _vm._s(_vm.apartments.price) + ",00")])
+        _c("p", { staticClass: "apartment-price" }, [
+          _vm._v("€" + _vm._s(_vm.apartments.price))
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("p", [
+          _c("span", { staticClass: "apartment-guests" }, [
+            _vm._v(_vm._s(_vm.apartments.max_guests) + " ospiti")
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "apartment-rooms" }, [
+            _vm._v(_vm._s(_vm.apartments.rooms) + " camere")
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "apartment-beds" }, [
+            _vm._v(_vm._s(_vm.apartments.beds) + " letti")
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "apartment-baths" }, [
+            _vm._v(_vm._s(_vm.apartments.baths) + " bagni")
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "apartment-mq" }, [
+            _vm._v(_vm._s(_vm.apartments.sq_meters) + "mq")
+          ])
+        ])
       ]),
       _vm._v(" "),
       _c("div")
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("i", { staticClass: "fas fa-home fa-lg" })])
+  }
+]
 render._withStripped = true
 
 

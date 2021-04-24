@@ -11,9 +11,17 @@
             </div>
             <div class="description-container float-l">
                 <h3>Indirizzo:</h3>
-                <p>{{apartments.address}}</p><br>
+                <p class="apartment-address">{{apartments.address}}</p>
                 <h3>Prezzo:</h3>
-                <p>€{{apartments.price}},00</p>
+                <p class="apartment-price">€{{apartments.price}}</p>
+                <h5><i class="fas fa-home fa-lg"></i></h5>
+                <p>
+                    <span class="apartment-guests">{{apartments.max_guests}} ospiti</span>
+                    <span class="apartment-rooms">{{apartments.rooms}} camere</span>
+                    <span class="apartment-beds">{{apartments.beds}} letti</span>
+                    <span class="apartment-baths">{{apartments.baths}} bagni</span>
+                    <span class="apartment-mq">{{apartments.sq_meters}}mq</span>
+                </p>
             </div>
 
 
@@ -79,7 +87,7 @@ export default {
             margin-bottom: 16px;
         }
         .description-container{
-            font-size: 10px;
+            // font-size: 10px;
             width:50%;
             margin:15px;
             vertical-align: middle;
@@ -91,6 +99,10 @@ export default {
                 // margin-left: 10px;
                 // margin-top:5px;
             }
+
+            .apartment-address,.apartment-price{
+                margin-bottom: 15px;
+            }
         }
 
 
@@ -100,15 +112,15 @@ export default {
 
 
 
-        > div > .apartment-beds{
-            font-size: 10px;
+        // > div > .apartment-beds{
+        //     font-size: 10px;
 
-        }
+        // }
 
-        > div > .apartment-rooms{
-            font-size: 10px;
+        // > div > .apartment-rooms{
+        //     font-size: 10px;
 
-        }
+        // }
     }
 
 </style>
