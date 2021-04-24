@@ -1,29 +1,71 @@
 
 // Personalizzazione navbar bootstrap
-.my-navbar{
-    background-color: $color_bg1;
 
-    .my-brand{
-        font-size: 22px;
-    }
-    a, .my-link{
-        color: $color_txt1;
-    }
-    .my-link {
-        display: block;
-        padding: 0rem 1rem;
+
+    .my-navbar{
+        background-color: rgba(22, 46, 68, 0.5);
+        vertical-align: middle;
+        height: 50px;
+
+        .change_color{
+            background-color: #162e44;
+        }
+
+        .position-relative{
+            position: relative;
+            width: 100px;
+            height: 30px;
+
+            .my-brand{
+                font-size: 26px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+
+                &:hover{
+                    text-decoration: none;
+                    font-size: 28px;
+                    color: $color_txt1;
+                }
+
+            }
+        }
+
+        a, .my-link{
+            text-decoration: none;
+
+        }
+
+        .my-link {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 0rem 0.9rem;
+            font-size: 16px;
+
+        &:hover{
+                font-size: 18px;
+                color: $color_txt2;
+            }
+        }
+
+        .my-username{
+            padding: 0px 5px;
+        }
+
+        .my-dropdown{
+            left: unset;
+            right: 0px;
+        }
+        // .my-bg-dark{
+        //     background-color: $color_bg2;
+
+        // }
     }
 
-    .my-username{
-        padding: 0px 5px;
-    }
+//
 
-    .my-dropdown{
-        left: unset;
-        right: 0px;
-    }
-    // .my-bg-dark{
-    //     background-color: $color_bg2;
 
-    // }
-}

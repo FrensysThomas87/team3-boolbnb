@@ -3,26 +3,54 @@
 @section('title', 'Index Apartment')
 
 @section('content')
-
-<h1>Sponsored</h1>
-    <div style="width: 1200px; display: flex; flex-wrap: wrap; margin: 0 auto;">
+<div class="container">
+    {{-- <h1>Sponsored</h1> --}}
+    <div class="container-card">
 
         @foreach ($apartments as $apartment)
-        <div class="card" style="width: 14rem; margin-bottom: 15px; margin-right: 15px;">
+        <div class="card">
             @if(!empty($apartment->profile_pic))
-                <img class="card-img-top" src="{{asset($apartment->profile_pic)}}" alt="Card image cap">
+
+                <img class="card-img-top image-size" src="{{asset($apartment->profile_pic)}}" alt="Card image cap">
+
             @else
-                <img src="{{asset('/images/placeholder/casadefault.jpg')}}" alt="Card image cap" style="height: 100px">
+                <img src="{{asset('/images/placeholder/casadefault.jpg')}}" alt="Card image cap">
             @endif
 
-            <div class="card-body">
-                <h1>{{$apartment->title}}</h1>
-                <h4>€{{$apartment->price}},00</h4>
-            </div>
+
+                <h1 class="color-text-dark text-right pr-3">{{$apartment->title}}</h1>
+                <h4 class="color-text-dark text-right pr-3">€{{$apartment->price}},00</h4>
+
         </div>
         @endforeach
 
     </div>
+
+    <div class="container-host mt-5 mb-5">
+
+        <div class="container-changeLife">
+          <div class="change-life">
+            <div class="text-title">
+              <h2 class="text-white">Diventa un HOST</h2>
+            </div>
+            <div class="line-text">
+              <div class="line">
+
+              </div>
+            </div>
+            <div class="text-subtitle">
+              <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis minus, provident sapiente voluptas qui dolore omnis autem exercitationem mollitia. Quam, nisi quidem. Perferendis modi voluptates nostrum expedita ad inventore sint?</p>
+            </div>
+          </div>
+          <div class="buttons-change-life">
+            <button type="button" class="btn my-btn-primary">Scopri di più</button>
+
+          </div>
+        </div>
+
+      </div>
+</div>
+
 
 
 
