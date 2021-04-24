@@ -3,13 +3,8 @@
 
 
     .my-navbar{
-        background-color: rgba(22, 46, 68, 0.5);
         vertical-align: middle;
         height: 50px;
-
-        .change_color{
-            background-color: #162e44;
-        }
 
         .position-relative{
             position: relative;
@@ -24,6 +19,7 @@
                 transform: translate(-50%,-50%);
 
                 &:hover{
+                    transition: 0.1s ease-in-out;
                     text-decoration: none;
                     font-size: 28px;
                     color: $color_txt1;

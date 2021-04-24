@@ -2120,7 +2120,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     apartmentId: '',
     formActive: false,
     noResults: false,
-    status: false
+    status: false,
+    scaleLogoHeader: false
   },
   methods: {
     getApartments: function getApartments() {
@@ -2186,7 +2187,19 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
       this.active = true;
     }
   },
-  mounted: function mounted() {}
+  mounted: function mounted() {
+    var _this = this;
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 1) {
+        _this.status = true;
+        _this.scaleLogoHeader = true;
+      } else {
+        _this.status = false;
+        _this.scaleLogoHeader = false;
+      }
+    });
+  }
 });
 
 /***/ }),

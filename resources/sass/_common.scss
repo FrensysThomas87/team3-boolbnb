@@ -47,3 +47,22 @@ p{
     color: grey;
     margin-bottom: 8px;
 }
+
+.bg-trnsprt {
+    background-color: rgba(22, 46, 68, 0.4);
+    transition: 0.3s linear;
+}
+.bg-blue {
+    background-color: #162e44;
+    transition: 0.3s linear;
+}
+
+.no-scale-logo {
+    transform: scale(1);
+    transition: 0.4s linear;
+}
+
+.scale-logo {
+    transform: scale(0.8);
+    transition: 0.4s linear;
+}

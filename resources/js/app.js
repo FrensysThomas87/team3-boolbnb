@@ -60,7 +60,7 @@ const app = new Vue({
         formActive:false,
         noResults:false,
         status: false,
-
+        scaleLogoHeader: false,
 
     },
     methods:{
@@ -142,9 +142,18 @@ const app = new Vue({
 
 
 
+
     },
     mounted() {
-
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 1) {
+              this.status = true;
+              this.scaleLogoHeader = true;
+            } else {
+              this.status = false;
+              this.scaleLogoHeader = false;
+            }
+        })
     }
 
 });

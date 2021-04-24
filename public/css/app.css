@@ -11080,6 +11080,26 @@ p {
   margin-bottom: 8px;
 }
 
+.bg-trnsprt {
+  background-color: rgba(22, 46, 68, 0.4);
+  transition: 0.3s linear;
+}
+
+.bg-blue {
+  background-color: #162e44;
+  transition: 0.3s linear;
+}
+
+.no-scale-logo {
+  transform: scale(1);
+  transition: 0.4s linear;
+}
+
+.scale-logo {
+  transform: scale(0.8);
+  transition: 0.4s linear;
+}
+
 .my-jumbotron-container {
   display: flex;
   justify-content: center;
@@ -11575,13 +11595,8 @@ p {
 }
 
 .my-navbar {
-  background-color: rgba(22, 46, 68, 0.5);
   vertical-align: middle;
   height: 50px;
-}
-
-.my-navbar .change_color {
-  background-color: #162e44;
 }
 
 .my-navbar .position-relative {
@@ -11599,6 +11614,7 @@ p {
 }
 
 .my-navbar .position-relative .my-brand:hover {
+  transition: 0.1s ease-in-out;
   text-decoration: none;
   font-size: 28px;
   color: #ffffff;
@@ -11652,11 +11668,12 @@ p {
   box-shadow: 5px 5px 10px 2px #ccc;
   cursor: pointer;
   overflow: hidden;
+  transition: transform 0.4s ease-in-out;
 }
 
-.container-card .card:hover img {
-  transition: all 0.5s ease-out 0s;
-  transform: scale(1);
+.container-card .card:hover {
+  transition: 0.5s ease-in-out;
+  transform: scale(1.06);
   overflow: hidden;
 }
 
