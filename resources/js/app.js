@@ -59,6 +59,7 @@ const app = new Vue({
         apartmentId:'',
         formActive:false,
         noResults:false,
+        status: false,
 
 
     },
@@ -143,7 +144,6 @@ const app = new Vue({
 
     },
     mounted() {
-
 
     }
 
