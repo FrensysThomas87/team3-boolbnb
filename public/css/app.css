@@ -11100,6 +11100,14 @@ p {
   transition: 0.4s linear;
 }
 
+.nav-link {
+  padding: 0.8rem 0.9rem;
+}
+
+.nav-link:hover {
+  background-color: #3490dc;
+}
+
 .my-jumbotron-container {
   display: flex;
   justify-content: center;
@@ -11609,8 +11617,9 @@ p {
   font-size: 26px;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 10%;
   transform: translate(-50%, -50%);
+  text-shadow: none;
 }
 
 .my-navbar .position-relative .my-brand:hover {
@@ -11618,6 +11627,22 @@ p {
   text-decoration: none;
   font-size: 28px;
   color: #ffffff;
+}
+
+.my-navbar .position-relative .my-brand .text-danger {
+  display: flex;
+  position: absolute;
+  left: 18px;
+  top: 4px;
+}
+
+.my-navbar .position-relative .my-brand .text-danger i {
+  color: #3490dc;
+}
+
+.my-navbar .position-relative .my-brand .lbnb {
+  position: absolute;
+  left: 57px;
 }
 
 .my-navbar a,
@@ -11629,15 +11654,16 @@ p {
   display: block;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 70%;
   transform: translate(-50%, -50%);
-  padding: 0rem 0.9rem;
+  padding: 0.7rem 0.9rem;
   font-size: 16px;
 }
 
 .my-navbar .my-link:hover {
   font-size: 18px;
   color: #162e44;
+  background-color: #4d82bb;
 }
 
 .my-navbar .my-username {

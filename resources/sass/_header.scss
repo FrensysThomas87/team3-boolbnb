@@ -15,8 +15,9 @@
                 font-size: 26px;
                 position: absolute;
                 top: 50%;
-                left: 50%;
+                left: 10%;
                 transform: translate(-50%,-50%);
+                text-shadow: none;
 
                 &:hover{
                     transition: 0.1s ease-in-out;
@@ -25,27 +26,44 @@
                     color: $color_txt1;
                 }
 
+                .text-danger {
+                    display: flex;
+                    position: absolute;
+                    left: 18px;
+                    top: 4px;
+
+                    i {
+                        color: #3490dc;
+                    }
+
+                }
+
+                  .lbnb {
+                    position: absolute;
+                    left: 57px;
+                }
+
             }
         }
 
         a, .my-link{
             text-decoration: none;
-
         }
 
         .my-link {
             display: block;
             position: absolute;
             top: 50%;
-            left: 50%;
+            left: 70%;
             transform: translate(-50%,-50%);
-            padding: 0rem 0.9rem;
+            padding: 0.7rem 0.9rem;
             font-size: 16px;
 
-        &:hover{
-                font-size: 18px;
-                color: $color_txt2;
-            }
+            &:hover{
+                    font-size: 18px;
+                    color: $color_txt2;
+                    background-color: $color_bg3;
+                }
         }
 
         .my-username{

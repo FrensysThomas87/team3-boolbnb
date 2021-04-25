@@ -45,7 +45,7 @@
             </div>
           </div>
           <div class="buttons-change-life">
-            <button type="button" class="btn my-btn-primary">Scopri di più</button>
+            <a type="button" class="btn my-btn-primary" href="{{ route('register') }}">Scopri di più</a>
 
           </div>
         </div>

@@ -16,7 +16,14 @@
             {{-- Navbar --}}
             <nav class="navbar navbar-expand-lg navbar-light my-navbar fixed-top" :class="status ? 'bg-blue':'bg-trnsprt'">
                 <div class="position-relative" :class="scaleLogoHeader ? 'scale-logo' : 'no-scale-logo'">
-                    <a href="{{route('index')}}" class="my-brand">BOOLBNB</a>
+                    <a href="{{route('index')}}" class="my-brand">
+                      <span>B</span>
+                      <span class="text-danger">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt"></i>
+                      </span>
+                      <span class="lbnb">LBNB</span>
+                    </a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -41,7 +48,7 @@
                         @if (!Auth::check())
                             <div>
                                 <a class="btn btn-primary align-items-end" href="/login">
-                                    Login
+                                    Accedi
                                     <i class="fas fa-sign-in-alt"></i>
 
                                 </a>
@@ -67,7 +74,7 @@
                                 <a class="dropdown-item text-primary" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('Esci') }}
                                     <i class="fas fa-sign-out-alt"></i>
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -98,8 +105,10 @@
                                 <div class="my-search">
                                     <div class="form-group my-search-form mt-5 mb-5 mr-2 ml-2">
 
-                                        <input class="form-control" v-on:keyup.enter="getApartments(), noResults = true" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="Inserisci indirizzo di ricerca" >
-                                        <a class="btn btn-primary" v-on:click="getApartments()">Cerca</a>
+                                        <input class="form-control" v-on:keyup.enter="getApartments(), noResults = true" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="La tua prossima destinazione">
+                                        <button type="submit" class="btn btn-search btn btn-primary" v-on:click="getApartments()">
+                                            Cerca
+                                        </button>
                                         <div v-if="apartments.length === 0 && noResults === true" class="no-results">La ricerca non ha prodotto risultati</div>
                                     </div>
                                 </div>
