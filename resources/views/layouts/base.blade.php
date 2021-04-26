@@ -68,8 +68,7 @@
                                 <span class="my-username"><i class="fas fa-user text-white"></i></span>
                             </a>
                             <div class="dropdown-menu my-dropdown" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item text-dark" href="#">Profilo</a>
-                                <a class="dropdown-item text-dark" href="{{route('dashboard')}}">I miei appartamenti</a>
+                                <a class="dropdown-item text-dark" href="{{route('dashboard')}}">I Miei Appartamenti</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-primary" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
@@ -186,7 +185,7 @@
 
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-              © 2021 Copyright:
+              © 2020 Copyright:
               <a class="text-white" href="https://mdbootstrap.com/">Team3 - IDRA</a>
             </div>
             <!-- Copyright -->
