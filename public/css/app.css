@@ -11175,7 +11175,10 @@ p {
   color: red;
   position: absolute;
   font-size: 20px;
-  top: 50%;
+  top: 30%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .main-search-container {
