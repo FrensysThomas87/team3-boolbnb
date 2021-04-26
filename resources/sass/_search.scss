@@ -6,19 +6,26 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    background-color: #eee;
+    background-color:#eee;
+
 
     .filter-content{
         background-color: #fff;
         margin-bottom: 20px;
         padding: 15px;
         border-radius: 10px;
+        width: 65%;
+        text-align: center;
 
         > form > input{
             border-radius: 10px;
             border: 1px solid black;
             margin: 15px;
+        }
 
+        .service-input{
+            width: 50%;
+            margin: 0 auto;
         }
 
         .km-range{
@@ -54,7 +61,10 @@
     color: red;
     position: absolute;
     font-size: 20px;
-    top: 50%;
+    top: 30%;
+    background-color: rgb(255, 255,255, 0.7);
+    border-radius: 10px;
+    padding: 10px;
 }
 
 

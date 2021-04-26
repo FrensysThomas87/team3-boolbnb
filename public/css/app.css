@@ -11161,12 +11161,19 @@ p {
   margin-bottom: 20px;
   padding: 15px;
   border-radius: 10px;
+  width: 65%;
+  text-align: center;
 }
 
 .filter-container .filter-content > form > input {
   border-radius: 10px;
   border: 1px solid black;
   margin: 15px;
+}
+
+.filter-container .filter-content .service-input {
+  width: 50%;
+  margin: 0 auto;
 }
 
 .filter-container .filter-content .km-range {
@@ -11196,7 +11203,10 @@ p {
   color: red;
   position: absolute;
   font-size: 20px;
-  top: 50%;
+  top: 30%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .main-search-container {
@@ -11731,6 +11741,105 @@ p {
   color: #fff;
   background-color: #162e44;
   border-color: #162e44;
+}
+
+.apartment-box {
+  font-family: "Montserrat", sans-serif, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.71429;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.main-box {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.main-box-left img {
+  height: 100%;
+}
+
+.main-box-right {
+  background-image: url("https://www.ilvestitoverde.com/wp-content/uploads/2020/04/Schermata-2020-04-18-alle-11.47.26-e1587203404913.png");
+}
+
+.main-box-left,
+.main-box-right {
+  background-color: lightgrey;
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.main-box-left img,
+.main-box-right img {
+  width: 100%;
+}
+
+.apartment-properties {
+  border-bottom: 1px solid lightgrey;
+}
+
+.apartment-properties ul {
+  list-style: none;
+  display: inline-block;
+  padding: 0px;
+  padding-right: 30px;
+  margin-bottom: 0px;
+}
+
+.apartment-properties li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.apartment-description {
+  border-bottom: 1px solid lightgrey;
+  font-style: italic;
+}
+
+.apartment-services {
+  border-bottom: 1px solid lightgrey;
+}
+
+.apartment-services ul {
+  list-style: none;
+  padding: 0 15px;
+}
+
+.apartment-messages .my-btn-msg {
+  margin: 30px 0;
+}
+
+.apartment-top,
+.apartment-properties,
+.apartment-description,
+.apartment-services,
+.apartment-booking,
+.apartment-messages {
+  padding: 15px 0;
+}
+
+.apartment-top i {
+  padding-right: 5px;
+}
+
+.main-content-show {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.msg-received {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 30px;
 }
 
 body {
