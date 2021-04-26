@@ -7,7 +7,7 @@
         @csrf
         @method('POST')
 
-        <input type="hidden" value="20" name="price">
+        <input type="hidden" value="" name="price">
       <!-- Putting the empty container you plan to pass to
         `braintree.dropin.create` inside a form will make layout and flow
         easier to manage -->

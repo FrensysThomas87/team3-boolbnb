@@ -2042,6 +2042,68 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'ShowComponent',
   props: {
@@ -2111,7 +2173,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     activeIndex: 0,
     apartmentId: '',
     formActive: false,
-    noResults: false
+    noResults: false,
+    flagSponsor: ''
   },
   methods: {
     getApartments: function getApartments() {
@@ -2175,6 +2238,18 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     },
     activeContent: function activeContent() {
       this.active = true;
+    },
+    bronzeSelect: function bronzeSelect() {
+      this.flagSponsor = 'bronze';
+    },
+    silverSelect: function silverSelect() {
+      this.flagSponsor = 'silver';
+    },
+    goldSelect: function goldSelect() {
+      this.flagSponsor = 'gold';
+    },
+    submitSponsor: function submitSponsor(sponsor) {
+      document.getElementById(sponsor).submit();
     }
   },
   mounted: function mounted() {}
@@ -38299,6 +38374,107 @@ var render = function() {
             _vm._v(" Check out: " + _vm._s(_vm.apartments.check_out))
           ])
         ])
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticStyle: { float: "right", "margin-right": "20px" } }, [
+        _c("li", [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              attrs: {
+                type: "button",
+                "data-toggle": "modal",
+                "data-target": "#modal-sponsor"
+              }
+            },
+            [_vm._v("\n                    Sponsorizza\n                ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "modal fade",
+              attrs: {
+                id: "modal-sponsor",
+                tabindex: "-1",
+                role: "dialog",
+                "aria-labelledby": "exampleModalLabel",
+                "aria-hidden": "true"
+              }
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "modal-dialog", attrs: { role: "document" } },
+                [
+                  _c("div", { staticClass: "modal-content" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "modal-body" }, [
+                      _vm._v(
+                        "\n                            Scegli uno Sponsor\n                            "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticStyle: {
+                          display: "flex",
+                          "justify-content": "center"
+                        }
+                      },
+                      [
+                        _c(
+                          "button",
+                          {
+                            on: {
+                              click: function($event) {
+                                return _vm.$emit("send-bronze")
+                              }
+                            }
+                          },
+                          [_vm._m(2)]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticStyle: {
+                              "margin-right": "15px",
+                              "margin-left": "15px"
+                            },
+                            on: {
+                              click: function($event) {
+                                return _vm.$emit("send-silver")
+                              }
+                            }
+                          },
+                          [_vm._m(3)]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            on: {
+                              click: function($event) {
+                                return _vm.$emit("send-gold")
+                              }
+                            }
+                          },
+                          [_vm._m(4)]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(5)
+                  ])
+                ]
+              )
+            ]
+          )
+        ])
       ])
     ]),
     _vm._v(" "),
@@ -38308,7 +38484,7 @@ var render = function() {
       _c("p", [_vm._v(_vm._s(_vm.apartments.description))])
     ]),
     _vm._v(" "),
-    _vm._m(1),
+    _vm._m(6),
     _vm._v(" "),
     _c("div", { staticClass: "apartment-booking" }, [
       _c("h2", [
@@ -38343,6 +38519,127 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [_c("i", { staticClass: "fas fa-home fa-2x" })])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
+        [_vm._v("Acquista Sponsor")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("form", { attrs: { action: "" } }, [
+      _c("h3", [_vm._v("BRONZE")]),
+      _vm._v(" "),
+      _c("h5", [_vm._v("Costo: 2,99€")]),
+      _vm._v(" "),
+      _c("h5", [_vm._v("Durata: 24H")]),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { id: "bronze", type: "hidden", value: "24", name: "time" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { id: "bronze", type: "hidden", value: "2.99", name: "price" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { id: "bronze", type: "hidden", value: "bronze", name: "title" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("form", { attrs: { id: "bronze", action: "" } }, [
+      _c("h3", [_vm._v("Silver")]),
+      _vm._v(" "),
+      _c("h5", [_vm._v("Costo: 5,99€")]),
+      _vm._v(" "),
+      _c("h5", [_vm._v("Durata: 72H")]),
+      _vm._v(" "),
+      _c("input", { attrs: { type: "hidden", value: "72", name: "time" } }),
+      _vm._v(" "),
+      _c("input", { attrs: { type: "hidden", value: "5.99", name: "price" } }),
+      _vm._v(" "),
+      _c("input", { attrs: { type: "hidden", value: "silver", name: "title" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("form", { attrs: { action: "" } }, [
+      _c("h3", [_vm._v("Gold")]),
+      _vm._v(" "),
+      _c("h5", [_vm._v("Costo: 9,99€")]),
+      _vm._v(" "),
+      _c("h5", [_vm._v("Durata: 144H")]),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { id: "bronze", type: "hidden", value: "144", name: "time" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { id: "bronze", type: "hidden", value: "9.99", name: "price" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { id: "bronze", type: "hidden", value: "Gold", name: "title" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-secondary",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      ),
+      _vm._v(" "),
+      _c(
+        "form",
+        { staticClass: "delete", attrs: { action: "", method: "POST" } },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-danger",
+              attrs: { type: "submit", value: "submit" }
+            },
+            [_vm._v("DELETE")]
+          )
+        ]
+      )
+    ])
   },
   function() {
     var _vm = this

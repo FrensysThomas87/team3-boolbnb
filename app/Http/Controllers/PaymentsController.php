@@ -8,6 +8,7 @@ use Braintree;
 class PaymentsController extends Controller
 {
     public function index(Request $request){
+
         return view('Payments.index');
     }
 

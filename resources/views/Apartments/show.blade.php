@@ -9,7 +9,11 @@
 @section('content')
     {{-- Show component --}}
     <div class="search-apartment-content" {{--v-if="active" --}}>
-        <show-component apartments="apartment"/>
+        <show-component apartments="apartment"
+        v-on:send-bronze="bronzeSelect()"
+        v-on:send-silver="silverSelect()"
+        v-on:send-gold="goldSelect()"
+        />
     </div>
     {{-- /Show component --}}
 

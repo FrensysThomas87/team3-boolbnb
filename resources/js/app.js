@@ -59,6 +59,7 @@ const app = new Vue({
         apartmentId:'',
         formActive:false,
         noResults:false,
+        flagSponsor:'',
 
 
     },
@@ -107,7 +108,7 @@ const app = new Vue({
                 apartment.services.forEach(service =>{
                     apartmentServices.push(service.service_name);
                 });
-                
+
                 //ciclo i servizi che ho selezionato nell'input e li confronto con il servizi all'interno dell'array popolato in precedenza
                 //per ogni servizio che trova riscontro il contatore aumenta di 1
                 this.selectedServices.forEach(selectedService => {
@@ -137,6 +138,23 @@ const app = new Vue({
         activeContent: function () {
             this.active = true;
         },
+
+        bronzeSelect: function () {
+            this.flagSponsor = 'bronze';
+        },
+
+        silverSelect: function () {
+            this.flagSponsor = 'silver';
+        },
+
+        goldSelect: function () {
+            this.flagSponsor = 'gold';
+        },
+
+        submitSponsor: function (sponsor) {
+            document.getElementById(sponsor).submit();
+        }
+
 
 
 
