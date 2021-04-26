@@ -41,8 +41,8 @@ const app = new Vue({
         apartments:[],
         searchAddress:"",
         rangeKm:'20',
-        beds:'1',
-        rooms:'1',
+        beds:'0',
+        rooms:'0',
         services:[
             'WiFi',
             'Animali Ammessi',
@@ -60,6 +60,8 @@ const app = new Vue({
         formActive:false,
         noResults:false,
         flagSponsor:'',
+        status: false,
+        scaleLogoHeader: false,
 
 
     },
@@ -162,6 +164,15 @@ const app = new Vue({
     },
     mounted() {
 
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 1) {
+              this.status = true;
+              this.scaleLogoHeader = true;
+            } else {
+              this.status = false;
+              this.scaleLogoHeader = false;
+            }
+        })
 
     }
 

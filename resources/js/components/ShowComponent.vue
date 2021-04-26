@@ -40,68 +40,7 @@
                     <li class="apartment-check-in"><span><i class="far fa-clock fa-lg"></i> Check in: {{apartments.check_in}}</span></li>
                     <li class="apartment-check-out"><span><i class="fas fa-clock fa-lg"></i> Check out: {{apartments.check_out}}</span></li>
                 </ul>
-                <ul style="float: right; margin-right:20px">
-                    <li>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-sponsor">
-                            Sponsorizza
-                        </button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="modal-sponsor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Acquista Sponsor</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    </div>
-                                    <div class="modal-body">
-                                    Scegli uno Sponsor
-                                    </div>
-                                    <div style="display:flex; justify-content:center">
-                                        <button v-on:click ="$emit('send-bronze')">
-                                            <form action="">
-                                                <h3>BRONZE</h3>
-                                                <h5>Costo: 2,99€</h5>
-                                                <h5>Durata: 24H</h5>
-                                                <input id="bronze" type="hidden" value="24" name="time">
-                                                <input id="bronze" type="hidden" value="2.99" name="price">
-                                                <input id="bronze" type="hidden" value="bronze" name="title">
-                                            </form>
-                                        </button>
-                                        <button v-on:click ="$emit('send-silver')" style="margin-right:15px; margin-left: 15px;">
-                                            <form id="bronze" action="">
-                                                <h3>Silver</h3>
-                                                <h5>Costo: 5,99€</h5>
-                                                <h5>Durata: 72H</h5>
-                                                <input type="hidden" value="72" name="time">
-                                                <input type="hidden" value="5.99" name="price">
-                                                <input type="hidden" value="silver" name="title">
-                                            </form>
-                                        </button>
-                                        <button v-on:click ="$emit('send-gold')">
-                                            <form action="">
-                                                <h3>Gold</h3>
-                                                <h5>Costo: 9,99€</h5>
-                                                <h5>Durata: 144H</h5>
-                                                <input id="bronze" type="hidden" value="144" name="time">
-                                                <input id="bronze" type="hidden" value="9.99" name="price">
-                                                <input id="bronze" type="hidden" value="Gold" name="title">
-                                            </form>
-                                        </button>
 
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <form class ="delete" action="" method="POST">
-                                            <button class="btn btn-danger" type="submit" value="submit">DELETE</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
             </div>
 
             <!-- Proprietario appartamento -->

@@ -14,7 +14,7 @@
     <div id="app">
         <header >
             {{-- Navbar --}}
-            <nav class="navbar navbar-expand-lg navbar-light my-navbar fixed-top" :class="status ? 'bg-blue':'bg-trnsprt'">
+            <nav class="navbar navbar-expand-lg navbar-light my-navbar fixed-top" :class="status ? 'bg-trnsprt':'bg-blue'">
                 <div class="position-relative" :class="scaleLogoHeader ? 'scale-logo' : 'no-scale-logo'">
                     <a href="{{route('index')}}" class="my-brand">
                       <span>B</span>
@@ -119,9 +119,9 @@
 
               {{-- /Jumbotron --}}
         </header>
-
-        @yield('content')
-
+            <div class="section-content">
+                @yield('content')
+            </div>
         <footer class="my-footer text-center text-white">
             <!-- Grid container -->
             <div class="container p-4 pb-0">
