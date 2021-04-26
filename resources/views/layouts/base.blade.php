@@ -105,11 +105,13 @@
                                 <div class="my-search">
                                     <div class="form-group my-search-form mt-5 mb-5 mr-2 ml-2">
 
-                                        <input class="form-control" v-on:keyup.enter="getApartments(), noResults = true" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="La tua prossima destinazione">
+                                        <input class="form-control" v-on:keyup.enter="getApartments(), noResultsTrue()" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="La tua prossima destinazione">
                                         <button type="submit" class="btn btn-search btn btn-primary" v-on:click="getApartments()">
                                             Cerca
                                         </button>
-                                        <div v-if="apartments.length === 0 && noResults === true" class="no-results">La ricerca non ha prodotto risultati</div>
+                                        <div v-if="apartments.length === 0 && noResults === true"
+                                        class="no-results">La ricerca non ha prodotto risultati!!</div>
+
                                     </div>
                                 </div>
                             @endif

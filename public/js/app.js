@@ -2205,6 +2205,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     },
     submitSponsor: function submitSponsor(sponsor) {
       document.getElementById(sponsor).submit();
+    },
+    noResultsTrue: function noResultsTrue() {
+      var self = this;
+      setTimeout(function () {
+        self.noResults = true;
+      }, 1000);
     }
   },
   mounted: function mounted() {

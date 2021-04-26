@@ -155,7 +155,16 @@ const app = new Vue({
 
         submitSponsor: function (sponsor) {
             document.getElementById(sponsor).submit();
+        },
+
+        noResultsTrue:function(){
+            let self = this;
+            setTimeout(function(){
+                self.noResults = true;
+
+            },1000)
         }
+
 
 
 
