@@ -119,9 +119,19 @@
 
               {{-- /Jumbotron --}}
         </header>
-            <div class="section-content">
-                @yield('content')
-            </div>
+
+            {{-- Utilizza stesse condizioni del jumbotron --}}
+            @if (Route::is('home') || Route::is('index')|| Route::is('search') )
+                <div class="section-content-jumbo">
+                    @yield('content')
+                </div>
+            @else
+                <div class="section-content">
+                    @yield('content')
+                </div>
+            @endif
+
+
         <footer class="my-footer text-center text-white">
             <!-- Grid container -->
             <div class="container p-4 pb-0">

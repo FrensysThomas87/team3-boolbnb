@@ -11029,8 +11029,13 @@ input:checked + .slider .off {
   border-radius: 50%;
 }
 
+.section-content-jumbo {
+  min-height: calc(100vh - 460px - 172px);
+}
+
 .section-content {
   margin-top: 50px;
+  min-height: calc(100vh - 50px - 172px);
 }
 
 h1 {
@@ -11216,7 +11221,7 @@ p {
 .main-search-container {
   width: 100%;
   display: flex;
-  min-height: 30px;
+  height: 100%;
   max-height: 800px;
 }
 
@@ -11229,7 +11234,6 @@ p {
 .main-search-container .search-content-right {
   background-color: #eee;
   border-top: 3px solid #212529;
-  max-height: 100%;
   overflow-y: auto;
 }
 

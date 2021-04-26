@@ -9,9 +9,16 @@
     // cursor: pointer;
 }
 
+// Section content with jumbo
+.section-content-jumbo{
+    // margin-top: 50px;
+    min-height: calc(100vh - 460px - 172px);  //Sottrai altezze (jumbotron, footer)
+}
 
+// Section content without jumbo
 .section-content{
     margin-top: 50px;
+    min-height:calc(100vh - 50px - 172px); //Sottrai altezze (navbar, footer)
 }
 
 h1{
