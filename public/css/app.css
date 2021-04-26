@@ -11031,11 +11031,17 @@ input:checked + .slider .off {
 
 .section-content-jumbo {
   min-height: calc(100vh - 460px - 172px);
+  background-color: #eff3f6;
 }
 
 .section-content {
-  margin-top: 50px;
-  min-height: calc(100vh - 50px - 172px);
+  margin-top: 53px;
+  min-height: calc(100vh - 53px - 172px);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fff;
 }
 
 h1 {
@@ -11162,7 +11168,6 @@ p {
   display: flex;
   justify-content: center;
   align-content: center;
-  background-color: #eee;
   margin-top: 30px;
   border-bottom: 1px solid #ccc;
 }
@@ -11174,6 +11179,8 @@ p {
   border-radius: 10px;
   width: 90%;
   text-align: center;
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 10px 2px #ccc;
 }
 
 .filter-container .filter-content > form > input {
@@ -11225,6 +11232,7 @@ p {
   display: flex;
   height: 100%;
   max-height: 800px;
+  border-top: 1px solid #ccc;
 }
 
 .main-search-container .search-content-left {
@@ -11234,7 +11242,7 @@ p {
 
 .main-search-container .search-content-left,
 .main-search-container .search-content-right {
-  background-color: #eee;
+  background-color: #fff;
   max-height: 100%;
   overflow-y: auto;
 }
@@ -11624,7 +11632,6 @@ p {
 
 .my-navbar {
   vertical-align: middle;
-  height: 50px;
 }
 
 .my-navbar .position-relative {
@@ -11854,7 +11861,7 @@ p {
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #eff3f6;
+  background-color: #fff;
 }
 
 
