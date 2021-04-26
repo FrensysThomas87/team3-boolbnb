@@ -11158,11 +11158,13 @@ p {
 }
 
 .filter-container {
-  padding-top: 20px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-content: center;
   background-color: #eee;
+  margin-top: 30px;
+  border-bottom: 1px solid #ccc;
 }
 
 .filter-container .filter-content {
@@ -11170,7 +11172,7 @@ p {
   margin-bottom: 20px;
   padding: 15px;
   border-radius: 10px;
-  width: 65%;
+  width: 90%;
   text-align: center;
 }
 
@@ -11227,13 +11229,13 @@ p {
 
 .main-search-container .search-content-left {
   width: 40%;
-  border-right: 3px solid #212529;
+  border-right: 1px solid #ccc;
 }
 
 .main-search-container .search-content-left,
 .main-search-container .search-content-right {
   background-color: #eee;
-  border-top: 3px solid #212529;
+  max-height: 100%;
   overflow-y: auto;
 }
 

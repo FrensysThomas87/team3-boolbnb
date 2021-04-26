@@ -53,8 +53,8 @@ export default {
             }
 
     .apartment-box{
-        border-bottom: 1px solid black;
-        padding: 15px;
+        border-bottom: 1px solid #ccc;
+        padding: 25px;
         height: 350px;
         cursor: pointer;
 
@@ -66,10 +66,13 @@ export default {
             width: 44%;
             height: 72%;
             margin: 15px 0;
-            transition:0.5s;
 
-              &:hover{
-                transform: translateY(-8px);
+
+              &:hover img{
+                transition: all .5s ease-out 0s;
+                transform: scale(1.1);
+
+                // overflow: hidden;
         }
 
 
@@ -77,6 +80,7 @@ export default {
                 width: 100%;
                 height: 100%;
                 border-radius: 5px;
+                box-shadow: 5px 5px 10px 2px #ccc;
 
             }
         }
@@ -91,6 +95,7 @@ export default {
             width:50%;
             margin:15px;
             vertical-align: middle;
+            padding:15px;
 
 
 
