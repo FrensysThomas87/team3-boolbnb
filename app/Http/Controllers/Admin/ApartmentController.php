@@ -150,12 +150,12 @@ class ApartmentController extends Controller
 
                     unset($data['service_name'][$key]);
                 };
-            };            
+            };
         };
-        
+
 
         $address = $request->address;
-        
+
         // dd($address);
         $response = Http::withOptions(['verify' => false])->get('https://api.tomtom.com/search/2/geocode/' . $address . '.json?limit=1&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr')->json();
         $lat = $response['results'][0]['position']['lat'];

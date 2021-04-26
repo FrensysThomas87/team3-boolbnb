@@ -1,3 +1,29 @@
+@php
+
+    use Carbon\Carbon;
+
+
+    date_default_timezone_set('Europe/Rome');
+    $current_date = Carbon::now();
+    $apartmentsSponsored=[];
+    $activeApartments=[];
+
+
+    foreach($apartments as $apartment){
+        if (count($apartment->sponsors) > 0) {
+            $apartmentsSponsored[] = $apartment;
+        }
+    }
+
+    foreach ($apartmentsSponsored as $key => $item) {
+        foreach ($item->sponsors as $sponsor) {
+            if ($sponsor->sponsor_expire > $current_date) {
+                $activeApartments[]=$item;
+            }
+        }
+    }
+@endphp
+
 @extends('layouts.base')
 
 @section('title', 'Index Apartment')
@@ -7,7 +33,7 @@
     {{-- <h1>Sponsored</h1> --}}
     <div class="container-card">
 
-        @foreach ($apartments as $apartment)
+        @foreach ($activeApartments as $apartment)
         <a href="{{route('public.apartments.show', ['apartment'=> $apartment->id])}}" style="text-decoration: none;">
             <div class="card">
                 @if(!empty($apartment->profile_pic))

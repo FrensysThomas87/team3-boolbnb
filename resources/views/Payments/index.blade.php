@@ -3,18 +3,24 @@
     <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
   </head>
   <body>
-    <form id="payment-form" action="{{route('payment.process')}}" method="post">
-        @csrf
-        @method('POST')
+      <div class="payment-container">
+        <form id="payment-form" action="{{route('payment.process')}}" method="post">
+            @csrf
+            @method('POST')
 
-        <input type="hidden" value="" name="price">
-      <!-- Putting the empty container you plan to pass to
-        `braintree.dropin.create` inside a form will make layout and flow
-        easier to manage -->
-      <div id="dropin-container"></div>
-      <input type="submit" />
-      <input type="hidden" id="nonce" name="payment_method_nonce"/>
-    </form>
+          <input type="hidden" value="{{$sponsor['price']}}" name="price">
+          <input type="hidden" value="{{$sponsor['time']}}" name="time">
+          <input type="hidden" value="{{$sponsor['title']}}" name="title">
+          <input type="hidden" value="{{$sponsor['apartment_id']}}" name="apartment_id">
+          <!-- Putting the empty container you plan to pass to
+            `braintree.dropin.create` inside a form will make layout and flow
+            easier to manage -->
+          <div id="dropin-container"></div>
+          <input type="submit" />
+          <input type="hidden" id="nonce" name="payment_method_nonce"/>
+        </form>
+      </div>
+
 
     <script type="text/javascript">
       const form = document.getElementById('payment-form');
