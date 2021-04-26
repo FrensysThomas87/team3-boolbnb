@@ -9,11 +9,13 @@
     <thead class="thead-dark">
 
       <tr>
-        <th scope="col">id</th>
-        <th scope="col">Title</th>
-        <th scope="col">Actions</th>
+        <th scope="col">Titolo</th>
+        <th scope="col">Dettagli</th>
             <th scope="col">
-                 <a class="btn btn-light" href="{{route('apartments.create')}}" role="button">ADD NEW ITEM</a>
+                 <a class="btn btn-light" href="{{route('apartments.create')}}" role="button">
+                    Nuovo Appartamento
+                    <i class="fas fa-plus"></i>
+                </a>
             </th>
       </tr>
     </thead>
@@ -21,12 +23,8 @@
         @foreach ($apartments as $apartment)
                 @if ($apartment->user_id === $user->id)
                 <tr>
-                    <th scope="row">{{$apartment->id}}</th>
                     <td>{{$apartment->title}}</td>
                     <td>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-{{$apartment->id}}">
-                            <i class="fas fa-bomb"></i>
-                        </button>
                         <a class="btn btn-primary" href="{{route('apartments.edit', ['apartment'=> $apartment->id])}}"><i class="fas fa-edit"></i></a>
                         <!-- Modal -->
                         <div class="modal fade" id="modal-{{$apartment->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -53,6 +51,9 @@
                             </div>
                         </div>
                         <a class="btn btn-success" href="{{route('apartments.show', ['apartment'=> $apartment->id])}}" role="button"><i class="fas fa-info-circle"></i></a>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-{{$apartment->id}}">
+                            <i class="fas fa-bomb"></i>
+                        </button>
                     </td>
                 </tr>
                 @endif
