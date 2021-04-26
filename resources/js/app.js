@@ -41,8 +41,8 @@ const app = new Vue({
         apartments:[],
         searchAddress:"",
         rangeKm:'20',
-        beds:'0',
-        rooms:'0',
+        beds:'1',
+        rooms:'1',
         services:[
             'WiFi',
             'Animali Ammessi',

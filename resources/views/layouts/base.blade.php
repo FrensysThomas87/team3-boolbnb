@@ -14,9 +14,16 @@
     <div id="app">
         <header >
             {{-- Navbar --}}
-            <nav class="navbar navbar-expand-lg  navbar-light my-navbar  fixed-top" :class="{change_color: scrollPosition > 50}" >
-                <div class="position-relative">
-                    <a href="#" class="my-brand">BOOLBNB</a>
+            <nav class="navbar navbar-expand-lg navbar-light my-navbar fixed-top" :class="status ? 'bg-blue':'bg-trnsprt'">
+                <div class="position-relative" :class="scaleLogoHeader ? 'scale-logo' : 'no-scale-logo'">
+                    <a href="{{route('index')}}" class="my-brand">
+                      <span>B</span>
+                      <span class="text-danger">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt"></i>
+                      </span>
+                      <span class="lbnb">LBNB</span>
+                    </a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -25,23 +32,33 @@
                   <ul class="navbar-nav mr-auto align-items-end">
                     <li class="nav-item active">
                         <div class="position-relative">
-                            <a class="my-link text-white" href="{{route('index')}}">Home <span class="sr-only">(current)</span></a>
+                            <a class="my-link text-white" href="{{route('index')}}">Home <span class="sr-only"></span></a>
                         </div>
 
                     </li>
                     <li>
                         <div class="position-relative">
-                            <a class="my-link text-white" href="{{route('search')}}">Search</a>
+                            <a class="my-link text-white" href="{{route('search')}}">Cerca</a>
                         </div>
 
                     </li>
                   </ul>
-                  @if (!Auth::check())
-                  <div class="align-items-end">
-                    <a class="btn btn-primary align-items-flex-end" href="/login">Login</a>
-                  </div>
+                  <ul class="navbar-nav align-items-end" style="padding: 0rem 0.9rem;">
+                      <li>
+                        @if (!Auth::check())
+                            <div>
+                                <a class="btn btn-primary align-items-end" href="/login">
+                                    Accedi
+                                    <i class="fas fa-sign-in-alt"></i>
 
-                  @else
+                                </a>
+                            </div>
+
+                        @else
+
+                      </li>
+                  </ul>
+
 
                     {{-- LOGIN --}}
                     <ul class="navbar-nav left align-items-end">
@@ -51,13 +68,14 @@
                                 <span class="my-username"><i class="fas fa-user text-white"></i></span>
                             </a>
                             <div class="dropdown-menu my-dropdown" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item text-dark" href="#">Profile</a>
-                                <a class="dropdown-item text-dark" href="{{route('dashboard')}}">My Appartments</a>
+                                <a class="dropdown-item text-dark" href="#">Profilo</a>
+                                <a class="dropdown-item text-dark" href="{{route('dashboard')}}">I miei appartamenti</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-primary" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('Esci') }}
+                                    <i class="fas fa-sign-out-alt"></i>
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
@@ -87,8 +105,10 @@
                                 <div class="my-search">
                                     <div class="form-group my-search-form mt-5 mb-5 mr-2 ml-2">
 
-                                        <input class="form-control" v-on:keyup.enter="getApartments(), noResults = true" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="Inserisci indirizzo di ricerca" >
-                                        <button class="btn btn-dark" v-on:click="getApartments()" {{-- type="submit" --}}>Search</button>
+                                        <input class="form-control" v-on:keyup.enter="getApartments(), noResults = true" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="La tua prossima destinazione">
+                                        <button type="submit" class="btn btn-search btn btn-primary" v-on:click="getApartments()">
+                                            Cerca
+                                        </button>
                                         <div v-if="apartments.length === 0 && noResults === true" class="no-results">La ricerca non ha prodotto risultati</div>
                                     </div>
                                 </div>
@@ -166,7 +186,7 @@
 
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-              © 2020 Copyright:
+              © 2021 Copyright:
               <a class="text-white" href="https://mdbootstrap.com/">Team3 - IDRA</a>
             </div>
             <!-- Copyright -->

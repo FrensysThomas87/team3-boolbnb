@@ -4,29 +4,34 @@
 
 @section('content')
 
+{{-- Advanced Search --}}
 <div class="filter-container">
     <div class="filter-content">
         <form action="">
-            <label for="rooms" >N° Rooms</label>
-            <input v-model="rooms" type="number" id="rooms" name="rooms">
-            <label for="beds">N°Letti</label>
-            <input v-model="beds" type="number"  id="beds" name="beds">
+            {{-- Input numerici --}}
+            <label for="rooms" >Stanze</label>
+            <input v-model="rooms" type="number" min="1" max="20" id="rooms" name="rooms">
+            <label for="beds">Letti</label>
+            <input v-model="beds" type="number" min="1" max="20"  id="beds" name="beds">
 
 
 
+            {{-- Servizi --}}
+            <v-select class="service-input" multiple v-model="selectedServices" :options="services" placeholder="Servizi"></v-select>
 
-            <v-select multiple v-model="selectedServices" :options="services"></v-select>
-            {{-- <div>
-                <search-component v-model="selectedServices" :services="services" />
-            </div> --}}
+            {{-- Slider km --}}
             <div class="km-range">
-                <label for="range-km" class="form-label">Km Distance</label>
-                <input v-model='rangeKm' v-on:change="getApartments" type="range" class="form-range" min="1" max="50" step="1" id="range-km">
-                <input type="text" :value="rangeKm" disabled>
+                <label for="range-km" class="form-label">Distanza(km) </label>
+                <span>0</span>
+                <input v-model='rangeKm' v-on:change="getApartments" type="range" class="form-range" min="1" max="50" step="1" id="range-km" >
+                </span>50</span>
+                <input class="cursor-distance" type="text" :value="rangeKm" disabled>
             </div>
+
         </form>
     </div>
 </div>
+{{-- /Advanced Search --}}
 <div class="main-search-container">
     <div class="search-content-left">
             <apartments-component

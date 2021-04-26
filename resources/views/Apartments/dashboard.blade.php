@@ -33,20 +33,20 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Cancellazione Appartamento</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                    SEI SICURO DI VOLER ELIMINARE IL PRODOTTO ?
+                                    Sei sicuro di voler cancellare questo appartamento?
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
                                         <form class ="delete" action="{{route('apartments.destroy', ['apartment'=> $apartment->id])}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-danger" type="submit" value="submit">DELETE</button>
+                                            <button class="btn btn-danger" type="submit" value="submit">Conferma</button>
                                         </form>
                                     </div>
                                 </div>
