@@ -7,8 +7,15 @@
         display:flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin: -75px auto 0 auto;
         border-radius: 10px;
+
+
+        .content-card{
+            position: relative;
+            bottom: 50px;
+        }
+
+
 
 
 

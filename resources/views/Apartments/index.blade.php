@@ -32,26 +32,26 @@
 <div class="container">
     {{-- <h1>Sponsored</h1> --}}
     <div class="container-card">
+        <div class="content-card">
+            @foreach ($activeApartments as $apartment)
+            <a href="{{route('public.apartments.show', ['apartment'=> $apartment->id])}}" style="text-decoration: none;">
+                <div class="card">
+                    @if(!empty($apartment->profile_pic))
 
-        @foreach ($activeApartments as $apartment)
-        <a href="{{route('public.apartments.show', ['apartment'=> $apartment->id])}}" style="text-decoration: none;">
-            <div class="card">
-                @if(!empty($apartment->profile_pic))
+                        <img class="card-img-top image-size" src="{{asset($apartment->profile_pic)}}" alt="Card image cap">
 
-                    <img class="card-img-top image-size" src="{{asset($apartment->profile_pic)}}" alt="Card image cap">
+                    @else
+                        <img src="{{asset('/images/placeholder/casadefault.jpg')}}" alt="Card image cap">
+                    @endif
 
-                @else
-                    <img src="{{asset('/images/placeholder/casadefault.jpg')}}" alt="Card image cap">
-                @endif
+                    <h1 class="color-text-dark text-left pr-3" style="margin-top: 10px; padding-left: 5px;">{{$apartment->title}}</h1>
+                    <h4 class="color-text-dark text-right pr-3">€{{$apartment->price}},00</h4>
 
-                <h1 class="color-text-dark text-left pr-3" style="margin-top: 10px; padding-left: 5px;">{{$apartment->title}}</h1>
-                <h4 class="color-text-dark text-right pr-3">€{{$apartment->price}},00</h4>
+                </div>
+            </a>
 
-            </div>
-        </a>
-
-        @endforeach
-
+            @endforeach
+        </div>
     </div>
 
     <div class="container-host mt-5 mb-5">
