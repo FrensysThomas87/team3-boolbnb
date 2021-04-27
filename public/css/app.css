@@ -11119,10 +11119,6 @@ p {
   padding: 0.8rem 0.9rem;
 }
 
-.nav-link:hover {
-  background-color: #3490dc;
-}
-
 .btn-boolbnb {
   background: linear-gradient(90deg, #0e8fb6 0%, #0e8fb6 50%, #020031 100%);
   color: #fff;
@@ -11164,6 +11160,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 15px;
 }
 
 .my-jumbotron-container .my-jumbotron .my-search {
@@ -11750,7 +11747,6 @@ p {
 .my-navbar .my-link:hover {
   font-size: 18px;
   color: #162e44;
-  background-color: #4d82bb;
 }
 
 .my-navbar .my-username {
