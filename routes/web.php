@@ -58,7 +58,7 @@ Route::prefix('admin')
 
 Route::get('/search', 'SearchController@index')->name('search');
 
-Route::get('/payment', 'PaymentsController@index')->name('payment');
+Route::post('/payment', 'PaymentsController@index')->name('payment');
 Route::post('/payment/process', 'PaymentsController@process')->name('payment.process');
 
 
