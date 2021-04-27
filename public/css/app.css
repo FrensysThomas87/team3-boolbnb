@@ -11029,8 +11029,19 @@ input:checked + .slider .off {
   border-radius: 50%;
 }
 
+.section-content-jumbo {
+  min-height: calc(100vh - 460px - 172px);
+  background-color: #eff3f6;
+}
+
 .section-content {
-  margin-top: 50px;
+  margin-top: 53px;
+  min-height: calc(100vh - 53px - 172px);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fff;
 }
 
 h1 {
@@ -11179,11 +11190,12 @@ p {
 }
 
 .filter-container {
-  padding-top: 20px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-content: center;
-  background-color: #eee;
+  margin-top: 30px;
+  border-bottom: 1px solid #ccc;
 }
 
 .filter-container .filter-content {
@@ -11191,8 +11203,10 @@ p {
   margin-bottom: 20px;
   padding: 15px;
   border-radius: 10px;
-  width: 65%;
+  width: 90%;
   text-align: center;
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 10px 2px #ccc;
 }
 
 .filter-container .filter-content > form > input {
@@ -11231,30 +11245,34 @@ p {
 
 .no-results {
   color: red;
-  position: absolute;
   font-size: 20px;
-  top: 30%;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   padding: 10px;
+  position: absolute;
+  top: 30%;
+}
+
+.invisible {
+  display: none;
 }
 
 .main-search-container {
   width: 100%;
   display: flex;
-  min-height: 30px;
+  height: 100%;
   max-height: 800px;
+  border-top: 1px solid #ccc;
 }
 
 .main-search-container .search-content-left {
   width: 40%;
-  border-right: 3px solid #212529;
+  border-right: 1px solid #ccc;
 }
 
 .main-search-container .search-content-left,
 .main-search-container .search-content-right {
-  background-color: #eee;
-  border-top: 3px solid #212529;
+  background-color: #fff;
   max-height: 100%;
   overflow-y: auto;
 }
@@ -11644,7 +11662,6 @@ p {
 
 .my-navbar {
   vertical-align: middle;
-  height: 50px;
 }
 
 .my-navbar .position-relative {
@@ -12064,5 +12081,4 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #eff3f6;
 }
-
 

@@ -9,9 +9,26 @@
     // cursor: pointer;
 }
 
+// Section content with jumbo
+.section-content-jumbo{
+    // margin-top: 50px;
+    min-height: calc(100vh - 460px - 172px);  //Sottrai altezze (jumbotron, footer)
+    background-color: #eff3f6;
 
+
+
+}
+
+// Section content without jumbo
 .section-content{
-    margin-top: 50px;
+    margin-top: 53px;
+    min-height:calc(100vh - 53px - 172px); //Sottrai altezze (navbar, footer)
+
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
 }
 
 h1{

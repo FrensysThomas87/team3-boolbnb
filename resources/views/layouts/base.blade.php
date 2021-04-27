@@ -25,7 +25,7 @@
                       <span class="lbnb">LBNB</span>
                     </a>
                 </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -104,11 +104,13 @@
                                 <div class="my-search">
                                     <div class="form-group my-search-form mt-5 mb-5 mr-2 ml-2">
 
-                                        <input class="form-control" v-on:keyup.enter="getApartments(), noResults = true" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="La tua prossima destinazione">
+                                        <input class="form-control" v-on:keyup.enter="getApartments(), noResultsTrue()" v-model="searchAddress" type="text" id="search" {{-- name="searchAddress" --}} placeholder="La tua prossima destinazione">
                                         <button type="submit" class="btn btn-search btn btn-primary" v-on:click="getApartments()">
                                             Cerca
                                         </button>
-                                        <div v-if="apartments.length === 0 && noResults === true" class="no-results">La ricerca non ha prodotto risultati</div>
+                                        <div v-if="apartments.length === 0 && noResults === true"
+                                        class="no-results">La ricerca non ha prodotto risultati!!</div>
+
                                     </div>
                                 </div>
                             @endif
@@ -118,9 +120,19 @@
 
               {{-- /Jumbotron --}}
         </header>
-            <div class="section-content">
-                @yield('content')
-            </div>
+
+            {{-- Utilizza stesse condizioni del jumbotron --}}
+            @if (Route::is('home') || Route::is('index')|| Route::is('search') )
+                <div class="section-content-jumbo">
+                    @yield('content')
+                </div>
+            @else
+                <div class="section-content">
+                    @yield('content')
+                </div>
+            @endif
+
+
         <footer class="my-footer text-center text-white">
             <!-- Grid container -->
             <div class="container p-4 pb-0">
