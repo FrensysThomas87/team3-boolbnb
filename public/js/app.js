@@ -2047,6 +2047,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'ShowComponent',
   props: {
@@ -38262,7 +38266,19 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "main-box-right" })
+      _c("div", { staticClass: "main-box-right" }, [
+        _c("img", {
+          staticClass: "map-search",
+          attrs: {
+            src:
+              "https://api.tomtom.com/map/1/staticimage?layer=basic&style=main&format=png&zoom=14&center=" +
+              _vm.apartments.longitude +
+              "%2C%20" +
+              _vm.apartments.latitude +
+              "&width=658&height=400&view=Unified&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr"
+          }
+        })
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "apartment-properties" }, [
