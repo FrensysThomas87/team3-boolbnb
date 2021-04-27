@@ -2126,7 +2126,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     noResults: false,
     flagSponsor: '',
     status: false,
-    scaleLogoHeader: false
+    scaleLogoHeader: false,
+    activeGold: false,
+    activeSilver: false,
+    activeBronze: false
   },
   methods: {
     getApartments: function getApartments() {
@@ -2217,6 +2220,21 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
     },
     submitSearch: function submitSearch(search) {
       document.getElementById(search).submit();
+    },
+    goldClassIn: function goldClassIn() {
+      this.activeSilver = false;
+      this.activeBronze = false;
+      this.activeGold = !this.activeGold;
+    },
+    silverClassIn: function silverClassIn() {
+      this.activeSilver = !this.activeSilver;
+      this.activeBronze = false;
+      this.activeGold = false;
+    },
+    bronzeClassIn: function bronzeClassIn() {
+      this.activeBronze = !this.activeBronze;
+      this.activeSilver = false;
+      this.activeGold = false;
     }
   },
   mounted: function mounted() {
@@ -38334,13 +38352,13 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "apartment-description" }, [
-      _c("h2", [_vm._v("Description")]),
+      _c("h2", [_vm._v("Descrizione")]),
       _vm._v(" "),
       _c("p", [_vm._v(_vm._s(_vm.apartments.description))])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "apartment-services" }, [
-      _c("h2", [_vm._v("Services")]),
+      _c("h2", [_vm._v("Servizi")]),
       _vm._v(" "),
       _c(
         "ul",

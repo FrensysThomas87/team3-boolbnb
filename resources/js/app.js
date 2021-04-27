@@ -63,6 +63,11 @@ const app = new Vue({
         flagSponsor:'',
         status: false,
         scaleLogoHeader: false,
+        activeGold: false,
+        activeSilver: false,
+        activeBronze: false,
+
+
 
 
     },
@@ -173,6 +178,28 @@ const app = new Vue({
 
         submitSearch: function (search) {
             document.getElementById(search).submit();
+        },
+
+        goldClassIn: function(){
+            this.activeSilver = false;
+            this.activeBronze = false;
+            this.activeGold = !this.activeGold;
+
+        },
+
+        silverClassIn: function(){
+            this.activeSilver = !this.activeSilver;
+            this.activeBronze = false;
+            this.activeGold = false;
+
+        },
+
+        bronzeClassIn: function(){
+            this.activeBronze = !this.activeBronze;
+            this.activeSilver = false;
+            this.activeGold = false;
+
+
         },
 
     },

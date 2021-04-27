@@ -101,7 +101,7 @@ foreach ($apartment->sponsors as $key => $sponsor) {
                                     <b>Seleziona uno Sponsor</b>
                                 </div>
                                 <div  class="sponsor-container "style="display:flex; justify-content:center">
-                                    <button class="sponsor-button" v-on:click="bronzeSelect">
+                                    <button v-bind:class="activeBronze?'sponsor-active':'sponsor-button'" v-on:click="bronzeSelect(), bronzeClassIn()">
                                         <form id="bronze" action="{{route('payment')}}" method="post">
                                             @csrf
                                             @method('POST')
@@ -115,7 +115,7 @@ foreach ($apartment->sponsors as $key => $sponsor) {
                                             <input type="hidden" value="{{$apartment->id}}" name="apartment_id">
                                         </form>
                                     </button>
-                                    <button class="sponsor-button" v-on:click ="silverSelect" style="margin-right:15px; margin-left: 15px;">
+                                    <button v-bind:class="activeSilver?'sponsor-active':'sponsor-button'" v-on:click ="silverSelect(), silverClassIn()" style="margin-right:15px; margin-left: 15px;">
                                         <form id="silver" action="{{route('payment')}}" method="post">
                                             @csrf
                                             @method('POST')
@@ -129,7 +129,7 @@ foreach ($apartment->sponsors as $key => $sponsor) {
                                             <input type="hidden" value="{{$apartment->id}}" name="apartment_id">
                                         </form>
                                     </button>
-                                    <button class="sponsor-button" v-on:click="goldSelect">
+                                    <button v-bind:class="activeGold?'sponsor-active':'sponsor-button'" v-on:click="goldSelect(),goldClassIn()">
                                         <form id="gold" action="{{route('payment')}}" method="post">
                                             @csrf
                                             @method('POST')
@@ -146,7 +146,7 @@ foreach ($apartment->sponsors as $key => $sponsor) {
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
                                     <form class ="delete" action="" method="POST">
                                         <button class="btn btn-success" type="button" href="{{route('payment')}}" v-on:click="submitSponsor(flagSponsor)">Vai al Pagamento</button>
                                     </form>

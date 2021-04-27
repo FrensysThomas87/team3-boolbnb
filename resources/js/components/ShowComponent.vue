@@ -57,7 +57,7 @@
 
             <!-- Descrizione appartamento -->
             <div class="apartment-description">
-                <h2>Description</h2>
+                <h2>Descrizione</h2>
                 <p>{{apartments.description}}</p>
             </div>
 
@@ -65,7 +65,7 @@
 
             <!-- Servizi appartamento -->
             <div class="apartment-services">
-                <h2>Services</h2>
+                <h2>Servizi</h2>
                 <ul>
                     <li v-for="service in apartments.services" :key="service">
                         <i class="far fa-dot-circle"></i>
