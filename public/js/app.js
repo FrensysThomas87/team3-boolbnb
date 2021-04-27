@@ -2210,7 +2210,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
       var self = this;
       setTimeout(function () {
         self.noResults = true;
-      }, 1000);
+      }, 1500);
     }
   },
   mounted: function mounted() {

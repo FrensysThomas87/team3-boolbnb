@@ -162,7 +162,8 @@ const app = new Vue({
             setTimeout(function(){
                 self.noResults = true;
 
-            },1000)
+
+            },1500)
         }
 
 
