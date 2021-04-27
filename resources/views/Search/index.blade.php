@@ -13,23 +13,30 @@
             <div class="filter-content">
                 <form action="">
                     {{-- Input numerici --}}
-                    <label for="rooms" >Stanze</label>
-                    <input v-model="rooms" type="number" min="1" max="20" id="rooms" name="rooms">
-                    <label for="beds">Letti</label>
-                    <input v-model="beds" type="number" min="1" max="20"  id="beds" name="beds">
-
-
-
+                    <div class="filter-properties">
+                        <div>
+                            <label for="rooms" >Stanze</label>
+                            <input v-model="rooms" type="number" min="1" max="20" id="rooms" name="rooms">
+                        </div>
+                        <div>
+                            <label for="beds">Letti</label>
+                            <input v-model="beds" type="number" min="1" max="20"  id="beds" name="beds">
+                        </div>
+                    </div>
+                    <hr>
                     {{-- Servizi --}}
                     <v-select class="service-input" multiple v-model="selectedServices" :options="services" placeholder="Servizi"></v-select>
 
                     {{-- Slider km --}}
+                    <hr>
+                    <div style="width: 100%">
+                        <label for="range-km" class="label-km">Distanza</label>
+                    </div>
                     <div class="km-range">
-                        <label for="range-km" class="form-label">Distanza(km) </label>
                         <span>0</span>
                         <input v-model='rangeKm' v-on:change="getApartments" type="range" class="form-range" min="1" max="50" step="1" id="range-km" >
                         </span>50</span>
-                        <input class="cursor-distance" type="text" :value="rangeKm" disabled>
+                        <input class="cursor-distance" type="text" :value="rangeKm + ' ' + 'km'" disabled>
                     </div>
 
                 </form>
@@ -44,7 +51,7 @@
             v-on:active-main="active = true"
             v-on:apartment-id="apartmentId = apartment.id"
             v-on:disactive-message="formActive = false"
-            />
+        />
     </div>
     <div class="search-content-right">
             {{-- Show appartamento --}}

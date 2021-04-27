@@ -2,35 +2,31 @@
 
         <div class="apartment-box" v-on:click="$emit('send-index'), $emit('active-main'), $emit('apartment-id'),$emit('disactive-message')">
 
-            <h2 class="apartment-title">{{apartments.title}}</h2>
+            <div class="content-container">
+                <div class="pic-container">
+                    <img v-if="apartments.profile_pic" :src="apartments.profile_pic" alt="">
+                    <img v-else src="/images/placeholder/casadefault.jpg" alt="">
+                    <div class="price">
+                        <span class="apartment-price">€ {{apartments.price}}</span>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <div>
+                        <h4 class="apartment-title">{{apartments.title}}</h4>
+                        <p class="apartment-address">{{apartments.address}}</p>
+                    </div>
 
-
-            <div class="pic-container float-l">
-                <img v-if="apartments.profile_pic" :src="apartments.profile_pic" alt="">
-                <img v-else src="/images/placeholder/casadefault.jpg" alt="">
-            </div>
-            <div class="description-container float-l">
-                <h3>Indirizzo:</h3>
-                <p class="apartment-address">{{apartments.address}}</p>
-                <h3>Prezzo:</h3>
-                <p class="apartment-price">€{{apartments.price}}</p>
-                <h5><i class="fas fa-home fa-lg"></i></h5>
-                <p>
-                    <span class="apartment-guests">{{apartments.max_guests}} ospiti</span>
-                    <span class="apartment-rooms">{{apartments.rooms}} camere</span>
-                    <span class="apartment-beds">{{apartments.beds}} letti</span>
-                    <span class="apartment-baths">{{apartments.baths}} bagni</span>
-                    <span class="apartment-mq">{{apartments.sq_meters}}mq</span>
-                </p>
-            </div>
-
-
-            <!-- <h3 class="apartment-address">{{apartments.address}}</h3> -->
-            <div>
-                <!-- <span class="apartment-rooms">Numero Camere: {{apartments.rooms}}</span>
-                <span class="apartment-beds">Numero Letti: {{apartments.beds}}</span> -->
-
-
+                    <!-- <div>
+                        <ul style="list-style:none; text-align:center;" >
+                            <li style=""><h5><i class="fas fa-home fa-lg"></i></h5></li>
+                            <li class="apartment-guests">{{apartments.max_guests}} ospiti</li>
+                            <li class="apartment-rooms">{{apartments.rooms}} camere</li>
+                            <li class="apartment-beds">{{apartments.beds}} letti</li>
+                            <li class="apartment-baths">{{apartments.baths}} bagni</li>
+                            <li class="apartment-mq">{{apartments.sq_meters}}mq</li>
+                        </ul>
+                    </div> -->
+                </div>
             </div>
         </div>
 </template>
@@ -48,33 +44,42 @@ export default {
 
 <style lang="scss" scoped>
 
-    .float-l{
-            float:left;
-            }
-
+    .content-container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
     .apartment-box{
-        border-bottom: 1px solid #ccc;
+
+        box-shadow: 0px 0px 10px 1px #ccc;
         padding: 25px;
-        height: 350px;
+        width: 90%;
         cursor: pointer;
+        border-radius: 15px;
+        margin-bottom: 15px;
 
-
-
+        &:hover{
+            transition: all .5s ease-out 0s;
+            transform: scale(1.02);
+        }
 
 
         .pic-container{
-            width: 44%;
+            width: 100%;
             height: 72%;
             margin: 15px 0;
+            position: relative;
 
-
-              &:hover img{
-                transition: all .5s ease-out 0s;
-                transform: scale(1.1);
-
-                // overflow: hidden;
-        }
-
+            .price{
+                position: absolute;
+                background: rgba($color: #fff, $alpha: 0.8);
+                border-radius: 5px;
+                padding: 5px;
+                right: 15px;
+                bottom: 10px;
+                min-width: 50px;
+                text-align: center;
+            }
 
             img{
                 width: 100%;
@@ -85,19 +90,8 @@ export default {
             }
         }
 
-
-
-        .apartment-title{
-            margin-bottom: 16px;
-        }
         .description-container{
-            // font-size: 10px;
-            width:50%;
-            margin:15px;
-            vertical-align: middle;
-            padding:15px;
-
-
+            width: 100%;
 
             p{
                 font-size:15px;
@@ -110,22 +104,6 @@ export default {
             }
         }
 
-
-
-
-
-
-
-
-        // > div > .apartment-beds{
-        //     font-size: 10px;
-
-        // }
-
-        // > div > .apartment-rooms{
-        //     font-size: 10px;
-
-        // }
     }
 
 </style>
