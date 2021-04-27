@@ -93,7 +93,7 @@
               {{-- Jumbotron --}}
               @if (Route::is('home') || Route::is('index')|| Route::is('search') )
                 <div class="my-jumbotron-container">
-                        <div class="my-jumbotron" style="background-image: url({{asset('../img_app/jumbo3.jpeg')}})">
+                        <div class="my-jumbotron" style="background-image: url({{asset('../img_app/jumbo.jpeg')}})">
 
                             @if (Route::is('index') || Route::is('public.apartments.index'))
                                 <div>
