@@ -44,7 +44,11 @@ foreach ($apartment->sponsors as $key => $sponsor) {
 
             <!-- Box right -->
             <div class="main-box-right">
-                <!-- Mappa - background img su CSS -->
+                <!-- Mappa -->
+                <img
+                    class="map-search"
+                    src = "https://api.tomtom.com/map/1/staticimage?layer=basic&style=main&format=png&zoom=14&center={{$apartment->longitude}}%2C%20{{$apartment->latitude}}&width=658&height=400&view=Unified&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr"
+                >
             </div>
         </div>
 
@@ -174,13 +178,6 @@ foreach ($apartment->sponsors as $key => $sponsor) {
         <!-- Servizi appartamento -->
         <div class="apartment-services">
             <h2>Services</h2>
-            {{-- <ul>
-                <li v-for="service in $apartment->services">
-                    <i class="far fa-dot-circle"></i>
-                    <span> {{service.service_name}}</span>
-                </li>
-
-            </ul> --}}
             <ul>
                 @foreach($apartment->services as $service)
                 <li>

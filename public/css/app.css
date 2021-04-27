@@ -11852,8 +11852,9 @@ p {
   height: 100%;
 }
 
-.main-box-right {
-  background-image: url("https://www.ilvestitoverde.com/wp-content/uploads/2020/04/Schermata-2020-04-18-alle-11.47.26-e1587203404913.png");
+.main-box-right .map-search {
+  width: 100%;
+  height: 100%;
 }
 
 .main-box-left,
@@ -11952,6 +11953,7 @@ p {
 .main-content-show {
   width: 70%;
   margin: 0 auto;
+  padding-top: 30px;
 }
 
 .msg-received {

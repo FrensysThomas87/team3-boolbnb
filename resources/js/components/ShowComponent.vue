@@ -20,7 +20,11 @@
 
                  <!-- Box right -->
                  <div class="main-box-right">
-                    <!-- Mappa - background img su CSS -->
+                    <!-- Mappa -->
+                    <img
+                        class="map-search"
+                        :src = "'https://api.tomtom.com/map/1/staticimage?layer=basic&style=main&format=png&zoom=14&center=' + apartments.longitude +'%2C%20' + apartments.latitude + '&width=658&height=400&view=Unified&key=cNjEbN63bx5Y0c7NfdNNKzoIkWdvYGsr'"
+                    >
                  </div>
              </div>
 
