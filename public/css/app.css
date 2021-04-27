@@ -11112,6 +11112,32 @@ p {
   background-color: #3490dc;
 }
 
+.btn-boolbnb {
+  background: linear-gradient(90deg, #0e8fb6 0%, #0e8fb6 50%, #020031 100%);
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.1s linear;
+}
+
+.btn-boolbnb.big {
+  padding: 15px 25px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.btn-boolbnb:hover {
+  opacity: 0.9;
+  color: #fff;
+}
+
+.off {
+  left: 65%;
+}
+
+.on {
+  left: 28%;
+}
+
 .my-jumbotron-container {
   display: flex;
   justify-content: center;
@@ -11844,6 +11870,175 @@ p {
   background-color: white;
   padding: 15px;
   margin-bottom: 30px;
+}
+
+#admin-dash .welcome {
+  font-size: 1.5em;
+}
+
+#admin-dash .big-btn-add-apt {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+@media all and (min-width: 768px) {
+  #admin-dash .big-btn-add-apt {
+    text-align: right;
+    margin-bottom: 0;
+  }
+}
+
+.user-apartments .ms_apartments-table {
+  padding: 3px;
+  border: 1px solid #dddde4;
+}
+
+.user-apartments table {
+  border-collapse: collapse;
+}
+
+.user-apartments table thead {
+  text-align: center;
+  background-color: #162e44;
+}
+
+.user-apartments table tbody {
+  text-align: center;
+}
+
+.user-apartments table tbody tr {
+  padding: 50px 0;
+  border-spacing: 10px;
+}
+
+.user-apartments table tbody tr:last-child {
+  border-bottom: 1px solid #dddde4;
+}
+
+.user-apartments table tbody .apartment-icons {
+  color: #ccc;
+  transition: color 0.5s ease-in-out;
+}
+
+.user-apartments table tbody th.ms_data {
+  font-size: 0.8em;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 400;
+}
+
+.user-apartments table tbody td {
+  vertical-align: middle;
+  border-right: 1px solid #dddde4;
+}
+
+.user-apartments table tbody td.apartment-title {
+  text-align: left;
+}
+
+.user-apartments table tbody td.apartment-title a {
+  color: #3490dc;
+}
+
+.user-apartments table tbody td .controls-btn {
+  font-size: 0.8em;
+  display: block;
+  padding: 2px 7px;
+  margin: 7px auto;
+  background-color: #fff;
+  border: 1px solid #dddde4;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.user-apartments table tbody td .controls-btn.normal:hover {
+  border: 1px solid #70e296;
+  background-color: #70e296;
+  color: #fff;
+  text-decoration: none;
+}
+
+.user-apartments table tbody td .controls-btn.delete:hover {
+  border: 1px solid #e3342f;
+  background-color: #e3342f;
+  color: #fff;
+  text-decoration: none;
+}
+
+.user-apartments table tbody td:last-child {
+  border-right: none;
+}
+
+.user-apartments table tbody .apartment-foto-block {
+  width: 15%;
+}
+
+.user-apartments table tbody .apartment-foto-block .apartment-foto {
+  overflow: hidden;
+  width: 100%;
+}
+
+.user-apartments table tbody .apartment-foto-block .apartment-foto img {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.user-apartments table tbody .apartment-foto-block:hover img {
+  transform: scale(1.05);
+}
+
+.edit-apartment-heading {
+  font-size: 1.8em;
+  color: #162e44;
+}
+
+.edit-apartment-title {
+  padding: 20px 0 30px;
+  letter-spacing: 1px;
+}
+
+.apartment-edit-container {
+  background-color: #fff;
+  box-shadow: 0px 0px 15px 1px #0000002b;
+  padding: 20px 20px 50px;
+  border-radius: 15px;
+}
+
+.apartment-edit-container .edit-this-apartment {
+  padding-right: 20px;
+  border-right: 1px solid #dddde4;
+  height: 100%;
+}
+
+.apartment-edit-container .edit-this-apartment .edit-apartment-foto {
+  width: 100%;
+}
+
+.apartment-edit-container .edit-this-apartment .edit-apartment-foto img {
+  width: 100%;
+  border-top-left-radius: 15px;
+}
+
+.apartment-edit-container .edit-this-apartment .edit-apartment-info .edit-apartment-row {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #eeeef9;
+}
+
+.apartment-edit-container .edit-this-apartment .edit-apartment-info .edit-apartment-row .edit-column {
+  padding: 10px 0;
+  flex-basis: 50%;
+  font-size: 0.9em;
+}
+
+.apartment-edit-container .edit-this-apartment .edit-apartment-info .edit-apartment-row .left {
+  text-align: left;
+}
+
+.apartment-edit-container .edit-this-apartment .edit-apartment-info .edit-apartment-row .right {
+  text-align: right;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .sponsor-container {

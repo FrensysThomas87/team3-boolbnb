@@ -1,0 +1,121 @@
+#admin-dash {
+    .welcome {
+      font-size: 1.5em;
+    }
+    .big-btn-add-apt {
+      text-align: left;
+      margin-bottom: 30px;
+
+      @media all and (min-width: 768px) {
+        text-align: right;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .user-apartments {
+    .ms_apartments-table {
+      padding: 3px;
+      border: 1px solid #dddde4;
+    }
+
+    table {
+      border-collapse: collapse;
+
+
+      thead {
+        text-align: center;
+        background-color: #162e44;
+
+      }
+
+      tbody {
+        text-align: center;
+
+        tr {
+          padding: 50px 0;
+          border-spacing: 10px;
+        }
+
+        tr:last-child {
+          border-bottom: 1px solid #dddde4;
+        }
+
+        .apartment-icons {
+            color: #ccc;
+            transition: color 0.5s ease-in-out;
+        }
+
+        th.ms_data {
+          font-size: 0.8em;
+          text-align: center;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+
+        td {
+          vertical-align: middle;
+          border-right: 1px solid #dddde4;
+
+          &.apartment-title {
+            text-align: left;
+
+            a {
+              color: #3490dc;
+            }
+
+          }
+
+          .controls-btn {
+            font-size: 0.8em;
+            display: block;
+            padding: 2px 7px;
+            margin: 7px auto;
+            background-color:  #fff;
+            border: 1px solid  #dddde4;
+            color: #333;
+            transition: all .3s ease-in-out;
+
+          }
+
+          .controls-btn.normal:hover {
+            border: 1px solid #70e296;
+            background-color: #70e296;
+            color: #fff;
+            text-decoration: none;
+          }
+
+          .controls-btn.delete:hover {
+            border: 1px solid #e3342f;
+            background-color: #e3342f;
+            color: #fff;
+            text-decoration: none;
+          }
+
+        }
+
+        td:last-child {
+          border-right: none;
+        }
+
+        .apartment-foto-block {
+          width: 15%;
+
+          .apartment-foto {
+            overflow: hidden;
+            width: 100%;
+
+            img {
+              width: 100%;
+              transition: transform .3s ease-in-out;
+            }
+
+          }
+        }
+
+        .apartment-foto-block:hover img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }

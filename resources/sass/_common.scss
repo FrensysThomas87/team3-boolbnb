@@ -90,3 +90,29 @@ p{
         background-color: #3490dc;
     }
 }
+
+.btn-boolbnb {
+    background: linear-gradient(90deg, rgb(14, 143, 182) 0%, rgb(14, 143, 182) 50%, rgb(2, 0, 49)100%);
+    color: #fff;
+    opacity: 1;
+    transition: opacity 0.1s linear;
+
+    &.big {
+      padding: 15px 25px;
+      text-transform: uppercase;
+      border-radius: 5px;
+    }
+  }
+
+.btn-boolbnb:hover {
+    opacity: 0.9;
+    color: #fff;
+}
+
+.off {
+    left: 65%;;
+}
+
+.on {
+    left: 28%;
+}
