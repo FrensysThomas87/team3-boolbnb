@@ -37,6 +37,8 @@ class PublicApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
+        $apartment->view_count += 1;
+        $apartment->save();
         return view('Apartments.show', compact('apartment'));
     }
 

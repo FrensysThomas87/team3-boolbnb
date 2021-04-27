@@ -63,7 +63,7 @@
             <div class="apartment-services">
                 <h2>Services</h2>
                 <ul>
-                    <li v-for="service in apartments.services">
+                    <li v-for="service in apartments.services" :key="service">
                         <i class="far fa-dot-circle"></i>
                         <span> {{service.service_name}}</span>
                     </li>
@@ -78,7 +78,7 @@
 
             <!-- Messaggi appartamento -->
             <div class="apartment-messages">
-                <button v-on:click="$emit('active-message')" type="button" class="my-btn-msg btn btn-primary">
+                <button v-on:click="$emit('active-message')"  type="button" class="my-btn-msg btn btn-primary">
                     <i class="far fa-comment"></i> INVIA MESSAGGIO</button>
             </div>
         </div>

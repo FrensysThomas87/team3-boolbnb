@@ -38,6 +38,14 @@ class SearchController extends Controller
 
         return response()->json($apartments);
     }
+
+    public function addView(Request $request){
+        $apartment = Apartment::find($request->id);
+        $apartment->view_count += 1 ;
+        $apartment->save();
+    }
 }
+
+
 
 

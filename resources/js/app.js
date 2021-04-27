@@ -5,6 +5,7 @@
  */
 
  import axios from 'axios'
+import { sortedLastIndexOf } from 'lodash';
  import Vue from 'vue'
  import vSelect from "vue-select"
  window.Vue = Vue;
@@ -70,9 +71,22 @@ const app = new Vue({
         getApartments: function(){
             const self = this;
             self.apartments=[];
+            self.active = false;
             axios.get('http://127.0.0.1:8000/api/get-apartments?address='+ self.searchAddress +'&range='+ self.rangeKm)
             .then(function(response) {
             self.apartments = response.data;
+
+            if(self.apartments.length < 1){
+                self.noResults = true;
+            }else{
+                self.noResults= false;
+            }
+            })
+        },
+
+        addView:function(idApartment){
+            axios.post('http://127.0.0.1:8000/api/add-view', {
+                id: idApartment
             })
         },
 
@@ -157,19 +171,9 @@ const app = new Vue({
             document.getElementById(sponsor).submit();
         },
 
-        noResultsTrue:function(){
-            let self = this;
-            setTimeout(function(){
-                self.noResults = true;
-
-
-            },1500)
-        }
-
-
-
-
-
+        submitSearch: function (search) {
+            document.getElementById(search).submit();
+        },
 
     },
     mounted() {

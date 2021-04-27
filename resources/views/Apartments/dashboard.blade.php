@@ -1,3 +1,7 @@
+@php
+use Carbon\Carbon;
+date_default_timezone_set('Europe/Rome');
+@endphp
 @extends('layouts.base')
 
 @section('title','Dashboard')
@@ -9,7 +13,7 @@
             <div class="row">
                 <div class="col-md-8">
                   <p class="welcome"><span>Ciao</span> {{$user->name}},</p>
-                  <h1 style="color: #162e44;">Benvenuto nella tua area riservata</h1>
+                  <h1 style="color: #162e44;">Benvenuto nella tua Dashboard</h1>
                 </div>
                 <div class="col-md-4 big-btn-add-apt" style="vertical-align: middle;">
                     <a href="{{route('apartments.create')}}" class="btn btn-boolbnb big">aggiungi un appartamento&nbsp; <i class="fas fa-plus"></i></a>
@@ -25,7 +29,10 @@
                           <th scope="col" style="color: #fff;">Data</th>
                           <th scope="col" style="color: #fff;">Foto</th>
                           <th scope="col" style="color: #fff;">Titolo</th>
+                          <th scope="col" style="color: #fff;">Views</th>
+                          <th scope="col" style="color: #fff;">Messaggi Ricevuti</th>
                           <th scope="col" style="color: #fff;">Opzioni</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -58,6 +65,12 @@
                               {{-- Titolo Appartamento --}}
                               <td class="apartment-title">
                                 <a href="{{route('apartments.show', ['apartment'=> $apartment->id])}}">{{$apartment->title}}</a>
+                              </td>
+                              <td class="apartment-views">
+                                <i class="fas fa-eye"></i><span style="margin-left: 15px">{{$apartment->view_count}}</span>
+                              </td>
+                              <td>
+                                <i class="fas fa-inbox"></i><span style="margin-left: 15px">{{count($apartment->messages)}}</span>
                               </td>
                               {{-- Opzioni --}}
                               <td>

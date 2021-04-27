@@ -31,6 +31,7 @@ class ApartmentController extends Controller
      */
     public function create()
     {
+
         $services = Service::all();
         return view('Apartments.create', compact('services'));
     }
@@ -43,7 +44,7 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-
+        date_default_timezone_set('Europe/Rome');
         $auth = Auth::id();
         $data = $request->all();
 
@@ -118,6 +119,8 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
+
+        date_default_timezone_set('Europe/Rome');
         //si fa una query alla tabella apartment con la relazione servizi
         // si chiede l'appartamento comprensivo di servizi corrispondente all'id dell'appartmento che si sta modificando
         $apartmentServices = Apartment::with('services')

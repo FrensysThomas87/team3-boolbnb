@@ -1872,12 +1872,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'ApartmentsComponent',
   props: {
@@ -2072,9 +2066,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -2083,7 +2079,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-window.Vue = vue__WEBPACK_IMPORTED_MODULE_2__.default;
+
+window.Vue = vue__WEBPACK_IMPORTED_MODULE_3__.default;
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 /**
@@ -2097,18 +2094,18 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 
-vue__WEBPACK_IMPORTED_MODULE_2__.default.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_2__.default.component('search-component', __webpack_require__(/*! ./components/SearchComponent.vue */ "./resources/js/components/SearchComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_2__.default.component('apartments-component', __webpack_require__(/*! ./components/ApartmentsComponent.vue */ "./resources/js/components/ApartmentsComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_2__.default.component('show-component', __webpack_require__(/*! ./components/ShowComponent.vue */ "./resources/js/components/ShowComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_2__.default.component('v-select', (vue_select__WEBPACK_IMPORTED_MODULE_1___default()));
+vue__WEBPACK_IMPORTED_MODULE_3__.default.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_3__.default.component('search-component', __webpack_require__(/*! ./components/SearchComponent.vue */ "./resources/js/components/SearchComponent.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_3__.default.component('apartments-component', __webpack_require__(/*! ./components/ApartmentsComponent.vue */ "./resources/js/components/ApartmentsComponent.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_3__.default.component('show-component', __webpack_require__(/*! ./components/ShowComponent.vue */ "./resources/js/components/ShowComponent.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_3__.default.component('v-select', (vue_select__WEBPACK_IMPORTED_MODULE_2___default()));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
+var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
   el: '#app',
   data: {
     apartments: [],
@@ -2131,8 +2128,20 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     getApartments: function getApartments() {
       var self = this;
       self.apartments = [];
+      self.active = false;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/get-apartments?address=' + self.searchAddress + '&range=' + self.rangeKm).then(function (response) {
         self.apartments = response.data;
+
+        if (self.apartments.length < 1) {
+          self.noResults = true;
+        } else {
+          self.noResults = false;
+        }
+      });
+    },
+    addView: function addView(idApartment) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post('http://127.0.0.1:8000/api/add-view', {
+        id: idApartment
       });
     },
     getApartmentIndex: function getApartmentIndex(index) {
@@ -2202,11 +2211,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     submitSponsor: function submitSponsor(sponsor) {
       document.getElementById(sponsor).submit();
     },
-    noResultsTrue: function noResultsTrue() {
-      var self = this;
-      setTimeout(function () {
-        self.noResults = true;
-      }, 1500);
+    submitSearch: function submitSearch(search) {
+      document.getElementById(search).submit();
     }
   },
   mounted: function mounted() {
@@ -38085,7 +38091,8 @@ var render = function() {
           _vm.$emit("send-index"),
             _vm.$emit("active-main"),
             _vm.$emit("apartment-id"),
-            _vm.$emit("disactive-message")
+            _vm.$emit("disactive-message"),
+            _vm.$emit("add-view")
         }
       }
     },
@@ -38322,7 +38329,7 @@ var render = function() {
       _c(
         "ul",
         _vm._l(_vm.apartments.services, function(service) {
-          return _c("li", [
+          return _c("li", { key: service }, [
             _c("i", { staticClass: "far fa-dot-circle" }),
             _vm._v(" "),
             _c("span", [_vm._v(" " + _vm._s(service.service_name))])

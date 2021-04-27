@@ -100,17 +100,23 @@
 
                                 </div>
                             @endif
-                            @if(Route::is('search') || Route::is('index') )
+                            @if (Route::is('index'))
+                            <div class="my-search">
+                                <div class="form-group my-search-form mt-5 mb-5 mr-2 ml-2">
+                                    <input class=""v-model="searchAddress" type="text" id="search" placeholder="La tua prossima destinazione">
+                                    <a type="button" href="{{route('search')}}" class="btn btn-search btn btn-primary">
+                                        Cerca
+                                    </a>
+                                </div>
+                            </div>
+                            @endif
+                            @if(Route::is('search'))
                                 <div class="my-search">
                                     <div class="form-group my-search-form mt-5 mb-5 mr-2 ml-2">
-
-                                        <input class="" v-on:keyup.enter="getApartments(), noResultsTrue()" v-model="searchAddress" type="text" id="search" placeholder="La tua prossima destinazione">
-                                        <button type="submit" class="btn btn-search btn btn-primary" v-on:click="getApartments()">
+                                        <input class="" v-on:keyup.enter="getApartments()" v-model="searchAddress" type="text" id="search" placeholder="La tua prossima destinazione">
+                                        <button type="button" href="{{route('search')}}" class="btn btn-search btn btn-primary" v-on:click="getApartments()">
                                             Cerca
                                         </button>
-                                        <div v-if="apartments.length === 0 && noResults === true"
-                                        class="no-results">La ricerca non ha prodotto risultati!!</div>
-
                                     </div>
                                 </div>
                             @endif

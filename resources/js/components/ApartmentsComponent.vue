@@ -1,7 +1,12 @@
 <template>
 
-        <div class="apartment-box" v-on:click="$emit('send-index'), $emit('active-main'), $emit('apartment-id'),$emit('disactive-message')">
-
+        <div class="apartment-box"
+            v-on:click="$emit('send-index'),
+                        $emit('active-main'),
+                        $emit('apartment-id'),
+                        $emit('disactive-message'),
+                        $emit('add-view')
+                        ">
             <div class="content-container">
                 <div class="pic-container">
                     <img v-if="apartments.profile_pic" :src="apartments.profile_pic" alt="">
@@ -15,17 +20,6 @@
                         <h4 class="apartment-title">{{apartments.title}}</h4>
                         <p class="apartment-address">{{apartments.address}}</p>
                     </div>
-
-                    <!-- <div>
-                        <ul style="list-style:none; text-align:center;" >
-                            <li style=""><h5><i class="fas fa-home fa-lg"></i></h5></li>
-                            <li class="apartment-guests">{{apartments.max_guests}} ospiti</li>
-                            <li class="apartment-rooms">{{apartments.rooms}} camere</li>
-                            <li class="apartment-beds">{{apartments.beds}} letti</li>
-                            <li class="apartment-baths">{{apartments.baths}} bagni</li>
-                            <li class="apartment-mq">{{apartments.sq_meters}}mq</li>
-                        </ul>
-                    </div> -->
                 </div>
             </div>
         </div>
