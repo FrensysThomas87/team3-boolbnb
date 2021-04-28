@@ -101,13 +101,8 @@
                                 </div>
                             @endif
                             @if (Route::is('index'))
-                            <div class="my-search">
-                                <div class="form-group my-search-form mt-5 mb-5 mr-2 ml-2">
-                                    <input class=""v-model="searchAddress" type="text" id="search" placeholder="La tua prossima destinazione">
-                                    <a type="button" href="{{route('search')}}" class="btn btn-search btn btn-primary">
-                                        Cerca
-                                    </a>
-                                </div>
+                            <div class="search-button">
+                                <a  class="search-redirect" href="{{route('search')}}"><b>Cerca Appartamento</b> <i class="fas fa-search"></i></a>
                             </div>
                             @endif
                             @if(Route::is('search'))

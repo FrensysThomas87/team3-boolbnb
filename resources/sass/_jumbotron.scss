@@ -17,6 +17,34 @@
         justify-content: center;
         padding: 0 15px;
 
+        .search-button{
+            transition: transform 0.4s ease-in-out;
+
+            .search-redirect{
+                width: 200px;
+                font-size: 20px;
+                border-radius: 25px;
+                background-color:rgba($color: #162e44, $alpha: 0.9);
+                padding: 15px;
+                letter-spacing: 5px;
+                color: white;
+
+            }
+            .search-redirect:hover{
+                text-decoration:none ;
+                background-color:rgba($color: #162e44, $alpha: 0.7);
+
+            }
+
+
+
+        }
+
+        .search-button:hover{
+            transition: 0.5s ease-in-out;
+            transform: scale(1.05);
+        }
+
         .my-search{
             height: 60px;
             background-color: rgb(255, 255,255, 0.8);

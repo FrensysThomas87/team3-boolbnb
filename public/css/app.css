@@ -11163,6 +11163,30 @@ p {
   padding: 0 15px;
 }
 
+.my-jumbotron-container .my-jumbotron .search-button {
+  transition: transform 0.4s ease-in-out;
+}
+
+.my-jumbotron-container .my-jumbotron .search-button .search-redirect {
+  width: 200px;
+  font-size: 20px;
+  border-radius: 25px;
+  background-color: rgba(22, 46, 68, 0.9);
+  padding: 15px;
+  letter-spacing: 5px;
+  color: white;
+}
+
+.my-jumbotron-container .my-jumbotron .search-button .search-redirect:hover {
+  text-decoration: none;
+  background-color: rgba(22, 46, 68, 0.7);
+}
+
+.my-jumbotron-container .my-jumbotron .search-button:hover {
+  transition: 0.5s ease-in-out;
+  transform: scale(1.05);
+}
+
 .my-jumbotron-container .my-jumbotron .my-search {
   height: 60px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -11284,13 +11308,13 @@ p {
 .main-search-container {
   width: 100%;
   display: flex;
-  height: 100%;
-  max-height: 800px;
+  min-height: 100%;
   border-top: 1px solid #ccc;
 }
 
 .main-search-container .search-content-left {
   width: 25%;
+  height: 100%;
   border-right: 1px solid #ccc;
   display: flex;
   flex-direction: column;
@@ -11300,7 +11324,7 @@ p {
 .main-search-container .search-content-left,
 .main-search-container .search-content-right {
   background-color: #fff;
-  max-height: 100%;
+  min-height: 100%;
   overflow-y: auto;
 }
 
