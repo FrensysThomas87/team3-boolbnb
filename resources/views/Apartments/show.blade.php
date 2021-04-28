@@ -208,6 +208,7 @@ foreach ($apartment->sponsors as $key => $sponsor) {
         <div class="msg-received rounded">
             <h3>Oggetto: {{$message->message_title}}</h3>
             <h5>Da: {{$message->message_email}}</h5>
+            <h5>Ricevuto il: {{date('d-m-Y H:i', strtotime($message->created_at))}}</h5>
             <hr>
             <p>{{$message->body_message}}</p>
         </div>

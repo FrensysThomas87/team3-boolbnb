@@ -156,7 +156,6 @@ class ApartmentController extends Controller
             };
         };
 
-
         $address = $request->address;
 
         // dd($address);
@@ -165,7 +164,10 @@ class ApartmentController extends Controller
         $lon = $response['results'][0]['position']['lon'];
 
         $this->validateForm($request);
-        $apartment->profile_pic = $path;
+        if(isset($data['profile_pic'])) {
+            $apartment->profile_pic = $path;
+        };
+
         $apartment->visible = $visible;
         $apartment->latitude = $lat;
         $apartment->longitude = $lon;

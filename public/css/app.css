@@ -11326,6 +11326,7 @@ p {
   background-color: #fff;
   min-height: 100%;
   overflow-y: auto;
+  max-height: 800px;
 }
 
 .main-search-container .search-content-right {
@@ -12006,6 +12007,12 @@ p {
   padding: 15px;
   transition: duration 0.4s;
   background-color: #ccc;
+}
+
+.payment-container {
+  width: 800px;
+  height: calc(100vh - 340px);
+  margin: 100px auto;
 }
 
 #admin-dash .welcome {

@@ -182,7 +182,7 @@ if (isset($edit) && !empty($edit)){
     {{-- Img upload --}}
     <div class="form-group">
         <label for="profile_pic">Inserisci Immagine</label>
-        <input class="form-control-file" type="file" name="profile_pic" value="" accept="image/*">
+        <input class="form-control-file" type="file" name="profile_pic" value="{{(isset($apartment)?$apartment->profile_pic:'')}}" >
     </div>
 
     {{-- Indirizzo --}}

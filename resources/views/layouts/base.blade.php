@@ -207,7 +207,7 @@
 
     {{-- Javascript --}}
     <script src="{{ asset('js/app.js') }}">
-        $(function () { $(document).scroll(function () { var $nav = $(".fixed-top"); $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height(50)); }); });
+        /* $(function () { $(document).scroll(function () { var $nav = $(".fixed-top"); $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height(50)); }); }); */
     </script>
 </body>
 </html>
