@@ -1872,6 +1872,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'ApartmentsComponent',
   props: {
@@ -2144,6 +2148,17 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
         } else {
           self.noResults = false;
         }
+
+        self.apartments.forEach(function (element) {
+          if (element.sponsors.length > 0) {
+            element.sponsored = true;
+          } else {
+            element.sponsored = false;
+          }
+        });
+        self.apartments.sort(function (a, b) {
+          return a.sponsored > b.sponsored ? -1 : 1;
+        });
       });
     },
     addView: function addView(idApartment) {
@@ -6756,7 +6771,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".content-container[data-v-bfbb633e] {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.apartment-box[data-v-bfbb633e] {\n  box-shadow: 0px 0px 10px 1px #ccc;\n  padding: 25px;\n  width: 90%;\n  cursor: pointer;\n  border-radius: 15px;\n  margin-bottom: 15px;\n}\n.apartment-box[data-v-bfbb633e]:hover {\n  transition: all 0.5s ease-out 0s;\n  transform: scale(1.02);\n}\n.apartment-box .pic-container[data-v-bfbb633e] {\n  width: 100%;\n  height: 72%;\n  margin: 15px 0;\n  position: relative;\n}\n.apartment-box .pic-container .price[data-v-bfbb633e] {\n  position: absolute;\n  background: rgba(255, 255, 255, 0.8);\n  border-radius: 5px;\n  padding: 5px;\n  right: 15px;\n  bottom: 10px;\n  min-width: 50px;\n  text-align: center;\n}\n.apartment-box .pic-container img[data-v-bfbb633e] {\n  width: 100%;\n  height: 100%;\n  border-radius: 5px;\n  box-shadow: 5px 5px 10px 2px #ccc;\n}\n.apartment-box .description-container[data-v-bfbb633e] {\n  width: 100%;\n}\n.apartment-box .description-container p[data-v-bfbb633e] {\n  font-size: 15px;\n}\n.apartment-box .description-container .apartment-address[data-v-bfbb633e], .apartment-box .description-container .apartment-price[data-v-bfbb633e] {\n  margin-bottom: 15px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".content-container[data-v-bfbb633e] {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.apartment-box[data-v-bfbb633e] {\n  box-shadow: 0px 0px 10px 1px #ccc;\n  padding: 25px;\n  width: 90%;\n  cursor: pointer;\n  border-radius: 15px;\n  margin-bottom: 15px;\n}\n.apartment-box[data-v-bfbb633e]:hover {\n  transition: all 0.5s ease-out 0s;\n  transform: scale(1.02);\n}\n.apartment-box .pic-container[data-v-bfbb633e] {\n  width: 100%;\n  height: 72%;\n  margin: 15px 0;\n  position: relative;\n}\n.apartment-box .pic-container .price[data-v-bfbb633e] {\n  position: absolute;\n  background: rgba(255, 255, 255, 0.8);\n  border-radius: 5px;\n  padding: 5px;\n  right: 15px;\n  bottom: 10px;\n  min-width: 50px;\n  text-align: center;\n}\n.apartment-box .pic-container img[data-v-bfbb633e] {\n  width: 100%;\n  height: 100%;\n  border-radius: 5px;\n  box-shadow: 5px 5px 10px 2px #ccc;\n}\n.apartment-box .pic-container .badge-sponsor[data-v-bfbb633e] {\n  position: absolute;\n  background: rgba(255, 255, 255, 0.8);\n  border-radius: 5px;\n  padding: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  bottom: 10px;\n  left: 15px;\n  font-size: 20px;\n}\n.apartment-box .description-container[data-v-bfbb633e] {\n  width: 100%;\n}\n.apartment-box .description-container p[data-v-bfbb633e] {\n  font-size: 15px;\n}\n.apartment-box .description-container .apartment-address[data-v-bfbb633e], .apartment-box .description-container .apartment-price[data-v-bfbb633e] {\n  margin-bottom: 15px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -38131,7 +38146,13 @@ var render = function() {
             _c("span", { staticClass: "apartment-price" }, [
               _vm._v("€ " + _vm._s(_vm.apartments.price))
             ])
-          ])
+          ]),
+          _vm._v(" "),
+          _vm.apartments.sponsored
+            ? _c("div", { staticClass: "badge-sponsor" }, [
+                _c("i", { staticClass: "fas fa-medal" })
+              ])
+            : _vm._e()
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "description-container" }, [
@@ -38362,8 +38383,8 @@ var render = function() {
       _vm._v(" "),
       _c(
         "ul",
-        _vm._l(_vm.apartments.services, function(service) {
-          return _c("li", { key: service }, [
+        _vm._l(_vm.apartments.services, function(service, key) {
+          return _c("li", { key: key }, [
             _c("i", { staticClass: "far fa-dot-circle" }),
             _vm._v(" "),
             _c("span", [_vm._v(" " + _vm._s(service.service_name))])

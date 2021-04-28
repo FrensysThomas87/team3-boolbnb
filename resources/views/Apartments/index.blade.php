@@ -34,14 +34,16 @@
     <div class="container-card">
         <div class="content-card">
             @foreach ($activeApartments as $apartment)
+            @if ($apartment->visible === 'true')
             <a href="{{route('public.apartments.show', ['apartment'=> $apartment->id])}}" style="text-decoration: none;">
                 <div class="card">
                     @if(!empty($apartment->profile_pic))
-
-                        <img class="card-img-top image-size" src="{{asset($apartment->profile_pic)}}" alt="Card image cap">
+                        <div class="img-container" style="background-image: url({{$apartment->profile_pic}})"></div>
+                        {{-- <img class="card-img-top image-size" src="{{asset($apartment->profile_pic)}}" alt="Card image cap"> --}}
 
                     @else
-                        <img src="{{asset('/images/placeholder/casadefault.jpg')}}" alt="Card image cap">
+                    <div class="img-container" style="background-image: url('/images/placeholder/casadefault.jpg')"></div>
+                    {{-- <img src="{{asset('/images/placeholder/casadefault.jpg')}}" alt="Card image cap"> --}}
                     @endif
 
                     <h1 class="color-text-dark text-left pr-3" style="margin-top: 10px; padding-left: 5px;">{{$apartment->title}}</h1>
@@ -49,7 +51,7 @@
 
                 </div>
             </a>
-
+            @endif
             @endforeach
         </div>
     </div>

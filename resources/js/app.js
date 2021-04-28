@@ -86,6 +86,14 @@ const app = new Vue({
             }else{
                 self.noResults= false;
             }
+            self.apartments.forEach(element => {
+                if (element.sponsors.length > 0) {
+                    element.sponsored = true;
+                }else{
+                    element.sponsored = false;
+                }
+            });
+            self.apartments.sort((a, b) =>(a.sponsored > b.sponsored) ? -1 : 1 );
             })
         },
 

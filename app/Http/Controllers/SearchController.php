@@ -29,7 +29,7 @@ class SearchController extends Controller
 
         //Creata query con le funzioni di eloquent
         //Richiamata la tabella Apartment con l'aggiunta dei servizi (with)
-        $apartments = Apartment::with('services')
+        $apartments = Apartment::with('services','sponsors')
         ->select(Apartment::raw('*, ( 6371 * acos( cos( radians('.$lat.') ) * cos( radians(apartments.latitude) )
         * cos( radians(apartments.longitude) - radians('.$lon.')) + sin(radians('.$lat.'))
         * sin( radians(apartments.latitude)))) AS distance'))

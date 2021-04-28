@@ -169,7 +169,7 @@ foreach ($apartment->sponsors as $key => $sponsor) {
 
         <!-- Descrizione appartamento -->
         <div class="apartment-description">
-            <h2>Description</h2>
+            <h2>Descrizione</h2>
             <p>{{$apartment->description}}</p>
         </div>
 
@@ -177,7 +177,7 @@ foreach ($apartment->sponsors as $key => $sponsor) {
 
         <!-- Servizi appartamento -->
         <div class="apartment-services">
-            <h2>Services</h2>
+            <h2>Servizi</h2>
             <ul>
                 @foreach($apartment->services as $service)
                 <li>

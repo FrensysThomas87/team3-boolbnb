@@ -14,12 +14,16 @@
                     <div class="price">
                         <span class="apartment-price">€ {{apartments.price}}</span>
                     </div>
+                    <div class="badge-sponsor" v-if="apartments.sponsored">
+                        <i class="fas fa-medal"></i>
+                    </div>
                 </div>
                 <div class="description-container">
                     <div>
                         <h4 class="apartment-title">{{apartments.title}}</h4>
                         <p class="apartment-address">{{apartments.address}}</p>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -81,6 +85,19 @@ export default {
                 border-radius: 5px;
                 box-shadow: 5px 5px 10px 2px #ccc;
 
+            }
+
+            .badge-sponsor{
+                position: absolute;
+                background: rgba($color: #fff, $alpha: 0.8);
+                border-radius: 5px;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                bottom: 10px;
+                left: 15px;
+                font-size: 20px;
             }
         }
 

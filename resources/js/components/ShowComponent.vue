@@ -67,7 +67,7 @@
             <div class="apartment-services">
                 <h2>Servizi</h2>
                 <ul>
-                    <li v-for="service in apartments.services" :key="service">
+                    <li v-for="(service, key) in apartments.services" :key="key">
                         <i class="far fa-dot-circle"></i>
                         <span> {{service.service_name}}</span>
                     </li>

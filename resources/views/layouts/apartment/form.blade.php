@@ -47,7 +47,7 @@ if (isset($edit) && !empty($edit)){
     <div class="form-row">
         <div class="form-group col-md-12">
             <label for="description">Descrizione</label>
-            <textarea type="text" value="{{(isset($apartment)?$apartment->description:'')}}" class="form-control {{($errors->has('description')?'is-invalid':'')}}" id="description" name="description" rows="5"></textarea>
+            <textarea type="text" class="form-control {{($errors->has('description')?'is-invalid':'')}}" id="description" name="description" rows="5">{{(isset($apartment)?$apartment->description:'')}}</textarea>
             @php
                 if($errors->has('description')){
                   echo '<span class=text-danger>'. $errors->first('description') . '</span>';
@@ -200,30 +200,7 @@ if (isset($edit) && !empty($edit)){
     </div>
 
 
-    @if (isset($edit) && !empty($edit))
-    <div class="form-group">
-        <div class="form-row">
-            {{-- <coordinate-component  :latitude='latitude' :longitude='longitude'/> --}}
-            <div class="col-sm-5">
-              <input type="text" value="{{(isset($apartment)?$apartment->latitude:'')}}" class="form-control {{($errors->has('latitude')?'is-invalid':'')}}" id="latitude" name="latitude"  placeholder="Inserisci latitudine">
-              @php
-                if($errors->has('latitude')){
-                  echo '<span class=text-danger>'. $errors->first('latitude') . '</span>';
-                }
-              @endphp
-            </div>
-           <div class="col-sm-5">
-              <input type="text" value="{{(isset($apartment)?$apartment->longitude:'')}}" class="form-control {{($errors->has('longitude')?'is-invalid':'')}}" id="longitude" name="longitude"  placeholder="Inserisci longitudine">
-              @php
-                  if($errors->has('longitude')){
-                  echo '<span class=text-danger>'. $errors->first('longitude') . '</span>';
-                  }
-              @endphp
-            </div>
-        </div>
-    </div>
 
-    @endif
 
 
     <div class="form-group">
